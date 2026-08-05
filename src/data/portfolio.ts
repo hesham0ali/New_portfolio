@@ -1,10 +1,10 @@
 import type { PortfolioData } from "@/types/portfolio";
 
-const fallbackSiteUrl = "http://localhost:3000";
+const fallbackSiteUrl = "https://www.heshamali.com";
 
-export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL?.trim() || fallbackSiteUrl
-).replace(/\/$/, "");
+export const siteUrl = new URL(
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || fallbackSiteUrl,
+).origin;
 
 export const portfolio = {
   person: {

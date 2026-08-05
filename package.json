@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "project:new": "node scripts/create-project.mjs",
-    "projects:validate": "node scripts/validate-projects.mjs"
+    "projects:validate": "node scripts/validate-projects.mjs",
+    "seo:validate": "node scripts/validate-seo.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

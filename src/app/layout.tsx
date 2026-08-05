@@ -1,42 +1,46 @@
 import type { Metadata } from "next";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { portfolio, siteUrl } from "@/data/portfolio";
+import {
+  homeDescription,
+  homeTitle,
+  socialImage,
+  twitterImageUrl,
+} from "@/lib/seo";
 import "./globals.css";
-
-const title = "Hesham Ali | Backend, WordPress & E-commerce Software Engineer";
-const description =
-  "Portfolio of Hesham Ali, a Junior Software Engineer working across backend development, APIs, integrations, workflow automation, custom WordPress plugins, Multisite platforms, and Salla e-commerce stores.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title,
-  description,
-  authors: [{ name: portfolio.person.name }],
+  title: {
+    default: homeTitle,
+    template: "%s | Hesham Ali",
+  },
+  description: homeDescription,
+  applicationName: "Hesham Ali Portfolio",
+  authors: [{ name: portfolio.person.name, url: siteUrl }],
   creator: portfolio.person.name,
+  publisher: portfolio.person.name,
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: "/",
-    title: "Hesham Ali — Software Engineer Portfolio",
-    description:
-      "Backend systems, WordPress development, API integrations, workflow automation, and e-commerce solutions.",
+    title: homeTitle,
+    description: homeDescription,
     siteName: "Hesham Ali Portfolio",
     locale: "en_US",
-    images: [
-      {
-        url: "/logo.png",
-        width: 1536,
-        height: 1024,
-        alt: "Hesham Ali",
-      },
-    ],
+    images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hesham Ali — Software Engineer Portfolio",
-    description:
-      "Backend systems, WordPress development, API integrations, workflow automation, and e-commerce solutions.",
-    images: ["/logo.png"],
+    title: homeTitle,
+    description: homeDescription,
+    images: [twitterImageUrl],
+  },
+  icons: {
+    icon: [{ url: "/icon", type: "image/png", sizes: "64x64" }],
+    apple: [
+      { url: "/apple-icon", type: "image/png", sizes: "180x180" },
+    ],
   },
   robots: {
     index: true,

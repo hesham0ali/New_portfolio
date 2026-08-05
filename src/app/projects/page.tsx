@@ -8,17 +8,28 @@ import {
   getAllProjectCategories,
   getAllPublishedProjects,
 } from "@/lib/projects/get-projects";
+import { socialImage, twitterImageUrl } from "@/lib/seo";
+
+const projectsTitle = "Projects | Hesham Ali";
+const projectsDescription =
+  "Selected backend, integration, WordPress, automation, and e-commerce projects by Hesham Ali.";
 
 export const metadata: Metadata = {
-  title: "Projects | Hesham Ali",
-  description:
-    "Selected backend, integration, WordPress, automation, and e-commerce projects by Hesham Ali.",
+  title: "Projects",
+  description: projectsDescription,
   alternates: { canonical: "/projects" },
   openGraph: {
-    title: "Projects | Hesham Ali",
-    description:
-      "Backend systems, integrations, WordPress platforms, automation, and e-commerce delivery.",
+    type: "website",
+    title: projectsTitle,
+    description: projectsDescription,
     url: "/projects",
+    images: [socialImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: projectsTitle,
+    description: projectsDescription,
+    images: [twitterImageUrl],
   },
 };
 

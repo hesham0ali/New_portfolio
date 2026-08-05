@@ -13,6 +13,7 @@ import {
   getProjectBySlug,
   getProjectNavigation,
 } from "@/lib/projects/get-projects";
+import { socialImage } from "@/lib/seo";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -32,36 +33,35 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   const { metadata } = project;
   const path = `/projects/${metadata.slug}`;
-  const socialImage = metadata.cover ?? {
-    src: "/logo.png",
-    alt: "Hesham Ali",
-    width: 1536,
-    height: 1024,
-  };
+  const projectTitle = `${metadata.title} | Hesham Ali`;
+  const projectSocialImage = metadata.cover
+    ? {
+        url: new URL(metadata.cover.src, siteUrl).toString(),
+        alt: metadata.cover.alt,
+        width: metadata.cover.width,
+        height: metadata.cover.height,
+      }
+    : {
+        ...socialImage,
+        url: new URL(socialImage.url, siteUrl).toString(),
+      };
 
   return {
-    title: `${metadata.title} | Hesham Ali`,
+    title: metadata.title,
     description: metadata.summary,
     alternates: { canonical: path },
     openGraph: {
       type: "article",
-      title: `${metadata.title} | Hesham Ali`,
+      title: projectTitle,
       description: metadata.summary,
       url: path,
-      images: [
-        {
-          url: socialImage.src,
-          alt: socialImage.alt,
-          width: socialImage.width,
-          height: socialImage.height,
-        },
-      ],
+      images: [projectSocialImage],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${metadata.title} | Hesham Ali`,
+      title: projectTitle,
       description: metadata.summary,
-      images: [socialImage.src],
+      images: [projectSocialImage.url],
     },
   };
 }
@@ -84,7 +84,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     keywords: metadata.tags.join(", "),
     ...(metadata.cover
       ? { image: `${siteUrl}${metadata.cover.src}` }
-      : { image: `${siteUrl}/logo.png` }),
+      : { image: new URL(socialImage.url, siteUrl).toString() }),
   };
 
   return (
