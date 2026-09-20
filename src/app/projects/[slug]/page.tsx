@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   const { metadata } = project;
   const path = `/projects/${metadata.slug}`;
-  const projectTitle = `${metadata.title} | Hesham Ali`;
+  const projectTitle = `${metadata.title} | هشام علي`;
   const projectSocialImage = metadata.cover
     ? {
         url: new URL(metadata.cover.src, siteUrl).toString(),
@@ -73,6 +73,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   const navigation = await getProjectNavigation(slug);
   const { Content, metadata } = project;
+  const arabic = metadata.slug === "sho9";
   const projectJsonLd = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
@@ -90,10 +91,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <>
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        {arabic ? "انتقل إلى المحتوى" : "Skip to main content"}
       </a>
       <SiteHeader />
-      <main id="main-content" tabIndex={-1} className="bg-cream">
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="bg-cream"
+        lang={arabic ? "ar" : "en"}
+        dir={arabic ? "rtl" : "ltr"}
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -108,12 +115,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <Reveal>
               <section aria-labelledby="project-overview">
                 <h2 id="project-overview" className="text-2xl font-semibold tracking-tight text-navy sm:text-3xl">
-                  Project overview
+                  {arabic ? "ملخص المشروع" : "Project overview"}
                 </h2>
                 <p className="mt-4 leading-8 text-slate-700">{metadata.overview}</p>
 
                 <h3 className="mt-9 text-xl font-semibold tracking-tight text-navy">
-                  Primary contributions
+                  {arabic ? "المساهمة الأساسية" : "Primary contributions"}
                 </h3>
                 <ul className="mt-5 space-y-3 leading-7 text-slate-700">
                   {metadata.contributions.map((contribution) => (
@@ -140,9 +147,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
               <Reveal>
               <aside className="mt-14 rounded-[1.5rem] bg-navy p-6 text-cream sm:p-8">
-                <p className="eyebrow text-cyan">Discuss a similar project</p>
+                <p className="eyebrow text-cyan">
+                  {arabic ? "عندك متجر على سلة؟" : "Discuss a similar project"}
+                </p>
                 <h2 className="mt-3 text-2xl font-semibold tracking-tight">
-                  Have a project you would like to discuss?
+                  {arabic
+                    ? "ابعتلي رابط متجرك وخليني أشوف إيه اللي ممكن نشتغل عليه."
+                    : "Have a project you would like to discuss?"}
                 </h2>
                 <a
                   href={portfolio.person.whatsapp.url}
@@ -159,7 +170,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </aside>
               </Reveal>
 
-              <ProjectNavigation {...navigation} />
+              <ProjectNavigation {...navigation} locale={arabic ? "ar" : "en"} />
             </div>
           </Container>
         </article>

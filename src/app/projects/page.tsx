@@ -10,12 +10,12 @@ import {
 } from "@/lib/projects/get-projects";
 import { socialImage, twitterImageUrl } from "@/lib/seo";
 
-const projectsTitle = "Projects | Hesham Ali";
+const projectsTitle = "أعمال هشام علي | مطور سلة";
 const projectsDescription =
-  "Selected backend, integration, WordPress, automation, and e-commerce projects by Hesham Ali.";
+  "أعمال مختارة لهشام علي تشمل متاجر سلة ومشروعات تقنية أخرى.";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "أعمال مختارة",
   description: projectsDescription,
   alternates: { canonical: "/projects" },
   openGraph: {
@@ -42,19 +42,19 @@ export default async function ProjectsPage() {
   return (
     <>
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        انتقل إلى المحتوى
       </a>
       <SiteHeader />
       <main id="main-content" tabIndex={-1} className="bg-cream">
         <section className="section-shell min-h-[70vh]">
           <Container>
             <Reveal trigger="mount">
-              <p className="eyebrow text-blue">Project archive</p>
-              <h1 className="mt-4 max-w-4xl text-4xl font-semibold tracking-[-0.045em] text-navy sm:text-6xl">
-                Backend, WordPress, integration, and e-commerce work.
+              <p className="eyebrow text-blue">أعمال مختارة</p>
+              <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-[1.3] text-navy sm:text-6xl">
+                مشروعات متاجر سلة وأعمال تقنية أخرى.
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
-                Explore selected client-facing work across custom systems, existing-platform improvement, and complete digital delivery.
+                استعرض نماذج من العمل ونطاق المساهمة في كل مشروع بدون مبالغة في الملكية أو النتائج.
               </p>
             </Reveal>
 

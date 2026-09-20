@@ -355,7 +355,7 @@ export const metadata = {
   ],
 
   year: "2026",
-  role: "Junior Software Engineer",
+  role: "Backend support",
 
   summary:
     "Business workflows, integrations, and backend support for a custom CRM platform.",

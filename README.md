@@ -1,37 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HeshamAli.com
 
-## Getting Started
+Arabic-first portfolio and service website for Hesham Ali, a Salla developer focused on designing and developing Salla stores.
 
-First, run the development server:
+## Product direction
+
+- Primary audience: Salla merchants.
+- Primary offer: Salla store design and development from start to finish.
+- Primary action: send the store URL through WhatsApp.
+- Language and direction: Arabic / RTL.
+- Canonical site: `https://www.heshamali.com`.
+
+The homepage is intentionally focused on the Salla offer. Broader technical projects remain available under `/projects` as secondary professional evidence.
+
+## Stack
+
+- Next.js 16 App Router
+- React 19 and TypeScript
+- Tailwind CSS 4
+- Local typed data and MDX project entries
+- Vercel deployment
+
+## Local development
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run projects:validate
+npm run build
+npm run seo:validate
+```
 
-## Learn More
+## Content locations
 
-To learn more about Next.js, take a look at the following resources:
+- Homepage and contact data: `src/data/portfolio.ts`
+- Homepage composition: `src/app/page.tsx`
+- Project entries: `content/projects/*.mdx`
+- Project assets: `public/projects/<slug>/`
+- Project authoring guide: `docs/PROJECTS_GUIDE.md`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The Sho9 case study expects an approved cover at `public/projects/sho9/cover.webp`. Do not add a screenshot until it is approved for public use; after adding it, update `cover` in `content/projects/sho9.mdx`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# New_portfolio
+Do not publish unverified store ownership, results, metrics, or testimonials. Do not imply an official partnership with Salla.

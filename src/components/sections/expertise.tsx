@@ -1,43 +1,32 @@
 import { Container } from "@/components/layout/container";
-import { Reveal } from "@/components/motion/Reveal";
-import { Stagger } from "@/components/motion/Stagger";
-import { StaggerItem } from "@/components/motion/StaggerItem";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { portfolio } from "@/data/portfolio";
 
 export function Expertise() {
   return (
-    <section id="expertise" className="section-shell scroll-mt-24 bg-mist">
+    <section id="service" className="section-shell scroll-mt-20 bg-mist">
       <Container>
-        <Reveal>
-          <SectionHeading
-            eyebrow="What I Work On"
-            title="Practical software solutions across backend, WordPress, integrations, and e-commerce."
-            description="Four connected areas of practice, grounded in real business workflows and client delivery."
-          />
-        </Reveal>
+        <SectionHeading
+          eyebrow="الخدمة"
+          title="إيه اللي أقدر أشتغل عليه في متجرك؟"
+          description="خدمة واحدة متكاملة لمتجر سلة، من ترتيب الواجهة إلى التخصيص الفني وتحسين تجربة الاستخدام."
+        />
 
-        <Stagger className="mt-12 grid gap-px overflow-hidden rounded-[1.5rem] border border-navy/10 bg-navy/10 md:grid-cols-2">
+        <div className="mt-10 grid gap-px overflow-hidden rounded-[1.5rem] border border-navy/10 bg-navy/10 md:grid-cols-2">
           {portfolio.expertise.map((item) => (
-            <StaggerItem key={item.number} as="article" className="motion-card-interaction bg-white p-6 sm:p-8 lg:p-10">
+            <article key={item.number} className="bg-white p-6 sm:p-8">
               <div className="flex items-start justify-between gap-5">
-                <h3 className="max-w-sm text-2xl font-semibold tracking-[-0.035em] text-navy sm:text-3xl">
-                  {item.title}
-                </h3>
-                <span className="font-mono text-sm font-semibold text-blue">{item.number}</span>
+                <h3 className="text-2xl font-extrabold text-navy">{item.title}</h3>
+                <span className="font-mono text-sm font-bold text-blue" dir="ltr">
+                  {item.number}
+                </span>
               </div>
-              <p className="mt-5 leading-7 text-slate-600">{item.description}</p>
-              <ul className="mt-7 grid gap-2 border-t border-navy/10 pt-6 sm:grid-cols-2">
-                {item.capabilities.map((capability) => (
-                  <li key={capability} className="flex gap-2 text-sm leading-6 text-slate-700">
-                    <span aria-hidden="true" className="mt-2.5 h-px w-3 shrink-0 bg-blue" />
-                    {capability}
-                  </li>
-                ))}
-              </ul>
-            </StaggerItem>
+              <p className="mt-4 max-w-xl leading-7 text-slate-600" dir="auto">
+                {item.description}
+              </p>
+            </article>
           ))}
-        </Stagger>
+        </div>
       </Container>
     </section>
   );

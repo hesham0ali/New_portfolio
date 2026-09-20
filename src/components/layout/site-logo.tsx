@@ -1,9 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { MouseEventHandler } from "react";
 
 export function SiteLogo({
-  priority = false,
   size = "header",
   onClick,
 }: {
@@ -14,24 +12,18 @@ export function SiteLogo({
   return (
     <Link
       href="/"
-      className="inline-flex shrink-0"
-      aria-label="Hesham Ali, home"
+      className="inline-flex shrink-0 items-center text-cream"
+      aria-label="هشام علي، الصفحة الرئيسية"
       onClick={onClick}
     >
       <span
-        className={`relative block overflow-hidden ${
-          size === "footer" ? "h-12 w-44" : "h-10 w-40"
-        }`}
+        className={
+          size === "footer"
+            ? "text-2xl font-extrabold leading-none"
+            : "text-xl font-extrabold leading-none sm:text-2xl"
+        }
       >
-        <Image
-          src="/logo.png"
-          alt="Hesham Ali"
-          width={1536}
-          height={1024}
-          priority={priority}
-          sizes={size === "footer" ? "176px" : "160px"}
-          className="absolute top-1/2 left-1/2 h-auto w-[18rem] max-w-none -translate-x-1/2 -translate-y-1/2 brightness-0 invert"
-        />
+        هشام علي
       </span>
     </Link>
   );

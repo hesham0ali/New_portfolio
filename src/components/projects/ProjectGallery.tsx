@@ -115,7 +115,7 @@ export function ProjectGallery({ images }: { images: ResolvedProjectImage[] }) {
                   triggerRef.current = event.currentTarget;
                   setSelectedIndex(index);
                 }}
-                className="group relative block w-full cursor-zoom-in overflow-hidden text-left focus-visible:outline-offset-[-4px]"
+                className="group relative block w-full cursor-zoom-in overflow-hidden text-start focus-visible:outline-offset-[-4px]"
                 style={{ aspectRatio: `${image.width} / ${image.height}` }}
                 aria-label={`Expand image: ${image.alt}`}
                 aria-haspopup="dialog"
@@ -161,7 +161,7 @@ export function ProjectGallery({ images }: { images: ResolvedProjectImage[] }) {
                   ref={closeButtonRef}
                   type="button"
                   onClick={closeLightbox}
-                  className="absolute top-4 right-4 z-10 flex size-11 items-center justify-center rounded-full border border-white/40 bg-navy text-xl text-white hover:border-cyan hover:text-cyan sm:top-6 sm:right-6"
+                  className="absolute top-4 end-4 z-10 flex size-11 items-center justify-center rounded-full border border-white/40 bg-navy text-xl text-white hover:border-cyan hover:text-cyan sm:top-6 sm:end-6"
                   aria-label="Close image viewer"
                 >
                   ×
@@ -171,11 +171,11 @@ export function ProjectGallery({ images }: { images: ResolvedProjectImage[] }) {
                   <button
                     type="button"
                     onClick={showPrevious}
-                    className="absolute bottom-4 left-4 z-10 flex min-h-11 items-center rounded-full border border-white/40 bg-navy px-4 font-semibold text-white hover:border-cyan hover:text-cyan sm:top-1/2 sm:bottom-auto sm:left-6 sm:-translate-y-1/2"
+                    className="absolute bottom-4 start-4 z-10 flex min-h-11 items-center rounded-full border border-white/40 bg-navy px-4 font-semibold text-white hover:border-cyan hover:text-cyan sm:top-1/2 sm:bottom-auto sm:start-6 sm:-translate-y-1/2"
                     aria-label="Show previous image"
                   >
                     <span aria-hidden="true">←</span>
-                    <span className="sr-only sm:not-sr-only sm:ml-2">Previous</span>
+                    <span className="sr-only sm:not-sr-only sm:ms-2">Previous</span>
                   </button>
                 ) : null}
 
@@ -210,10 +210,10 @@ export function ProjectGallery({ images }: { images: ResolvedProjectImage[] }) {
                   <button
                     type="button"
                     onClick={showNext}
-                    className="absolute right-4 bottom-4 z-10 flex min-h-11 items-center rounded-full border border-white/40 bg-navy px-4 font-semibold text-white hover:border-cyan hover:text-cyan sm:top-1/2 sm:right-6 sm:bottom-auto sm:-translate-y-1/2"
+                    className="absolute end-4 bottom-4 z-10 flex min-h-11 items-center rounded-full border border-white/40 bg-navy px-4 font-semibold text-white hover:border-cyan hover:text-cyan sm:top-1/2 sm:end-6 sm:bottom-auto sm:-translate-y-1/2"
                     aria-label="Show next image"
                   >
-                    <span className="sr-only sm:not-sr-only sm:mr-2">Next</span>
+                    <span className="sr-only sm:not-sr-only sm:me-2">Next</span>
                     <span aria-hidden="true">→</span>
                   </button>
                 ) : null}

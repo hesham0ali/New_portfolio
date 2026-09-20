@@ -13,10 +13,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: homeTitle,
-    template: "%s | Hesham Ali",
+    template: "%s | هشام علي",
   },
   description: homeDescription,
-  applicationName: "Hesham Ali Portfolio",
+  applicationName: "هشام علي — مطور سلة",
   authors: [{ name: portfolio.person.name, url: siteUrl }],
   creator: portfolio.person.name,
   publisher: portfolio.person.name,
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     url: "/",
     title: homeTitle,
     description: homeDescription,
-    siteName: "Hesham Ali Portfolio",
-    locale: "en_US",
+    siteName: "هشام علي — مطور سلة",
+    locale: "ar_SA",
     images: [socialImage],
   },
   twitter: {
@@ -70,7 +70,7 @@ const personJsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="ar" dir="rtl" data-scroll-behavior="smooth">
       <body>
         <script
           type="application/ld+json"

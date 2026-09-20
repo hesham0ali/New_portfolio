@@ -21,7 +21,7 @@ export function SectionHeading({
         {eyebrow}
       </p>
       <h2
-        className={`mt-4 text-balance text-3xl font-semibold tracking-[-0.04em] sm:text-4xl lg:text-5xl ${inverse ? "text-cream" : "text-navy"}`}
+        className={`mt-4 text-balance text-3xl font-extrabold leading-[1.35] sm:text-4xl lg:text-5xl ${inverse ? "text-cream" : "text-navy"}`}
       >
         {title}
       </h2>

@@ -11,8 +11,8 @@ export function SiteHeader({ homePage = false }: { homePage?: boolean }) {
   }));
   return (
     <header id="top" className="sticky top-0 z-50 border-b border-white/10 bg-navy/95 text-cream backdrop-blur-md">
-      <Container className="flex min-h-18 items-center justify-between gap-6">
-        <SiteLogo priority />
+      <Container className="flex min-h-16 items-center justify-between gap-4 sm:min-h-18">
+        <SiteLogo />
 
         <ActiveNavigation items={navigation} />
 

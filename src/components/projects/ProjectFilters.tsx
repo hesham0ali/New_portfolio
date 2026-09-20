@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AnimatedProjectGrid } from "@/components/motion/AnimatedProjectGrid";
 import type { ResolvedProjectMetadata } from "@/lib/projects/project-types";
 
-const allCategory = "All";
+const allCategory = "الكل";
 
 export function ProjectFilters({
   projects,
@@ -24,7 +24,7 @@ export function ProjectFilters({
   return (
     <div>
       <div
-        aria-label="Filter projects by category"
+        aria-label="تصفية المشروعات حسب التصنيف"
         className="-mx-5 mb-8 overflow-x-auto px-5 pb-2 sm:mx-0 sm:px-0"
       >
         <div className="flex min-w-max gap-2" role="group">
@@ -50,8 +50,7 @@ export function ProjectFilters({
       </div>
 
       <p className="sr-only" aria-live="polite">
-        Showing {visibleProjects.length} project
-        {visibleProjects.length === 1 ? "" : "s"}.
+        عدد المشروعات الظاهرة: {visibleProjects.length}.
       </p>
       <AnimatedProjectGrid projects={visibleProjects} />
     </div>

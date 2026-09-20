@@ -1,11 +1,12 @@
 type TagListProps = {
   items: string[];
   inverse?: boolean;
+  label?: string;
 };
 
-export function TagList({ items, inverse = false }: TagListProps) {
+export function TagList({ items, inverse = false, label = "Technologies" }: TagListProps) {
   return (
-    <ul className="flex flex-wrap gap-2" aria-label="Technologies">
+    <ul className="flex flex-wrap gap-2" aria-label={label}>
       {items.map((item) => (
         <li
           key={item}

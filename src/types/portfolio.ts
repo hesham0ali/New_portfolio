@@ -56,7 +56,7 @@ export type PortfolioData = {
       ariaLabel: string;
     };
     linkedInUrl: string;
-    githubUrl: string | null;
+    githubUrl: string;
     cvUrl: string;
   };
   navigation: NavigationItem[];

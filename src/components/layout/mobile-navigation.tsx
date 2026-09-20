@@ -9,9 +9,13 @@ type MobileNavigationProps = {
   whatsapp: PortfolioData["person"]["whatsapp"];
 };
 
+const focusableSelector =
+  'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
@@ -23,13 +27,30 @@ export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        event.preventDefault();
         setIsOpen(false);
         requestAnimationFrame(() => toggleRef.current?.focus());
+        return;
+      }
+
+      if (event.key !== "Tab" || !dialogRef.current) return;
+      const focusable = Array.from(
+        dialogRef.current.querySelectorAll<HTMLElement>(focusableSelector),
+      );
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      if (!first || !last) return;
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
       }
     };
 
     document.addEventListener("keydown", handleKeyDown);
-
     return () => {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleKeyDown);
@@ -49,44 +70,48 @@ export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
         className="menu-button"
         aria-expanded={isOpen}
         aria-controls="mobile-navigation"
-        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-label={isOpen ? "إغلاق قائمة التنقل" : "فتح قائمة التنقل"}
         onClick={() => setIsOpen((open) => !open)}
       >
         <span aria-hidden="true" className="menu-button-lines">
           <span />
           <span />
         </span>
-        <span>Menu</span>
+        <span>القائمة</span>
       </button>
 
       {isOpen ? (
         <div
+          ref={dialogRef}
           id="mobile-navigation"
+          role="dialog"
+          aria-modal="true"
+          aria-label="قائمة التنقل"
           className="fixed inset-0 z-[70] flex flex-col bg-navy px-5 py-5 text-cream"
         >
           <div className="flex items-center justify-between border-b border-white/15 pb-5">
             <SiteLogo onClick={() => setIsOpen(false)} />
             <button
               type="button"
-              className="inline-flex min-h-11 items-center rounded-full border border-white/25 px-4 text-sm font-semibold"
+              className="inline-flex min-h-11 items-center rounded-full border border-white/25 px-4 text-sm font-bold"
               onClick={closeAndReturnFocus}
             >
-              Close
+              إغلاق
             </button>
           </div>
 
-          <nav aria-label="Mobile navigation" className="flex flex-1 flex-col justify-center">
+          <nav aria-label="التنقل على الجوال" className="flex flex-1 flex-col justify-center">
             <ul className="divide-y divide-white/10">
               {items.map((item, index) => (
                 <li key={item.href}>
                   <a
                     ref={index === 0 ? firstLinkRef : undefined}
                     href={item.href}
-                    className="flex min-h-16 items-center justify-between text-2xl font-semibold tracking-tight"
+                    className="flex min-h-16 items-center justify-between text-2xl font-bold"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
-                    <span aria-hidden="true" className="font-mono text-sm text-cyan">
+                    <span aria-hidden="true" className="font-mono text-sm text-cyan" dir="ltr">
                       0{index + 1}
                     </span>
                   </a>

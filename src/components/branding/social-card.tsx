@@ -1,5 +1,3 @@
-import { HaMonogram } from "./ha-monogram";
-
 const gridLines = Array.from({ length: 12 }, (_, index) => index);
 
 export function SocialCard() {
@@ -14,6 +12,7 @@ export function SocialCard() {
         backgroundColor: "#0a192f",
         color: "#f7f4ed",
         fontFamily: "sans-serif",
+        direction: "ltr",
       }}
     >
       {gridLines.map((line) => (
@@ -45,17 +44,6 @@ export function SocialCard() {
 
       <div
         style={{
-          position: "absolute",
-          top: 54,
-          right: 62,
-          width: 176,
-          height: 176,
-          border: "1px solid rgba(89, 225, 212, 0.18)",
-          borderRadius: 999,
-        }}
-      />
-      <div
-        style={{
           position: "relative",
           display: "flex",
           flexDirection: "column",
@@ -71,13 +59,14 @@ export function SocialCard() {
             justifyContent: "space-between",
           }}
         >
-          <HaMonogram size={92} />
+          <div style={{ display: "flex", fontSize: 34, fontWeight: 700 }}>
+            Hesham Ali
+          </div>
           <div
             style={{
               display: "flex",
               color: "#94a3b8",
               fontSize: 24,
-              letterSpacing: 1,
             }}
           >
             heshamali.com
@@ -95,36 +84,24 @@ export function SocialCard() {
           <div
             style={{
               display: "flex",
-              fontSize: 76,
-              fontWeight: 700,
-              letterSpacing: -3,
-              lineHeight: 1,
-            }}
-          >
-            Hesham Ali
-          </div>
-          <div
-            style={{
-              display: "flex",
-              marginTop: 18,
               color: "#59e1d4",
               fontSize: 42,
-              fontWeight: 600,
-              lineHeight: 1.1,
+              fontWeight: 700,
             }}
           >
-            Software Engineer
+            Salla Developer
           </div>
           <div
             style={{
               display: "flex",
-              marginTop: 32,
-              color: "#cbd5e1",
-              fontSize: 30,
-              lineHeight: 1.25,
+              marginTop: 20,
+              maxWidth: 920,
+              fontSize: 64,
+              fontWeight: 700,
+              lineHeight: 1.3,
             }}
           >
-            Backend · Integrations · WordPress · E-commerce
+            Design &amp; Development for Salla Stores
           </div>
         </div>
       </div>

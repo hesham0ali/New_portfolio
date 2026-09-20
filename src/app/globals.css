@@ -12,7 +12,7 @@
   --slate-600: #475569;
   --slate-700: #334155;
   --slate-800: #1e293b;
-  --font-sans-stack: "Avenir Next", Avenir, "Segoe UI", Arial, sans-serif;
+  --font-sans-stack: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
   --font-mono-stack: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
@@ -67,7 +67,7 @@ button:focus-visible {
 }
 
 .section-shell {
-  padding-block: 5rem;
+  padding-block: 4rem;
 }
 
 .eyebrow {
@@ -81,7 +81,7 @@ button:focus-visible {
 
 .skip-link {
   position: fixed;
-  left: 1rem;
+  inset-inline-start: 1rem;
   top: 1rem;
   z-index: 100;
   translate: 0 -200%;
@@ -130,14 +130,14 @@ button:focus-visible {
 .project-orbit-one {
   width: 18rem;
   height: 18rem;
-  right: -5rem;
+  inset-inline-end: -5rem;
   top: -10rem;
 }
 
 .project-orbit-two {
   width: 10rem;
   height: 10rem;
-  right: 3rem;
+  inset-inline-end: 3rem;
   top: -5rem;
 }
 
@@ -180,7 +180,7 @@ button:focus-visible {
   .motion-arrow-link:focus-visible .motion-arrow,
   .project-navigation-card:hover .motion-arrow,
   .project-navigation-card:focus-visible .motion-arrow {
-    transform: translateX(4px);
+    transform: translateX(-4px);
   }
 
   .project-navigation-card:hover {
@@ -199,11 +199,25 @@ button:focus-visible {
 .animated-project-card:focus-within .project-card-arrow,
 .motion-arrow-link:focus-visible .motion-arrow,
 .project-navigation-card:focus-visible .motion-arrow {
-  transform: translateX(4px);
+  transform: translateX(-4px);
 }
 
 .project-navigation-card:focus-visible {
   transform: translateY(-3px);
+}
+
+[dir="ltr"] .project-card-arrow,
+[dir="ltr"] .motion-arrow {
+  transform: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [dir="ltr"] .animated-project-card:hover .project-card-arrow,
+  [dir="ltr"] .animated-project-card:focus-within .project-card-arrow,
+  [dir="ltr"] .motion-arrow-link:hover .motion-arrow,
+  [dir="ltr"] .motion-arrow-link:focus-visible .motion-arrow {
+    transform: translateX(4px);
+  }
 }
 
 .menu-button {
@@ -233,7 +247,7 @@ button:focus-visible {
   background: currentColor;
 }
 
-.button-primary,
+.button-primary:not(.hidden),
 .button-secondary,
 .button-secondary-dark,
 .button-text-dark,
@@ -334,13 +348,13 @@ button:focus-visible {
 
 @media (min-width: 640px) {
   .section-shell {
-    padding-block: 6rem;
+    padding-block: 5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section-shell {
-    padding-block: 8rem;
+    padding-block: 6rem;
   }
 }
 

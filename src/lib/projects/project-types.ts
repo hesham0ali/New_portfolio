@@ -35,6 +35,7 @@ export type ProjectMetadata = {
   summary: string;
   overview: string;
   contributions: string[];
+  maintenance?: string | null;
   cover?: ProjectImage | null;
   links: ProjectLinks;
   gallery: ProjectImage[];

@@ -2,19 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatedProjectCard } from "@/components/motion/AnimatedProjectCard";
 import { ProjectPlaceholder } from "@/components/ui/project-placeholder";
-import { TagList } from "@/components/ui/tag-list";
 import type { ResolvedProjectMetadata } from "@/lib/projects/project-types";
 
 export function ProjectCard({ project }: { project: ResolvedProjectMetadata }) {
   const number = String(project.order).padStart(2, "0");
+  const arabic = /[\u0600-\u06ff]/.test(project.title);
 
   return (
     <AnimatedProjectCard>
-      <Link
-        href={`/projects/${project.slug}`}
-        className="flex h-full flex-col focus-visible:outline-offset-[-3px]"
-      >
-        <div className="project-card-media relative aspect-[16/10] overflow-hidden">
+      <div className="flex h-full flex-col" lang={arabic ? "ar" : "en"} dir={arabic ? "rtl" : "ltr"}>
+        <Link
+          href={`/projects/${project.slug}`}
+          className="project-card-media relative aspect-[16/10] overflow-hidden focus-visible:outline-offset-[-3px]"
+          aria-label={`${arabic ? "عرض مشروع" : "View project"}: ${project.title}`}
+        >
           {project.cover ? (
             <Image
               src={project.cover.src}
@@ -32,41 +33,29 @@ export function ProjectCard({ project }: { project: ResolvedProjectMetadata }) {
               className="h-full"
             />
           )}
-        </div>
+        </Link>
 
         <div className="flex flex-1 flex-col p-6 sm:p-8">
-          <h3 className="text-2xl font-semibold tracking-[-0.03em] text-navy transition-colors group-hover:text-blue group-focus-within:text-blue">
-            {project.title}
-          </h3>
-          <p className="mt-3 font-medium leading-7 text-slate-800">
-            {project.summary}
-          </p>
-          <p className="mt-4 leading-7 text-slate-600">{project.overview}</p>
-
-          <div className="mt-6 border-t border-navy/10 pt-6">
-            <p className="eyebrow text-blue">Primary contribution</p>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
-              {project.contributions.map((contribution) => (
-                <li key={contribution} className="flex gap-3">
-                  <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-blue" />
-                  <span>{contribution}</span>
-                </li>
-              ))}
-            </ul>
+          <p className="eyebrow text-blue">{project.role}</p>
+          <h2 className="mt-3 text-2xl font-bold text-navy">
+            <Link href={`/projects/${project.slug}`} className="link-underline">
+              {project.title}
+            </Link>
+          </h2>
+          <p className="mt-4 leading-7 text-slate-600">{project.summary}</p>
+          <div className="mt-auto pt-7">
+            <Link
+              href={`/projects/${project.slug}`}
+              className="motion-arrow-link inline-flex min-h-11 items-center gap-2 font-bold text-blue"
+            >
+              {arabic ? "تفاصيل المشروع" : "View project"}
+              <span aria-hidden="true" className="motion-arrow inline-block">
+                {arabic ? "←" : "→"}
+              </span>
+            </Link>
           </div>
-
-          <div className="mt-6">
-            <TagList items={project.tags} />
-          </div>
-
-          <span className="link-underline mt-7 w-fit font-semibold text-blue">
-            View project
-            <span aria-hidden="true" className="project-card-arrow inline-block">
-              ↗
-            </span>
-          </span>
         </div>
-      </Link>
+      </div>
     </AnimatedProjectCard>
   );
 }

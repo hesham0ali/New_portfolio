@@ -1,86 +1,100 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/layout/container";
-import { Reveal } from "@/components/motion/Reveal";
-import { Stagger } from "@/components/motion/Stagger";
-import { StaggerItem } from "@/components/motion/StaggerItem";
 import { portfolio } from "@/data/portfolio";
+import type { ResolvedProjectMetadata } from "@/lib/projects/project-types";
 
-export function Hero() {
+export function Hero({ project }: { project: ResolvedProjectMetadata }) {
   return (
-    <section id="home" className="hero-grid scroll-mt-24 overflow-hidden bg-navy text-cream">
-      <Container className="relative py-20 sm:py-24 lg:py-32">
-        <div className="grid items-end gap-14 lg:grid-cols-[minmax(0,1.5fr)_minmax(18rem,0.7fr)] lg:gap-20">
-          <Stagger trigger="mount" delay={0.04}>
-            <StaggerItem>
-              <p className="eyebrow text-cyan">{portfolio.hero.eyebrow}</p>
-            </StaggerItem>
-            <StaggerItem>
-              <h1 className="mt-6 max-w-5xl text-balance text-4xl font-semibold leading-[1.03] tracking-[-0.055em] sm:text-6xl lg:text-[4.75rem]">
-                {portfolio.hero.headline}
-              </h1>
-            </StaggerItem>
-            <StaggerItem>
-              <div>
-                <p className="mt-7 max-w-3xl text-pretty text-lg leading-8 text-slate-300 sm:text-xl">
-                  {portfolio.hero.description}
-                </p>
-                <p className="mt-4 max-w-2xl leading-7 text-slate-400">
-                  {portfolio.hero.supportingText}
-                </p>
-              </div>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <a href="#projects" className="button-primary">
-                  View My Work
-                </a>
-                <a
-                  href={portfolio.person.whatsapp.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={portfolio.person.whatsapp.ariaLabel}
-                  className="button-secondary-dark"
-                >
-                  {portfolio.person.whatsapp.label}
-                </a>
-                <a href={portfolio.person.cvUrl} download className="button-text-dark">
-                  Download CV
-                  <span aria-hidden="true">↘</span>
-                </a>
-              </div>
-            </StaggerItem>
-          </Stagger>
+    <section id="home" className="hero-grid scroll-mt-20 overflow-hidden bg-navy text-cream">
+      <Container className="py-14 sm:py-20 lg:py-24">
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(19rem,0.75fr)] lg:gap-16">
+          <div>
+            <p className="eyebrow text-cyan">{portfolio.hero.eyebrow}</p>
+            <h1 className="mt-5 max-w-4xl text-4xl leading-[1.25] font-extrabold sm:text-5xl lg:text-6xl lg:leading-[1.2]">
+              {portfolio.hero.headline}
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+              {portfolio.hero.description}
+            </p>
+            <p className="mt-3 max-w-2xl leading-7 text-slate-400">
+              {portfolio.hero.supportingText}
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <a
+                href={portfolio.person.whatsapp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={portfolio.person.whatsapp.ariaLabel}
+                className="button-primary"
+              >
+                {portfolio.person.whatsapp.label}
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a href="#work" className="button-secondary-dark">
+                شوف شغلي
+                <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+          </div>
 
-          <Reveal trigger="mount" delay={0.28}>
-            <aside className="border-l border-white/15 pl-6 sm:pl-8" aria-label="Professional focus">
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-cyan">
-                Current focus
-              </p>
-              <p className="mt-5 text-xl font-medium leading-8 text-cream">
-                {portfolio.person.role}
-              </p>
-              <div className="mt-8 flex items-center gap-3 text-sm text-slate-400">
-                <span className="inline-block size-2 rounded-full bg-cyan" aria-hidden="true" />
-                {portfolio.person.location}
+          <Link
+            href={`/projects/${project.slug}`}
+            className="group relative overflow-hidden rounded-[1.5rem] border border-white/15 bg-navy-light focus-visible:outline-offset-4"
+            aria-label="عرض مشروع شوب ستور"
+          >
+            {project.cover ? (
+              <div
+                className="relative aspect-[4/3]"
+                style={{ aspectRatio: `${project.cover.width} / ${project.cover.height}` }}
+              >
+                <Image
+                  src={project.cover.src}
+                  alt={project.cover.alt}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  style={{ objectPosition: project.cover.position ?? "top" }}
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.015] motion-reduce:transform-none"
+                />
               </div>
-            </aside>
-          </Reveal>
+            ) : (
+              <div className="project-visual flex min-h-72 w-full flex-col justify-between p-7 text-navy sm:aspect-[4/3] sm:p-9">
+                <div className="flex items-start justify-between gap-5">
+                  <span className="eyebrow text-blue">مشروع حقيقي على سلة</span>
+                  <span className="size-3 rounded-full bg-cyan ring-4 ring-cyan/25" aria-hidden="true" />
+                </div>
+                <div>
+                  <p className="text-4xl font-extrabold sm:text-5xl" dir="ltr">
+                    SHO9
+                  </p>
+                  <p className="mt-3 text-lg font-bold">تصميم وتطوير من البداية للنهاية</p>
+                  <p className="mt-2 text-sm text-slate-600" dir="ltr">
+                    sho9.com
+                  </p>
+                </div>
+              </div>
+            )}
+            <div className="flex items-center justify-between border-t border-white/10 px-5 py-4 text-sm font-bold sm:px-6">
+              <span>شوب ستور — Sho9</span>
+              <span aria-hidden="true" className="motion-arrow text-cyan">↖</span>
+            </div>
+          </Link>
         </div>
 
-        <Reveal trigger="mount" delay={0.38}>
-          <div className="mt-16 grid border-y border-white/15 sm:grid-cols-3 lg:mt-24">
-            {portfolio.proof.map((item) => (
-              <div
-                key={item.value}
-                className="border-b border-white/15 py-6 last:border-b-0 sm:border-r sm:border-b-0 sm:px-6 sm:first:pl-0 sm:last:border-r-0 sm:last:pr-0"
-              >
-                <p className="font-mono text-2xl font-semibold tracking-[-0.04em] text-cyan sm:text-3xl">
-                  {item.value}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-slate-300">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
+        <dl className="mt-12 grid border-y border-white/15 sm:grid-cols-3 lg:mt-16">
+          {portfolio.proof.map((item) => (
+            <div
+              key={item.value}
+              className="border-b border-white/15 py-5 last:border-b-0 sm:border-b-0 sm:border-s sm:px-6 sm:first:border-s-0 sm:first:pe-0 sm:last:ps-0"
+            >
+              <dt className="text-sm leading-6 text-slate-300">{item.label}</dt>
+              <dd className="mt-1 font-bold text-cyan" dir="auto">
+                {item.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </Container>
     </section>
   );

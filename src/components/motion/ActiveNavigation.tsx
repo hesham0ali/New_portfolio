@@ -12,7 +12,7 @@ export function ActiveNavigation({ items }: { items: NavigationItem[] }) {
     pathname === "/"
       ? activeHash
       : pathname.startsWith("/projects")
-        ? "/#projects"
+        ? "/#work"
         : undefined;
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export function ActiveNavigation({ items }: { items: NavigationItem[] }) {
   }, [items, pathname]);
 
   return (
-    <nav aria-label="Primary navigation" className="hidden lg:block">
+    <nav aria-label="التنقل الرئيسي" className="hidden lg:block">
       <ul className="flex items-center gap-1">
         {items.map((item) => {
           const active = activeHref === item.href;

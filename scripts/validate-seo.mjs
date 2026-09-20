@@ -6,11 +6,11 @@ import { fileURLToPath } from "node:url";
 const rootDirectory = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const productionUrl = "https://www.heshamali.com";
 const homepageTitle =
-  "Hesham Ali | Software Engineer — Backend, WordPress & E-commerce";
+  "هشام علي | مطور سلة — تصميم وتطوير متاجر سلة";
 const homepageDescription =
-  "Portfolio of Hesham Ali, a Junior Software Engineer working across backend systems, API integrations, workflow automation, custom WordPress platforms, and Salla e-commerce solutions.";
+  "هشام علي، مطور سلة متخصص في تصميم وتطوير متاجر سلة، تخصيص الثيم، تحسين الواجهة وتجربة المتجر على الجوال.";
 const outdatedTitle =
-  "Hesham Ali — WordPress Developer" + " & WooCommerce Specialist";
+  "Hesham Ali | Software Engineer — Backend, WordPress & E-commerce";
 
 const sourceFiles = [
   ".env.example",
@@ -105,6 +105,10 @@ check(
   "root metadataBase is missing",
 );
 check(
+  sources.get("src/app/layout.tsx")?.includes('<html lang="ar" dir="rtl"'),
+  "root Arabic language or RTL direction is missing",
+);
+check(
   sources.get("src/lib/seo.ts")?.includes(homepageTitle) &&
     sources.get("src/lib/seo.ts")?.includes(homepageDescription),
   "homepage title or description does not match the approved copy",
@@ -160,6 +164,7 @@ if (await exists(".next/server/app/index.html")) {
     const canonical = getLink(head, "canonical");
     const ogTitle = getMeta(head, "property", "og:title");
     const ogDescription = getMeta(head, "property", "og:description");
+    const ogLocale = getMeta(head, "property", "og:locale");
     const ogImage = getMeta(head, "property", "og:image");
     const ogWidth = getMeta(head, "property", "og:image:width");
     const ogHeight = getMeta(head, "property", "og:image:height");
@@ -178,6 +183,7 @@ if (await exists(".next/server/app/index.html")) {
       ogDescription === homepageDescription,
       "generated og:description is incorrect",
     );
+    check(ogLocale === "ar_SA", `generated og:locale is incorrect: ${ogLocale}`);
     check(
       ogImage?.startsWith(`${productionUrl}/opengraph-image`) === true,
       `generated og:image must be an absolute production URL: ${ogImage}`,
@@ -189,6 +195,7 @@ if (await exists(".next/server/app/index.html")) {
     check(!head.includes("localhost"), "generated metadata contains localhost");
     check(!head.includes("vercel.app"), "generated metadata contains vercel.app");
     check(!head.includes(outdatedTitle), "generated metadata contains the outdated title");
+    check(/<html[^>]*lang="ar"[^>]*dir="rtl"/.test(html), "generated HTML is not Arabic RTL");
     check(!ogImage?.includes("logo.png"), "generated og:image falls back to logo.png");
 
     const projectFiles = (await readdir(path.join(rootDirectory, ".next", "server", "app", "projects")))

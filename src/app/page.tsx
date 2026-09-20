@@ -1,33 +1,29 @@
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { About } from "@/components/sections/about";
-import { CommerceSpotlight } from "@/components/sections/commerce-spotlight";
 import { Contact } from "@/components/sections/contact";
-import { Education } from "@/components/sections/education";
-import { Experience } from "@/components/sections/experience";
 import { Expertise } from "@/components/sections/expertise";
 import { Hero } from "@/components/sections/hero";
 import { Projects } from "@/components/sections/projects";
-import { TechStack } from "@/components/sections/tech-stack";
 import { WorkingStyle } from "@/components/sections/working-style";
+import { getProjectBySlug } from "@/lib/projects/get-projects";
 
-export default function Home() {
+export default async function Home() {
+  const sho9 = await getProjectBySlug("sho9");
+  if (!sho9) throw new Error("The published Sho9 project is required.");
+
   return (
     <>
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        انتقل إلى المحتوى
       </a>
       <SiteHeader homePage />
       <main id="main-content" tabIndex={-1}>
-        <Hero />
-        <About />
+        <Hero project={sho9.metadata} />
+        <Projects project={sho9.metadata} />
         <Expertise />
-        <Projects />
-        <CommerceSpotlight />
-        <Experience />
-        <TechStack />
         <WorkingStyle />
-        <Education />
+        <About />
         <Contact />
       </main>
       <SiteFooter />

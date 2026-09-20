@@ -196,6 +196,10 @@ export function validateProjectMetadataValue(value, filename, publicDirectory) {
     summary: text(input.summary, filename, "summary"),
     overview: text(input.overview, filename, "overview"),
     contributions,
+    maintenance:
+      input.maintenance === undefined || input.maintenance === null
+        ? null
+        : text(input.maintenance, filename, "maintenance"),
     cover,
     gallery: projectGallery(input.gallery, filename, slug, publicDirectory),
     links: {
