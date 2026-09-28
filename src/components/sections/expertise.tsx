@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { portfolio } from "@/data/portfolio";
@@ -26,6 +27,16 @@ export function Expertise() {
               </p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-8 flex flex-col items-start gap-3 border-t border-navy/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-2xl leading-7 text-slate-600">
+            لو محتاج تعرف نطاق تصميم وتجهيز المتجر والخطوات قبل ما نبدأ.
+          </p>
+          <Link href="/services/salla-store-design" className="button-secondary shrink-0">
+            تفاصيل تصميم متجر سلة
+            <span aria-hidden="true">←</span>
+          </Link>
         </div>
       </Container>
     </section>
