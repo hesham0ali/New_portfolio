@@ -7,14 +7,25 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { testimonials } from "@/data/testimonials";
 
 export function Testimonials() {
-  if (testimonials.length === 0) return null;
+  const visibleTestimonials =
+    process.env.NODE_ENV === "development"
+      ? testimonials
+      : testimonials.filter((testimonial) => testimonial.verified);
+
+  if (visibleTestimonials.length === 0) return null;
+
+  const containsDemoContent = visibleTestimonials.some(
+    (testimonial) => !testimonial.verified,
+  );
 
   const gridClass =
-    testimonials.length === 1
+    visibleTestimonials.length === 1
       ? "max-w-3xl"
-      : testimonials.length === 2
+      : visibleTestimonials.length === 2
         ? "md:grid-cols-2"
-        : "md:grid-cols-2 lg:grid-cols-3";
+        : visibleTestimonials.length === 5
+          ? "md:grid-cols-2 lg:grid-cols-6"
+          : "md:grid-cols-2 lg:grid-cols-3";
 
   return (
     <section
@@ -28,22 +39,37 @@ export function Testimonials() {
             id="testimonials-heading"
             eyebrow="آراء العملاء"
             title="تجارب من عملاء عملت معهم"
-            description="آراء موثقة من عملاء عملت معهم على مشاريع ومتاجر مختلفة."
+            description={
+              containsDemoContent
+                ? "معاينة تطويرية لمحتوى تجريبي غير منشور، جاهز للاستبدال بآراء عملاء معتمدة."
+                : "آراء من عملاء عملت معهم على مشاريع ومتاجر مختلفة."
+            }
           />
         </Reveal>
 
         <Stagger className={`mt-10 grid items-stretch gap-5 ${gridClass}`}>
-          {testimonials.map((testimonial) => {
+          {visibleTestimonials.map((testimonial, index) => {
             const clientDetails = [
               testimonial.clientRole,
               testimonial.company,
             ].filter(Boolean);
+            const balancedFiveCardClass =
+              visibleTestimonials.length === 5
+                ? index < 3
+                  ? "lg:col-span-2"
+                  : "lg:col-span-3"
+                : "";
+            const projectLabel = testimonial.project
+              ? testimonial.project.startsWith("مشروع")
+                ? testimonial.project
+                : `مشروع ${testimonial.project}`
+              : undefined;
 
             return (
               <StaggerItem
                 key={testimonial.id}
                 as="article"
-                className="motion-card-interaction flex h-full min-w-0 flex-col rounded-[1.25rem] border border-navy/10 bg-white p-6 sm:p-8"
+                className={`motion-card-interaction flex h-full min-w-0 flex-col rounded-[1.25rem] border border-navy/10 bg-white p-6 sm:p-8 ${balancedFiveCardClass}`}
               >
                 <blockquote className="text-lg leading-9 text-slate-700">
                   <p>{testimonial.quote}</p>
@@ -75,7 +101,7 @@ export function Testimonials() {
 
                   {testimonial.project ? (
                     <p className="mt-4 text-xs font-medium text-blue">
-                      مشروع {testimonial.project}
+                      {projectLabel}
                     </p>
                   ) : null}
 
