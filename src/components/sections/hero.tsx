@@ -11,7 +11,7 @@ export function Hero({ project }: { project: ResolvedProjectMetadata }) {
       <Container className="py-14 sm:py-20 lg:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(19rem,0.75fr)] lg:gap-16">
           <Reveal trigger="mount" distance={12}>
-            <p className="eyebrow text-cyan">{portfolio.hero.eyebrow}</p>
+            <p className="eyebrow text-cyan">مصمم ومطور متاجر سلة</p>
             <h1 className="mt-5 max-w-4xl text-4xl leading-[1.38] font-semibold sm:text-5xl lg:text-[3.65rem] lg:leading-[1.3]">
               {portfolio.hero.headline}
             </h1>

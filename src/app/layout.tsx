@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans_Arabic } from "next/font/google";
+import { FloatingControls } from "@/components/layout/floating-controls";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { personId, portfolio, siteUrl, websiteId } from "@/data/portfolio";
 import {
@@ -8,6 +9,7 @@ import {
   socialImage,
   twitterImageUrl,
 } from "@/lib/seo";
+import { createWhatsAppServiceUrl } from "@/lib/whatsapp";
 import "./globals.css";
 
 const plexSansArabic = IBM_Plex_Sans_Arabic({
@@ -62,6 +64,12 @@ const sameAs = [
   ...(portfolio.person.githubUrl ? [portfolio.person.githubUrl] : []),
 ];
 
+const floatingWhatsAppMessage = `مرحبًا هشام،
+أرغب في الاستفسار عن خدمات تصميم وتطوير متاجر سلة.
+
+تفاصيل المشروع:
+`;
+
 const globalJsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -113,7 +121,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             __html: JSON.stringify(globalJsonLd).replace(/</g, "\\u003c"),
           }}
         />
-        <MotionProvider>{children}</MotionProvider>
+        <MotionProvider>
+          {children}
+          <FloatingControls
+            whatsappUrl={createWhatsAppServiceUrl(
+              portfolio.person.whatsapp.url,
+              floatingWhatsAppMessage,
+            )}
+          />
+        </MotionProvider>
       </body>
     </html>
   );

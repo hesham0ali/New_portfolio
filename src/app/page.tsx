@@ -1,14 +1,12 @@
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { About } from "@/components/sections/about";
-import { Contact } from "@/components/sections/contact";
 import { Expertise } from "@/components/sections/expertise";
 import { Hero } from "@/components/sections/hero";
+import { HomeFaq } from "@/components/sections/home-faq";
 import { Projects } from "@/components/sections/projects";
 import { ServiceCta } from "@/components/sections/service-cta";
 import { ServicePackages } from "@/components/sections/service-packages";
 import { Testimonials } from "@/components/sections/testimonials";
-import { WorkingStyle } from "@/components/sections/working-style";
 import { getProjectBySlug } from "@/lib/projects/get-projects";
 
 export default async function Home() {
@@ -23,14 +21,12 @@ export default async function Home() {
       <SiteHeader homePage />
       <main id="main-content" tabIndex={-1}>
         <Hero project={sho9.metadata} />
-        <Expertise />
         <ServicePackages compact />
         <Projects project={sho9.metadata} />
+        <Expertise />
         <Testimonials />
+        <HomeFaq />
         <ServiceCta />
-        <WorkingStyle />
-        <About />
-        <Contact />
       </main>
       <SiteFooter />
     </>

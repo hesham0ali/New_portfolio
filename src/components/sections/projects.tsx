@@ -13,9 +13,9 @@ export function Projects({ project }: { project: ResolvedProjectMetadata }) {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="مشروع مميز"
-            title="شوب ستور — Sho9"
-            description="تصميم وتطوير متجر شوب ستور على منصة سلة من البداية للنهاية، مع متابعة وصيانة مستمرة للمتجر."
+            eyebrow="الأعمال"
+            title="أعمال مختارة"
+            description="نماذج من المشاريع التي توليت فيها التصميم والتطوير والتنفيذ التقني على منصة سلة."
           />
         </Reveal>
 
@@ -57,12 +57,16 @@ export function Projects({ project }: { project: ResolvedProjectMetadata }) {
             </div>
 
             <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-10">
-              <p className="eyebrow text-blue">نطاق العمل</p>
+              <p className="eyebrow text-blue">مشروع سلة مميز</p>
               <h3 className="mt-4 text-3xl font-semibold leading-[1.4] text-navy">
-                تصميم، تطوير، ومتابعة مستمرة
+                شوب ستور — Sho9
               </h3>
               <p className="mt-4 leading-8 text-slate-700">
-                دوري في المشروع شمل تصميم وتطوير المتجر بالكامل، ثم متابعة صيانته بشكل مستمر.
+                تصميم وتطوير متجر سلة من البداية للنهاية، مع متابعة وصيانة مستمرة للمتجر.
+              </p>
+              <p className="mt-6 text-sm font-semibold text-blue">دوري في المشروع</p>
+              <p className="mt-1 leading-7 font-medium text-navy">
+                تصميم، تطوير، تخصيص الثيم، ومتابعة مستمرة
               </p>
               <ul className="mt-7 flex flex-wrap gap-2" aria-label="نطاق العمل في المشروع">
                 {scope.map((item) => (
@@ -92,6 +96,13 @@ export function Projects({ project }: { project: ResolvedProjectMetadata }) {
           </div>
         </article>
         </Reveal>
+
+        <div className="mt-8">
+          <Link href="/projects" className="button-secondary">
+            عرض جميع الأعمال
+            <span aria-hidden="true">←</span>
+          </Link>
+        </div>
       </Container>
     </section>
   );

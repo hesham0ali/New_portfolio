@@ -20,7 +20,7 @@ export function Expertise() {
 
         <div className="mt-7">
           <Link href="/services" className="button-secondary">
-            استعرض كل الخدمات
+            عرض جميع الخدمات
             <span aria-hidden="true">←</span>
           </Link>
         </div>

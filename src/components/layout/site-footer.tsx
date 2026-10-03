@@ -6,7 +6,7 @@ export function SiteFooter() {
   const { person } = portfolio;
 
   return (
-    <footer className="border-t border-white/10 bg-navy py-8 text-slate-300">
+    <footer className="border-t border-white/10 bg-navy pt-8 pb-[calc(6rem+env(safe-area-inset-bottom))] text-slate-300">
       <Container className="flex flex-col gap-6 text-sm sm:flex-row sm:items-end sm:justify-between">
         <div>
           <SiteLogo size="footer" />
