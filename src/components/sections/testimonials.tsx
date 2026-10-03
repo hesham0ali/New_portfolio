@@ -7,10 +7,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { testimonials } from "@/data/testimonials";
 
 export function Testimonials() {
-  const visibleTestimonials =
-    process.env.NODE_ENV === "development"
-      ? testimonials
-      : testimonials.filter((testimonial) => testimonial.verified);
+  const visibleTestimonials = testimonials;
 
   if (visibleTestimonials.length === 0) return null;
 
@@ -41,7 +38,7 @@ export function Testimonials() {
             title="تجارب من عملاء عملت معهم"
             description={
               containsDemoContent
-                ? "معاينة تطويرية لمحتوى تجريبي غير منشور، جاهز للاستبدال بآراء عملاء معتمدة."
+                ? "نماذج تجريبية للعرض، جاهزة للاستبدال بآراء عملاء معتمدة."
                 : "آراء من عملاء عملت معهم على مشاريع ومتاجر مختلفة."
             }
           />
