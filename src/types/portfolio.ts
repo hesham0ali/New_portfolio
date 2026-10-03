@@ -11,8 +11,11 @@ export type ProofItem = {
 export type ExpertiseItem = {
   number: string;
   title: string;
+  label?: string;
   description: string;
   capabilities: string[];
+  href?: string;
+  ctaLabel?: string;
 };
 
 export type SpotlightItem = {

@@ -11,9 +11,13 @@ export function ActiveNavigation({ items }: { items: NavigationItem[] }) {
   const activeHref =
     pathname === "/"
       ? activeHash
-      : pathname.startsWith("/projects")
-        ? "/#work"
-        : undefined;
+      : pathname === "/about"
+        ? "/about"
+        : pathname.startsWith("/projects")
+          ? "/projects"
+          : pathname.startsWith("/services")
+            ? "/#service"
+            : undefined;
 
   useEffect(() => {
     if (pathname !== "/") return;

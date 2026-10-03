@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { MotionProvider } from "@/components/motion/MotionProvider";
-import { portfolio, siteUrl } from "@/data/portfolio";
+import { personId, portfolio, siteUrl, websiteId } from "@/data/portfolio";
 import {
   homeDescription,
   homeTitle,
@@ -53,19 +53,40 @@ const sameAs = [
   ...(portfolio.person.githubUrl ? [portfolio.person.githubUrl] : []),
 ];
 
-const personJsonLd = {
+const globalJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: portfolio.person.name,
-  url: siteUrl,
-  jobTitle: portfolio.person.role,
-  email: `mailto:${portfolio.person.email}`,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Alexandria",
-    addressCountry: "EG",
-  },
-  sameAs,
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: portfolio.person.name,
+      url: siteUrl,
+      jobTitle: portfolio.person.role,
+      description:
+        "متخصص في تصميم وتجهيز متاجر سلة وتخصيص الثيمات وتطوير واجهات المتاجر الإلكترونية.",
+      sameAs,
+      knowsAbout: [
+        "Salla",
+        "E-commerce storefront design",
+        "Salla theme customization",
+        "Frontend development",
+        "CSS",
+        "JavaScript",
+        "Twilight",
+        "Responsive web design",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: siteUrl,
+      name: "هشام علي — مطور سلة",
+      inLanguage: "ar",
+      author: { "@id": personId },
+      creator: { "@id": personId },
+      publisher: { "@id": personId },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -75,7 +96,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(globalJsonLd).replace(/</g, "\\u003c"),
           }}
         />
         <MotionProvider>{children}</MotionProvider>

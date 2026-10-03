@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { portfolio } from "@/data/portfolio";
 
@@ -17,6 +18,10 @@ export function About() {
             <p className="max-w-3xl text-lg leading-9 text-slate-700">
               {about.paragraphs[1]}
             </p>
+            <Link href="/about" className="button-secondary mt-7">
+              اعرف أكتر عني
+              <span aria-hidden="true">←</span>
+            </Link>
             <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm font-bold">
               <a
                 href={person.linkedInUrl}

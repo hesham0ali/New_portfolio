@@ -6,6 +6,9 @@ export const siteUrl = new URL(
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || fallbackSiteUrl,
 ).origin;
 
+export const personId = `${siteUrl}/#person`;
+export const websiteId = `${siteUrl}/#website`;
+
 const whatsappMessage =
   "أهلًا هشام، عندي متجر على سلة وعايز أراجع تصميمه وتطويره. رابط المتجر: ";
 
@@ -13,7 +16,7 @@ export const portfolio: PortfolioData = {
   person: {
     name: "هشام علي",
     shortName: "هشام",
-    role: "مطور سلة متخصص في تصميم وتطوير متاجر سلة",
+    role: "Salla Store Designer & Developer",
     location: "الإسكندرية، مصر",
     email: "heshamali.dev@gmail.com",
     whatsapp: {
@@ -27,9 +30,9 @@ export const portfolio: PortfolioData = {
     cvUrl: "/hesham-ali-cv.pdf",
   },
   navigation: [
-    { label: "أعمالي", href: "#work" },
-    { label: "الخدمة", href: "#service" },
-    { label: "عني", href: "#about" },
+    { label: "الأعمال", href: "/projects" },
+    { label: "الخدمات", href: "#service" },
+    { label: "عني", href: "/about" },
   ],
   hero: {
     eyebrow: "مطور متاجر سلة",
@@ -54,31 +57,63 @@ export const portfolio: PortfolioData = {
   expertise: [
     {
       number: "01",
-      title: "تصميم واجهة المتجر",
+      title: "إنشاء وتجهيز متاجر سلة",
+      label: "Store Setup",
       description:
-        "تصميم وترتيب الـ Homepage والأقسام بحيث تكون أوضح وأسهل للعميل.",
+        "تجهيز متجر سلة من البداية، ضبط الإعدادات الأساسية، تنظيم الصفحات، وتهيئة تجربة شراء واضحة قبل الإطلاق.",
       capabilities: [],
+      href: "/services/salla-store-design",
+      ctaLabel: "عرض تفاصيل الخدمة",
     },
     {
       number: "02",
-      title: "تجهيز وتنظيم المتجر",
+      title: "تصميم وتخصيص متاجر سلة",
+      label: "Store Design & Customization",
       description:
-        "تنظيم الأقسام، القوائم، المنتجات وتجربة التصفح داخل المتجر.",
+        "تصميم واجهة المتجر وتخصيص الثيم بما يناسب هوية البراند ويحسن وضوح المحتوى وتجربة التصفح والشراء.",
       capabilities: [],
+      href: "/services/salla-store-design#customization-heading",
+      ctaLabel: "اكتشف الخدمة",
     },
     {
       number: "03",
-      title: "تخصيص الثيم",
+      title: "تطوير ثيمات سلة",
+      label: "Salla Theme Development",
       description:
-        "تعديلات CSS وJavaScript وتخصيص واجهة المتجر حسب الاحتياج.",
+        "تطوير أو تعديل ثيمات سلة وSections مخصصة عندما يحتاج المشروع مستوى أعلى من التخصيص.",
       capabilities: [],
+      href: "/services/salla-theme-customization",
+      ctaLabel: "عرض تفاصيل الخدمة",
     },
     {
       number: "04",
-      title: "تحسين تجربة المتجر",
+      title: "التطوير والتكاملات",
+      label: "Development & Integrations",
       description:
-        "تحسين تجربة الموبايل، عرض المنتجات، الـ Navigation والمتابعة والصيانة عند الحاجة.",
+        "تنفيذ خصائص Frontend إضافية أو ربط خدمات خارجية عندما تكون الإمكانيات التقنية والتكاملات المناسبة متاحة.",
       capabilities: [],
+      href: "/services/salla-theme-customization#integrations-heading",
+      ctaLabel: "ناقش مشروعك",
+    },
+    {
+      number: "05",
+      title: "Google وSEO وTracking",
+      label: "SEO & Tracking",
+      description:
+        "تجهيز أساسيات Google Analytics وSearch Console وMerchant Center وSEO والتتبع بدون وعود بنتائج مضمونة.",
+      capabilities: [],
+      href: "/services/salla-store-design#google-seo-heading",
+      ctaLabel: "اكتشف الخدمة",
+    },
+    {
+      number: "06",
+      title: "تطوير ودعم المتاجر القائمة",
+      label: "Optimization & Support",
+      description:
+        "مراجعة متجر سلة قائم، تحسين الواجهة وتجربة الاستخدام، حل مشاكل Frontend، وتنفيذ تطويرات إضافية حسب الحاجة.",
+      capabilities: [],
+      href: "/services/salla-store-design#support-heading",
+      ctaLabel: "عرض التفاصيل",
     },
   ],
   spotlight: [],

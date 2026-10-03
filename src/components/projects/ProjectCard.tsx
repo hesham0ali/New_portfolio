@@ -6,7 +6,9 @@ import type { ResolvedProjectMetadata } from "@/lib/projects/project-types";
 
 export function ProjectCard({ project }: { project: ResolvedProjectMetadata }) {
   const number = String(project.order).padStart(2, "0");
-  const arabic = /[\u0600-\u06ff]/.test(project.title);
+  const arabic = /[\u0600-\u06ff]/.test(
+    `${project.title} ${project.summary}`,
+  );
 
   return (
     <AnimatedProjectCard>

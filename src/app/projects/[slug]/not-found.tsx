@@ -9,15 +9,15 @@ export default function ProjectNotFound() {
       <SiteHeader />
       <main id="main-content" className="section-shell min-h-[65vh] bg-cream">
         <Container className="text-center">
-          <p className="eyebrow text-blue">Project not found</p>
+          <p className="eyebrow text-blue">المشروع غير موجود</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-navy">
-            This project is not available.
+            هذا المشروع غير متاح.
           </h1>
           <p className="mx-auto mt-5 max-w-xl leading-7 text-slate-700">
-            The project may be unpublished, or the address may be incorrect.
+            قد يكون المشروع غير منشور أو أن الرابط غير صحيح.
           </p>
           <Link href="/projects" className="button-primary mt-8">
-            View all projects
+            عرض كل الأعمال
           </Link>
         </Container>
       </main>

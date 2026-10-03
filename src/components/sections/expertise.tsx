@@ -9,15 +9,24 @@ export function Expertise() {
       <Container>
         <SectionHeading
           eyebrow="الخدمة"
-          title="إيه اللي أقدر أشتغل عليه في متجرك؟"
-          description="خدمة واحدة متكاملة لمتجر سلة، من ترتيب الواجهة إلى التخصيص الفني وتحسين تجربة الاستخدام."
+          title="خدمات تصميم وتطوير متاجر سلة"
+          description="أساعدك في تجهيز متجر جديد أو تحسين متجر قائم، من التصميم والتخصيص إلى التطوير والتكاملات ضمن إمكانيات منصة سلة."
         />
 
-        <div className="mt-10 grid gap-px overflow-hidden rounded-[1.5rem] border border-navy/10 bg-navy/10 md:grid-cols-2">
+        <div className="mt-10 grid gap-px overflow-hidden rounded-[1.5rem] border border-navy/10 bg-navy/10 md:grid-cols-2 xl:grid-cols-3">
           {portfolio.expertise.map((item) => (
-            <article key={item.number} className="bg-white p-6 sm:p-8">
+            <article key={item.number} className="flex min-h-full flex-col bg-white p-6 sm:p-8">
               <div className="flex items-start justify-between gap-5">
-                <h3 className="text-2xl font-extrabold text-navy">{item.title}</h3>
+                <div>
+                  {item.label ? (
+                    <p className="font-mono text-xs font-bold uppercase text-blue" dir="ltr">
+                      {item.label}
+                    </p>
+                  ) : null}
+                  <h3 className="mt-3 text-2xl font-extrabold leading-snug text-navy">
+                    {item.title}
+                  </h3>
+                </div>
                 <span className="font-mono text-sm font-bold text-blue" dir="ltr">
                   {item.number}
                 </span>
@@ -25,17 +34,39 @@ export function Expertise() {
               <p className="mt-4 max-w-xl leading-7 text-slate-600" dir="auto">
                 {item.description}
               </p>
+              {item.href && item.ctaLabel ? (
+                <Link
+                  href={item.href}
+                  className="motion-arrow-link mt-6 inline-flex items-center gap-2 self-start font-bold text-blue"
+                >
+                  {item.ctaLabel}
+                  <span aria-hidden="true" className="motion-arrow">←</span>
+                </Link>
+              ) : null}
             </article>
           ))}
         </div>
 
-        <div className="mt-8 flex flex-col items-start gap-3 border-t border-navy/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-2xl leading-7 text-slate-600">
-            لو محتاج تعرف نطاق تصميم وتجهيز المتجر والخطوات قبل ما نبدأ.
-          </p>
-          <Link href="/services/salla-store-design" className="button-secondary shrink-0">
-            تفاصيل تصميم متجر سلة
-            <span aria-hidden="true">←</span>
+        <div className="mt-8 grid gap-4 border-t border-navy/10 pt-7 md:grid-cols-2">
+          <Link
+            href="/services/salla-store-design"
+            className="motion-card-interaction flex items-center justify-between gap-5 rounded-[1.25rem] border border-navy/10 bg-white p-5 text-navy"
+          >
+            <span>
+              <span className="block text-sm font-bold text-blue">تصميم وتجهيز المتجر</span>
+              <span className="mt-1 block leading-7 text-slate-600">الهيكلة، العرض، وتجربة الاستخدام</span>
+            </span>
+            <span aria-hidden="true" className="motion-arrow text-blue">←</span>
+          </Link>
+          <Link
+            href="/services/salla-theme-customization"
+            className="motion-card-interaction flex items-center justify-between gap-5 rounded-[1.25rem] border border-navy/10 bg-navy p-5 text-cream"
+          >
+            <span>
+              <span className="block text-sm font-bold text-cyan">تخصيص وتطوير الثيم</span>
+              <span className="mt-1 block leading-7 text-slate-300">CSS، JavaScript، وTwilight</span>
+            </span>
+            <span aria-hidden="true" className="motion-arrow text-cyan">←</span>
           </Link>
         </div>
       </Container>

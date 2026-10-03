@@ -7,7 +7,8 @@ import { SiteLogo } from "./site-logo";
 export function SiteHeader({ homePage = false }: { homePage?: boolean }) {
   const navigation = portfolio.navigation.map((item) => ({
     ...item,
-    href: homePage ? item.href : `/${item.href}`,
+    href:
+      homePage || !item.href.startsWith("#") ? item.href : `/${item.href}`,
   }));
   return (
     <header id="top" className="sticky top-0 z-50 border-b border-white/10 bg-navy/95 text-cream backdrop-blur-md">

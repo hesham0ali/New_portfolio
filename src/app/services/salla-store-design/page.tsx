@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/container";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { portfolio, siteUrl } from "@/data/portfolio";
+import { personId, portfolio, siteUrl, websiteId } from "@/data/portfolio";
 import { getProjectBySlug } from "@/lib/projects/get-projects";
 import {
   sallaStoreDesignDescription,
@@ -47,18 +47,82 @@ const audienceNeeds = [
 ];
 
 const includedServices = [
-  "إعداد المتجر من الصفر",
-  "تنظيم الصفحة الرئيسية",
-  "ترتيب الأقسام والـ Navigation",
-  "تحسين Product Cards وعرض المنتجات",
-  "تنظيم الـ Sections حسب أولوية المحتوى",
-  "تطبيق الهوية البصرية",
-  "تحسين تجربة الموبايل",
-  "Responsive adjustments",
-  "تعديل الثيم الموجود",
-  "تنفيذ UI بسيط مناسب للمشروع",
-  "Custom CSS عند الحاجة",
-  "JavaScript بسيط عند الحاجة",
+  {
+    title: "إنشاء وتجهيز متجر سلة",
+    description: "إعداد المتجر وضبط الإعدادات الأساسية المطلوبة قبل الإطلاق.",
+  },
+  {
+    title: "إعداد صفحات المتجر",
+    description: "تجهيز وتنظيم الصفحات الأساسية والمحتوى المطلوب داخل المتجر.",
+  },
+  {
+    title: "تنظيم الأقسام والتصنيفات",
+    description: "إنشاء وترتيب التصنيفات بما يجعل الوصول للمنتجات أسهل.",
+  },
+  {
+    title: "رفع وتنظيم المنتجات",
+    description: "إضافة المنتجات والصور والوصف والبيانات وتنظيمها داخل المتجر.",
+  },
+  {
+    title: "إعداد خيارات الدفع والشحن",
+    description: "ضبط الخيارات المتاحة للمتجر، مع ترك أي إجراءات اعتماد خارجية لصاحب المتجر.",
+  },
+  {
+    title: "تصميم واجهة متجر سلة",
+    description: "تصميم وتنظيم الـHome Page والصفحات الرئيسية للمتجر.",
+  },
+  {
+    title: "تخصيص الثيم",
+    description: "تعديل شكل الـTheme الحالي ليتناسب مع هوية البراند ومتطلبات المتجر.",
+  },
+  {
+    title: "تصميم أقسام المتجر",
+    description: "تصميم وترتيب Sections مخصصة لعرض المنتجات والعروض والمحتوى.",
+  },
+  {
+    title: "تصميم المحتوى البصري",
+    description: "تصميم Banners وصور الأقسام والعناصر البصرية المستخدمة داخل المتجر.",
+  },
+  {
+    title: "Responsive Design",
+    description: "التأكد من أن تجربة المتجر تعمل بشكل جيد على Desktop وTablet وMobile.",
+  },
+  {
+    title: "تحسين تجربة المستخدم",
+    description: "تحسين ترتيب المحتوى والتنقل ووضوح الـCTAs ومسار المستخدم داخل المتجر.",
+  },
+];
+
+const connectedServiceGroups = [
+  {
+    id: "google-seo-heading",
+    eyebrow: "Google وSEO وTracking",
+    title: "تجهيز أساسيات القياس والظهور",
+    description:
+      "إعداد البنية الأساسية التي تساعدك تقيس أداء المتجر وتراجع أساسيات ظهوره بدون وعود بترتيب أو زيارات أو مبيعات مضمونة.",
+    items: [
+      "Google Analytics",
+      "Google Search Console",
+      "Google Merchant Center عندما يكون المتجر والمنتجات مؤهلين",
+      "Basic Technical SEO للعناوين والوصف وبنية الصفحات والفهرسة",
+      "Tracking Setup عندما تكون الأدوات مدعومة ومتاحة للمشروع",
+    ],
+  },
+  {
+    id: "support-heading",
+    eyebrow: "تطوير ودعم المتاجر القائمة",
+    title: "تحسين متجر سلة موجود بدل البدء من الصفر",
+    description:
+      "أقدر أراجع متجر قائم، أحدد فرص التحسين، وأنفذ تعديلات تصميمية أو تقنية تقع ضمن نطاق الواجهة والثيم.",
+    items: [
+      "Store Audit",
+      "Store Redesign",
+      "UX Improvements",
+      "Technical Improvements داخل النطاق المتاح",
+      "Bug Fixing لمشاكل Frontend أو Theme أو Integrations",
+      "Ongoing Development حسب احتياج المتجر",
+    ],
+  },
 ];
 
 const designScope = [
@@ -188,24 +252,46 @@ export default async function SallaStoreDesignPage() {
         name: socialTitle,
         description: sallaStoreDesignDescription,
         inLanguage: "ar",
+        isPartOf: { "@id": websiteId },
         mainEntity: { "@id": `${pageUrl}#service` },
         breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
       },
       {
         "@type": "Service",
         "@id": `${pageUrl}#service`,
-        name: "تصميم وتجهيز متجر سلة",
-        serviceType: "تصميم وتجهيز واجهات متاجر سلة",
+        name: "تصميم وتجهيز وتخصيص متجر سلة",
+        serviceType: "تصميم وتطوير متجر سلة",
         description: sallaStoreDesignDescription,
         url: pageUrl,
-        provider: {
-          "@type": "Person",
-          name: portfolio.person.name,
-          url: siteUrl,
-        },
+        provider: { "@id": personId },
         areaServed: {
           "@type": "Country",
           name: "Saudi Arabia",
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "خدمات تصميم وتجهيز متاجر سلة",
+          itemListElement: [
+            ...includedServices.map((service) => ({
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: service.title,
+                description: service.description,
+              },
+            })),
+            ...connectedServiceGroups.map((group) => ({
+              "@type": "OfferCatalog",
+              name: group.eyebrow,
+              itemListElement: group.items.map((item) => ({
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: item,
+                },
+              })),
+            })),
+          ],
         },
       },
       {
@@ -311,24 +397,57 @@ export default async function SallaStoreDesignPage() {
           </Container>
         </section>
 
-        <section className="section-shell bg-mist" aria-labelledby="included-heading">
+        <section id="customization-heading" className="section-shell scroll-mt-20 bg-mist" aria-labelledby="included-heading">
           <Container>
             <SectionHeading
               id="included-heading"
               eyebrow="نطاق التنفيذ"
-              title="إيه اللي ممكن يدخل ضمن تصميم وتجهيز متجر سلة؟"
-              description="النطاق النهائي بيتحدد حسب حالة المتجر والثيم والمتطلبات، لكن الخدمة ممكن تشمل البنود التالية."
+              title="إيه اللي ممكن يدخل ضمن إنشاء وتصميم متجر سلة؟"
+              description="الخدمة تجمع بين تجهيز المتجر وتصميم واجهته وتخصيصه بشكل مناسب لهوية البراند، والنطاق النهائي بيتحدد حسب حالة المتجر والثيم والمتطلبات."
             />
             <ul className="mt-10 grid gap-px overflow-hidden rounded-[1.5rem] border border-navy/10 bg-navy/10 sm:grid-cols-2 lg:grid-cols-3">
               {includedServices.map((item) => (
-                <li key={item} className="flex min-h-24 items-center gap-3 bg-white p-5 sm:p-6">
-                  <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-blue" />
-                  <span className="font-bold leading-7 text-navy" dir="auto">
-                    {item}
-                  </span>
+                <li key={item.title} className="min-h-36 bg-white p-5 sm:p-6">
+                  <div className="flex items-center gap-3">
+                    <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-blue" />
+                    <h3 className="font-bold leading-7 text-navy" dir="auto">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-7 text-slate-600" dir="auto">
+                    {item.description}
+                  </p>
                 </li>
               ))}
             </ul>
+          </Container>
+        </section>
+
+        <section className="section-shell bg-cream" aria-labelledby="connected-services-heading">
+          <Container>
+            <SectionHeading
+              id="connected-services-heading"
+              eyebrow="خدمات مرتبطة"
+              title="مش كل خدمة تحتاج صفحة مستقلة"
+              description="بعض الاحتياجات تكون جزءًا من مشروع تجهيز أو تحسين متجر سلة، لذلك تظهر هنا كنطاقات واضحة بدل صفحات SEO خفيفة."
+            />
+            <div className="mt-10 grid gap-5 lg:grid-cols-2">
+              {connectedServiceGroups.map((group) => (
+                <article
+                  key={group.id}
+                  id={group.id}
+                  className="scroll-mt-24 rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8"
+                  aria-labelledby={`${group.id}-title`}
+                >
+                  <p className="eyebrow text-blue">{group.eyebrow}</p>
+                  <h3 id={`${group.id}-title`} className="mt-4 text-2xl font-extrabold text-navy">
+                    {group.title}
+                  </h3>
+                  <p className="mt-4 leading-8 text-slate-700">{group.description}</p>
+                  <CheckList items={group.items} />
+                </article>
+              ))}
+            </div>
           </Container>
         </section>
 
@@ -350,9 +469,15 @@ export default async function SallaStoreDesignPage() {
                 <p className="eyebrow text-cyan">تطوير الثيم</p>
                 <h3 className="mt-4 text-2xl font-extrabold">يكون مطلوب لما التعديل يحتاج منطق أو سلوك مخصص</h3>
                 <CheckList items={developmentScope} inverse />
-                <p className="mt-7 border-t border-white/15 pt-5 text-sm leading-7 text-slate-400">
-                  تطوير الثيم التقني خدمة مستقلة يتم تحديدها حسب المتطلبات. صفحة الخدمة التفصيلية هتتوفر لاحقًا.
-                </p>
+                <div className="mt-7 border-t border-white/15 pt-5 text-sm leading-7 text-slate-400">
+                  <p>تطوير الثيم التقني خدمة مستقلة يتم تحديدها حسب المتطلبات.</p>
+                  <Link
+                    href="/services/salla-theme-customization"
+                    className="link-underline mt-3 inline-flex font-bold text-cyan"
+                  >
+                    تفاصيل تخصيص وتطوير ثيمات سلة ←
+                  </Link>
+                </div>
               </article>
             </div>
           </Container>
@@ -424,10 +549,15 @@ export default async function SallaStoreDesignPage() {
                       </div>
                     ) : null}
                   </dl>
-                  <Link href="/projects/sho9" className="button-secondary mt-7">
-                    شاهد تفاصيل المشروع
-                    <span aria-hidden="true">←</span>
-                  </Link>
+                  <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+                    <Link href="/projects/sho9" className="button-secondary">
+                      شاهد تفاصيل المشروع
+                      <span aria-hidden="true">←</span>
+                    </Link>
+                    <Link href="/about" className="link-underline font-bold text-blue">
+                      تعرّف على خبرة هشام وطريقة عمله
+                    </Link>
+                  </div>
                 </div>
               </div>
             </article>
