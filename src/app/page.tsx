@@ -5,6 +5,7 @@ import { Contact } from "@/components/sections/contact";
 import { Expertise } from "@/components/sections/expertise";
 import { Hero } from "@/components/sections/hero";
 import { Projects } from "@/components/sections/projects";
+import { ServiceCta } from "@/components/sections/service-cta";
 import { WorkingStyle } from "@/components/sections/working-style";
 import { getProjectBySlug } from "@/lib/projects/get-projects";
 
@@ -22,6 +23,7 @@ export default async function Home() {
         <Hero project={sho9.metadata} />
         <Projects project={sho9.metadata} />
         <Expertise />
+        <ServiceCta />
         <WorkingStyle />
         <About />
         <Contact />

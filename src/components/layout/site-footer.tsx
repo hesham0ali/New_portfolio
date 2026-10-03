@@ -15,26 +15,38 @@ export function SiteFooter() {
             Design &amp; Development for Salla Stores
           </p>
         </div>
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+        <div className="flex flex-col items-start gap-4 sm:items-end">
           <a
-            href={person.linkedInUrl}
+            href={person.whatsapp.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="link-underline text-cream"
+            aria-label={person.whatsapp.ariaLabel}
+            className="button-primary w-full sm:w-auto"
           >
-            LinkedIn
+            ناقش مشروعك
+            <span aria-hidden="true">↗</span>
           </a>
-          <a
-            href={person.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="link-underline text-cream"
-          >
-            GitHub
-          </a>
-          <a href="#top" className="link-underline text-cream">
-            للأعلى
-          </a>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+            <a
+              href={person.linkedInUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline text-cream"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={person.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-underline text-cream"
+            >
+              GitHub
+            </a>
+            <a href="#top" className="link-underline text-cream">
+              للأعلى
+            </a>
+          </div>
         </div>
       </Container>
     </footer>
