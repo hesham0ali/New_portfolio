@@ -90,7 +90,7 @@ Focused searches for the domain, exact canonical URL, and Sho9 URL returned no r
 
 ### Thin-content risk
 
-The project pages are unique and indexable, but all four are short. Sho9 is commercially important yet currently repeats the same two supported facts in metadata, overview, contributions, and body (`content/projects/sho9.mdx:15-33`). The other three have more detail but no linked evidence. This is primarily a content/proof issue, not a canonical or rendering issue.
+The project pages are unique and indexable, but all three are short. Sho9 is commercially important yet currently repeats the same two supported facts in metadata, overview, contributions, and body (`content/projects/sho9.mdx:15-33`). The other two have more detail but no linked evidence. This is primarily a content/proof issue, not a canonical or rendering issue.
 
 ## 4. Metadata audit
 
@@ -99,7 +99,6 @@ The project pages are unique and indexable, but all four are short. Sho9 is comm
 | `/` | `هشام علي | مطور سلة — تصميم وتطوير متاجر سلة` | Specific and commercial | Correct | Complete | Strong |
 | `/projects` | `أعمال مختارة | هشام علي` | Mentions Salla and other technical work | Correct | Complete | **P2:** HTML title is more generic than the OG title and omits the main specialization |
 | `/projects/sho9` | `شوب ستور — Sho9 | هشام علي` | Accurate but brief | Correct | Complete | Good base; expand after the case study gains real detail |
-| `/projects/albasit-crm` | `Albasit CRM | هشام علي` | Relevant to the project | Correct | Complete | Accurate but off the core Salla topic |
 | `/projects/mithaq-wordpress-multisite` | Project-specific | Relevant | Correct | Complete | Accurate but off the core topic |
 | `/projects/hr-expert-club` | Project-specific | Relevant | Correct | Complete | Accurate but off the core topic |
 

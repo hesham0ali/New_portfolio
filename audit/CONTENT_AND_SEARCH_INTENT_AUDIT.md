@@ -11,7 +11,6 @@ This audit evaluates whether each indexable page has a distinct audience, query 
 | `/` | Hesham Ali as a Salla-focused developer | Branded discovery; initial service evaluation | Salla store owner or manager | Establish fit and start a WhatsApp conversation | Strong positioning, limited depth |
 | `/projects` | Portfolio archive | Proof/research | Prospective client or recruiter | Browse work | Clear archive, but mixed topical signal |
 | `/projects/sho9` | Salla store work and maintenance | Commercial proof | Salla decision-maker | Validate experience and contact | Relevant but under-documented |
-| `/projects/albasit-crm` | CRM engineering | Technical portfolio proof | Recruiter/technical evaluator | Demonstrate engineering breadth | Clear project summary; weak commercial fit with current positioning |
 | `/projects/mithaq-wordpress-multisite` | WordPress multisite | Technical portfolio proof | Recruiter/technical evaluator | Demonstrate scale experience | Clear summary; claim needs evidence |
 | `/projects/hr-expert-club` | WordPress/LMS work | Technical portfolio proof | Recruiter/technical evaluator | Demonstrate implementation experience | Clear summary; no outcome evidence |
 
@@ -37,7 +36,7 @@ This audit evaluates whether each indexable page has a distinct audience, query 
 
 - **Confirmed:** `/projects` is a useful complete-work archive and should remain the single archive URL.
 - **P2 — Confirmed:** Its generated HTML title is `أعمال مختارة | هشام علي`, while its social title is more specific. The visible and metadata framing should consistently explain whether the page represents Salla work, broader engineering work, or both.
-- **P2 — Confirmed:** Only one of four projects directly supports the homepage’s Salla specialist positioning.
+- **P2 — Confirmed:** Only one of three projects directly supports the homepage’s Salla specialist positioning.
 - **Recommendation:** Keep the broader technical work, but group or label it clearly—for example, “متاجر سلة” and “خبرات تقنية سابقة”—so breadth does not obscure the primary offer.
 - **Recommendation:** Do not create a second `/work` archive. It would duplicate `/projects` without serving a distinct intent.
 
@@ -50,12 +49,6 @@ This audit evaluates whether each indexable page has a distinct audience, query 
 - **P1:** It does not explain the business need, starting condition, constraints, concrete work completed, major decisions, or verified impact.
 - **P1:** It has no screenshots or annotated evidence.
 - **P2:** The short body repeats metadata rather than adding unique detail.
-
-### Albasit CRM
-
-- **Confirmed:** It explains the product type and technical contribution.
-- **P2:** The `5,000+` record statement lacks linked or contextual evidence.
-- **P2:** No screenshots, repository link, live link, outcome, or stakeholder quote are supplied.
 
 ### Mithaq WordPress Multisite
 
@@ -71,7 +64,7 @@ This audit evaluates whether each indexable page has a distinct audience, query 
 ## Language and terminology
 
 - **Confirmed:** The main commercial experience is Arabic and uses familiar platform terminology such as Salla and theme development.
-- **Confirmed:** Three project pages are written in English while the document root remains `lang="ar" dir="rtl"`; only the main content changes to English/LTR. This weakens document-level language clarity.
+- **Confirmed:** Two project pages are written in English while the document root remains `lang="ar" dir="rtl"`; only the main content changes to English/LTR. This weakens document-level language clarity.
 - **P2 — Recommendation:** Either translate/reframe these portfolio pages for the primary Arabic audience, or introduce a complete English localization strategy later. Do not add `/en` or hreflang for a handful of isolated pages.
 - **Recommendation:** Use Arabic phrases people naturally use—such as `تصميم متجر سلة`, `تطوير ثيم سلة`, and `تخصيص متجر سلة`—only where they precisely describe the content. Preserve useful English technical terms when they are the normal industry language.
 
@@ -139,4 +132,3 @@ Avoid generic AI-written articles, thin glossary pages, duplicated location page
 5. **P2:** Verify or qualify numerical claims across non-Salla projects.
 6. **P2:** Resolve the document-language inconsistency for English project pages.
 7. **P3:** Add supporting guides only after the commercial foundation is complete.
-

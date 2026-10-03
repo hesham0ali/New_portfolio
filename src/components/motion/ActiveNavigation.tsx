@@ -10,21 +10,23 @@ export function ActiveNavigation({ items }: { items: NavigationItem[] }) {
   const [activeHash, setActiveHash] = useState("#home");
   const activeHref =
     pathname === "/"
-      ? activeHash
+      ? activeHash === "#contact"
+        ? "/#contact"
+        : "/"
       : pathname === "/about"
         ? "/about"
         : pathname.startsWith("/projects")
           ? "/projects"
           : pathname.startsWith("/services")
-            ? "/#service"
+            ? "/services"
             : undefined;
 
   useEffect(() => {
     if (pathname !== "/") return;
 
-    const sectionLinks = items.filter((item) => item.href.startsWith("#"));
+    const sectionLinks = items.filter((item) => item.href.includes("#"));
     const sections = sectionLinks
-      .map((item) => document.querySelector<HTMLElement>(item.href))
+      .map((item) => document.querySelector<HTMLElement>(`#${item.href.split("#")[1]}`))
       .filter((section): section is HTMLElement => Boolean(section));
 
     const observer = new IntersectionObserver(

@@ -111,7 +111,7 @@ export default async function ProjectsPage() {
                   خبرات تقنية أخرى
                 </h2>
                 <p className="mt-4 max-w-3xl leading-8 text-slate-700">
-                  مشروعات في أنظمة CRM وWordPress وReact توضّح خبرة تقنية أوسع،
+                  مشروعات في WordPress وReact توضّح خبرة تقنية أوسع،
                   وتأتي بعد التخصص التجاري الأساسي في متاجر سلة.
                 </p>
               </Reveal>

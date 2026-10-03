@@ -30,9 +30,11 @@ export const portfolio: PortfolioData = {
     cvUrl: "/hesham-ali-cv.pdf",
   },
   navigation: [
+    { label: "الرئيسية", href: "/" },
+    { label: "الخدمات", href: "/services" },
     { label: "الأعمال", href: "/projects" },
-    { label: "الخدمات", href: "#service" },
     { label: "عني", href: "/about" },
+    { label: "تواصل", href: "/#contact" },
   ],
   hero: {
     eyebrow: "مطور متاجر سلة",
@@ -61,9 +63,18 @@ export const portfolio: PortfolioData = {
       label: "Store Setup",
       description:
         "تجهيز متجر سلة من البداية، ضبط الإعدادات الأساسية، تنظيم الصفحات، وتهيئة تجربة شراء واضحة قبل الإطلاق.",
-      capabilities: [],
+      capabilities: [
+        "ضبط الإعدادات الأساسية",
+        "تنظيم الصفحات والتصنيفات",
+        "رفع وتنظيم المنتجات",
+        "إعداد خيارات الدفع والشحن",
+      ],
+      inquiryTemplate: `مرحبًا هشام، أرغب في الاستفسار عن خدمة إنشاء وتجهيز متجر سلة.
+
+تفاصيل المشروع:
+`,
       href: "/services/salla-store-design",
-      ctaLabel: "عرض تفاصيل الخدمة",
+      ctaLabel: "تفاصيل الخدمة",
     },
     {
       number: "02",
@@ -71,9 +82,19 @@ export const portfolio: PortfolioData = {
       label: "Store Design & Customization",
       description:
         "تصميم واجهة المتجر وتخصيص الثيم بما يناسب هوية البراند ويحسن وضوح المحتوى وتجربة التصفح والشراء.",
-      capabilities: [],
+      capabilities: [
+        "تصميم واجهة وصفحة المتجر الرئيسية",
+        "تخصيص الثيم والهوية البصرية",
+        "تصميم الأقسام والمحتوى البصري",
+        "تحسين التجربة على الجوال",
+      ],
+      inquiryTemplate: `مرحبًا هشام، أرغب في الاستفسار عن خدمة تصميم وتخصيص متجر سلة.
+
+رابط المتجر إن وجد:
+تفاصيل المطلوب:
+`,
       href: "/services/salla-store-design#customization-heading",
-      ctaLabel: "اكتشف الخدمة",
+      ctaLabel: "تفاصيل الخدمة",
     },
     {
       number: "03",
@@ -81,9 +102,19 @@ export const portfolio: PortfolioData = {
       label: "Salla Theme Development",
       description:
         "تطوير أو تعديل ثيمات سلة وSections مخصصة عندما يحتاج المشروع مستوى أعلى من التخصيص.",
-      capabilities: [],
+      capabilities: [
+        "تطوير وتخصيص الثيم",
+        "Custom Sections وTwilight",
+        "Frontend Development",
+        "تخصيص CSS وJavaScript",
+      ],
+      inquiryTemplate: `مرحبًا هشام، أرغب في الاستفسار عن خدمة تطوير ثيم سلة.
+
+رابط المتجر:
+تفاصيل التطوير المطلوب:
+`,
       href: "/services/salla-theme-customization",
-      ctaLabel: "عرض تفاصيل الخدمة",
+      ctaLabel: "تفاصيل الخدمة",
     },
     {
       number: "04",
@@ -91,9 +122,19 @@ export const portfolio: PortfolioData = {
       label: "Development & Integrations",
       description:
         "تنفيذ خصائص Frontend إضافية أو ربط خدمات خارجية عندما تكون الإمكانيات التقنية والتكاملات المناسبة متاحة.",
-      capabilities: [],
+      capabilities: [
+        "Custom Store Features",
+        "External Integrations",
+        "API Integration",
+        "Automation حسب إمكانيات المشروع",
+      ],
+      inquiryTemplate: `مرحبًا هشام، أرغب في الاستفسار عن خدمة التطوير والتكاملات لمتجر سلة.
+
+رابط المتجر:
+التكامل أو الخاصية المطلوبة:
+`,
       href: "/services/salla-theme-customization#integrations-heading",
-      ctaLabel: "ناقش مشروعك",
+      ctaLabel: "تفاصيل الخدمة",
     },
     {
       number: "05",
@@ -101,9 +142,19 @@ export const portfolio: PortfolioData = {
       label: "SEO & Tracking",
       description:
         "تجهيز أساسيات Google Analytics وSearch Console وMerchant Center وSEO والتتبع بدون وعود بنتائج مضمونة.",
-      capabilities: [],
+      capabilities: [
+        "Google Analytics",
+        "Google Search Console",
+        "Google Merchant Center",
+        "Basic Technical SEO والتتبع",
+      ],
+      inquiryTemplate: `مرحبًا هشام، أرغب في الاستفسار عن خدمة Google وSEO والتتبع لمتجر سلة.
+
+رابط المتجر:
+الخدمة المطلوبة:
+`,
       href: "/services/salla-store-design#google-seo-heading",
-      ctaLabel: "اكتشف الخدمة",
+      ctaLabel: "تفاصيل الخدمة",
     },
     {
       number: "06",
@@ -111,9 +162,19 @@ export const portfolio: PortfolioData = {
       label: "Optimization & Support",
       description:
         "مراجعة متجر سلة قائم، تحسين الواجهة وتجربة الاستخدام، حل مشاكل Frontend، وتنفيذ تطويرات إضافية حسب الحاجة.",
-      capabilities: [],
+      capabilities: [
+        "Store Audit",
+        "Store Redesign وUX Improvements",
+        "Frontend وTheme Bug Fixing",
+        "تطوير ودعم مستمر حسب الحاجة",
+      ],
+      inquiryTemplate: `مرحبًا هشام، أرغب في تطوير أو تحسين متجر سلة قائم.
+
+رابط المتجر:
+المشكلة أو التحسين المطلوب:
+`,
       href: "/services/salla-store-design#support-heading",
-      ctaLabel: "عرض التفاصيل",
+      ctaLabel: "تفاصيل الخدمة",
     },
   ],
   spotlight: [],

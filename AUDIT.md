@@ -217,7 +217,7 @@ The flow is appropriate for a résumé portfolio but not for Salla customer acqu
 
 ### 5.4 Current proof metrics are poorly matched to buyers
 
-**Problem:** “1M+ Platform scale exposure,” “5,000+ CRM import and pagination testing,” and “API-First” are defensible qualifiers but mostly relate to unrelated backend/WordPress experience.
+**Problem:** “1M+ Platform scale exposure” and “API-First” are defensible qualifiers but mostly relate to unrelated backend/WordPress experience.
 
 **Why it matters:** In the hero they can look impressive without answering whether Hesham can improve a Salla storefront. They also risk feeling like résumé metrics rather than buyer proof.
 
@@ -391,7 +391,7 @@ Additional mobile findings:
 - The contact section again asks about “a system, WordPress platform, or e-commerce project,” reopening the broad scope instead of closing the Salla journey.
 - “View My Work” is a reasonable secondary CTA. “Chat on WhatsApp” and “Discuss Your Project” are weaker than the intended `ابعت رابط متجرك` because they do not tell the visitor what to send.
 - The footer restates the broad software-engineer position, so even the final impression is generic.
-- Claims such as “1M+,” “5,000+,” and “API-First” have qualifiers, which is good, but they are not strong Salla-client proof.
+- Claims such as “1M+” and “API-First” have qualifiers, which is good, but they are not strong Salla-client proof.
 - `content/projects/salla-ecommerce-stores.mdx` combines multiple stores and capabilities into one generic case study. The current business brief supports a much clearer Sho9-specific statement: designed and developed from start to finish, with ongoing maintenance.
 - The repository claims work on `taf3elat.com`; because the current brief does not confirm it, that claim should be independently verified rather than automatically reused.
 - Current copy does not mention the intended conversion-relevant service range in a coherent Salla frame: storefront design, setup, homepage design, theme/CSS/JavaScript customization, store structure, navigation, product presentation, mobile experience, and maintenance.
@@ -409,14 +409,14 @@ Strengths:
 
 Weaknesses:
 
-- All four covers and galleries are empty, so the strongest available infrastructure is unused.
+- All three covers and galleries are empty, so the strongest available infrastructure is unused.
 - All live project links are `null`; even Sho9 is not linked.
 - The Salla card uses a decorative placeholder rather than storefront evidence.
-- The homepage orders CRM and WordPress before Salla. On 320 px, the Salla card starts roughly 8,507 px down the page.
+- The homepage orders WordPress work before Salla. On 320 px, the Salla card starts roughly 8,507 px down the page.
 - The Salla detail page repeats the same claims but adds no store URL, screenshots, per-store role, or maintenance status.
 - The generic social image is used for every project without a cover, so shared case-study links do not show the work.
 - “View All Projects” repeats the same set rather than offering deeper proof.
-- Four unrelated projects compete equally for attention. For the new business goal, Sho9 should carry substantially more visual and narrative weight.
+- Three unrelated projects compete equally for attention. For the new business goal, Sho9 should carry substantially more visual and narrative weight.
 
 For each future public Salla project, the minimum credible proof model should be: store name; public URL; exact contribution; whether the work was full delivery or partial; approved desktop/mobile screenshots; and ongoing-maintenance status where true. Do not imply sole authorship for projects where the contribution was partial.
 
@@ -649,7 +649,7 @@ The separate project archive can remain for broader professional work, but it sh
 
 ### REMOVE
 
-- Backend/CRM/API material from the primary homepage journey unless it directly supports a Salla service.
+- Backend/API material from the primary homepage journey unless it directly supports a Salla service.
 - Equal weighting of WordPress and Salla in the sales spotlight.
 - Hero proof metrics that do not help a Salla buyer decide.
 - Technology-stack section from the Salla sales homepage; it may live in the broader project archive/about context.

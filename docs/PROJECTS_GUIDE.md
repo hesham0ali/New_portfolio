@@ -34,8 +34,8 @@ public/projects/<slug>/
 مثال:
 
 ```text
-content/projects/albasit-crm.mdx
-public/projects/albasit-crm/
+content/projects/example-project.mdx
+public/projects/example-project/
 ```
 
 ---
@@ -106,7 +106,7 @@ public/projects/<slug>/cover.webp
 مثال:
 
 ```text
-public/projects/albasit-crm/cover.webp
+public/projects/example-project/cover.webp
 ```
 
 بعدها داخل ملف الـMDX:
@@ -114,7 +114,7 @@ public/projects/albasit-crm/cover.webp
 ```ts
 cover: {
   file: "cover.webp",
-  alt: "Albasit CRM dashboard overview",
+  alt: "Project dashboard overview",
   position: "center",
 },
 ```
@@ -240,7 +240,7 @@ gallery: [],
 اكتب وصف واضح للصورة:
 
 ```ts
-alt: "CRM reporting dashboard with customer activity charts",
+alt: "Reporting dashboard with activity charts",
 ```
 
 ما تكتبش:
@@ -271,7 +271,7 @@ caption:
 ```ts
 {
   file: "dashboard.webp",
-  alt: "CRM reporting dashboard",
+  alt: "Reporting dashboard",
 },
 ```
 
@@ -334,16 +334,16 @@ https://
 
 ```ts
 export const metadata = {
-  slug: "albasit-crm",
-  title: "Albasit CRM",
-  shortTitle: "Albasit CRM",
+  slug: "example-project",
+  title: "Example Project",
+  shortTitle: "Example",
 
   status: "published",
   featured: true,
   order: 1,
 
-  category: "Backend",
-  categories: ["Backend", "CRM", "Integrations", "Automation"],
+  category: "Web Development",
+  categories: ["Web Development", "Integrations", "Automation"],
 
   tags: [
     "Node.js",
@@ -358,37 +358,37 @@ export const metadata = {
   role: "Backend support",
 
   summary:
-    "Business workflows, integrations, and backend support for a custom CRM platform.",
+    "Business workflows, integrations, and backend support for a custom web platform.",
 
   cover: {
     file: "cover.webp",
-    alt: "Albasit CRM dashboard overview",
+    alt: "Project dashboard overview",
     position: "center",
   },
 
   gallery: [
     {
       file: "dashboard.webp",
-      alt: "Albasit CRM reporting dashboard",
+      alt: "Project reporting dashboard",
       caption:
-        "Reporting and analytics interface for monitoring CRM activity.",
+        "Reporting and analytics interface for monitoring platform activity.",
     },
     {
       file: "customers.webp",
-      alt: "Customer records inside Albasit CRM",
+      alt: "Customer records inside the project dashboard",
       caption:
-        "Customer records interface tested with more than 5,000 imported records.",
+        "Customer records interface with search and pagination.",
     },
     {
       file: "integrations.webp",
-      alt: "Albasit CRM integrations workflow",
+      alt: "Project integrations workflow",
       caption:
-        "Connected workflows involving WhatsApp, Chatwoot, Facebook Lead Ads, APIs, and webhooks.",
+        "Connected workflows involving APIs and webhooks.",
     },
   ],
 
   links: {
-    live: "https://albasit.moraqmen.com",
+    live: "https://example.com",
     github: null,
   },
 }
@@ -453,7 +453,7 @@ http://localhost:3000/projects/<slug>
 مثال:
 
 ```text
-http://localhost:3000/projects/albasit-crm
+http://localhost:3000/projects/example-project
 ```
 
 ---

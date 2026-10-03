@@ -105,7 +105,9 @@ check(
   "root metadataBase is missing",
 );
 check(
-  sources.get("src/app/layout.tsx")?.includes('<html lang="ar" dir="rtl"'),
+  /<html\s+[\s\S]*?lang="ar"[\s\S]*?dir="rtl"/.test(
+    sources.get("src/app/layout.tsx") ?? "",
+  ),
   "root Arabic language or RTL direction is missing",
 );
 check(

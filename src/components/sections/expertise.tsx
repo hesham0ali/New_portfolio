@@ -18,6 +18,13 @@ export function Expertise() {
           />
         </Reveal>
 
+        <div className="mt-7">
+          <Link href="/services" className="button-secondary">
+            استعرض كل الخدمات
+            <span aria-hidden="true">←</span>
+          </Link>
+        </div>
+
         <Stagger className="mt-10 grid gap-px overflow-hidden rounded-[1.1rem] border border-navy/10 bg-navy/10 md:grid-cols-2 xl:grid-cols-3">
           {portfolio.expertise.map((item) => (
             <StaggerItem key={item.number} as="article" className="motion-card-interaction flex min-h-full flex-col bg-white p-6 sm:p-7">

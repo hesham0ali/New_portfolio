@@ -14,6 +14,7 @@ export type ExpertiseItem = {
   label?: string;
   description: string;
   capabilities: string[];
+  inquiryTemplate: string;
   href?: string;
   ctaLabel?: string;
 };

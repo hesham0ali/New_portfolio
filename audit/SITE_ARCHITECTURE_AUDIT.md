@@ -2,13 +2,12 @@
 
 ## Current architecture
 
-The site is a small statically generated portfolio with one commercial homepage, one project archive, and four project detail pages.
+The site is a small statically generated portfolio with one commercial homepage, one project archive, and three project detail pages.
 
 ```text
 /
 └── /projects
     ├── /projects/sho9
-    ├── /projects/albasit-crm
     ├── /projects/mithaq-wordpress-multisite
     └── /projects/hr-expert-club
 ```
@@ -22,16 +21,16 @@ In practice, the header on the homepage navigates to page sections rather than `
 - **Confirmed:** Projects use stable, descriptive slugs.
 - **Confirmed:** One archive consolidates all project discovery; there is no duplicate `/work` route.
 - **Confirmed:** Static generation makes all route content directly crawlable.
-- **Confirmed:** Next/previous project navigation connects all four case-study pages.
+- **Confirmed:** Next/previous project navigation connects all three case-study pages.
 
 ## Architecture weaknesses
 
 - **P1 — Confirmed:** The service taxonomy exists only as homepage sections. The two most important commercial intents have no independent, linkable destinations.
 - **P1 — Confirmed:** There is no About/Profile page to anchor the person entity and trust content.
 - **P2 — Confirmed:** The homepage has no direct contextual or primary-navigation link to `/projects`; the archive is indirectly reachable through the featured Sho9 page.
-- **P2 — Confirmed:** The portfolio archive combines one strategically relevant Salla project with three broader engineering projects without a clear hierarchy.
+- **P2 — Confirmed:** The portfolio archive combines one strategically relevant Salla project with two broader engineering projects without a clear hierarchy.
 - **P2 — Confirmed:** Project pages have no visible breadcrumb trail.
-- **P2 — Confirmed:** The site root is Arabic, while three English project documents only change language/direction inside `<main>`.
+- **P2 — Confirmed:** The site root is Arabic, while two English project documents only change language/direction inside `<main>`.
 - **P3 — Confirmed:** A contact route is absent, though the current WhatsApp CTA prevents this from being a conversion blocker.
 
 ## Page-type decisions
@@ -56,7 +55,6 @@ In practice, the header on the homepage navigates to page sections rather than `
 │   └── /services/salla-theme-development
 ├── /projects
 │   ├── /projects/sho9
-│   ├── /projects/albasit-crm
 │   ├── /projects/mithaq-wordpress-multisite
 │   └── /projects/hr-expert-club
 ├── /about
@@ -131,4 +129,3 @@ Recommended near-term approach:
 5. **P2:** Add visible and structured breadcrumbs.
 6. **P2:** Resolve mixed document-language handling.
 7. **P3:** Add a contact page or resource hub only when each has unique user value.
-

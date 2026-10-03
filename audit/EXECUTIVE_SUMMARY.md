@@ -80,7 +80,7 @@ No P0 issues were confirmed.
 5. **Create an authoritative About/Profile page.** Consolidate Hesham’s full name, Salla specialization, service market, working model, supported tools, Sho9 reference, and external profiles.
 6. **Build the commercial internal-linking model.** Homepage → service pages/About/Sho9; service pages → Sho9 and contact; Sho9 → relevant service pages; About → service and work; future guides → the relevant service page.
 7. **Strengthen the entity/schema graph conservatively.** Add stable `@id` links for Person and WebSite, add `ProfilePage` only after `/about` exists, connect project authors to the Person `@id`, and add BreadcrumbList to project/service pages.
-8. **Audit and reframe the three non-Salla cases.** Verify the `5,000+` and `1M+` claims, add evidence where publishable, and visually subordinate these pages to the Salla specialization.
+8. **Audit and reframe the two non-Salla cases.** Verify the `1M+` claim, add evidence where publishable, and visually subordinate these pages to the Salla specialization.
 9. **Add privacy-conscious conversion measurement.** Track WhatsApp CTA clicks by placement and landing page; document the analytics tool and add privacy disclosure if data collection warrants it.
 10. **Run field performance tests after content/assets are added.** Use PageSpeed Insights/CrUX and real-device testing; then reduce sitewide Motion/hydration or image priority only where measured evidence supports it.
 

@@ -77,7 +77,7 @@ Structured data should support visible content, not compensate for missing conte
 - **P1 — Confirmed:** The site cannot answer service-specific questions in depth because the services exist only as homepage sections.
 - **P1 — Confirmed:** The Sho9 case study does not provide enough concrete evidence for an answer system to confidently summarize the problem, decisions, implementation, and result.
 - **P2 — Confirmed:** The About copy is too short to establish a robust biographical/profile entity.
-- **P2 — Confirmed:** Claims such as `5,000+` records and more than one million users appear without linked, onsite evidence.
+- **P2 — Confirmed:** The claim of more than one million users appears without linked, onsite evidence.
 - **P2 — Likely:** Repetition of thin project facts is less useful for retrieval than distinct, factual sections answering specific questions.
 - **P3 — Confirmed:** `/llms.txt` returns 404. This is optional and is not a substitute for crawlable pages, a sitemap, or search-engine verification.
 
@@ -125,4 +125,3 @@ This structure helps human decision-makers first and also produces passages that
 6. **P2:** Verify, qualify, or remove unsupported quantitative project claims.
 7. **P2:** Strengthen consistent external profiles and links where the owner controls them.
 8. **P3:** Consider `llms.txt` only after core content, indexing, evidence, and crawler policy are settled.
-
