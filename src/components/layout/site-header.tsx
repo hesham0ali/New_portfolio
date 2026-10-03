@@ -11,7 +11,7 @@ export function SiteHeader({ homePage = false }: { homePage?: boolean }) {
       homePage || !item.href.startsWith("#") ? item.href : `/${item.href}`,
   }));
   return (
-    <header id="top" className="sticky top-0 z-50 border-b border-white/10 bg-navy/95 text-cream backdrop-blur-md">
+    <header id="top" className="sticky top-0 z-50 border-b border-white/10 bg-navy text-cream shadow-[0_1px_0_rgba(255,255,255,0.03)]">
       <Container className="flex min-h-16 items-center justify-between gap-4 sm:min-h-18">
         <SiteLogo />
 
@@ -22,7 +22,7 @@ export function SiteHeader({ homePage = false }: { homePage?: boolean }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={portfolio.person.whatsapp.ariaLabel}
-          className="button-primary hidden shrink-0 lg:inline-flex"
+          className="button-primary header-cta hidden shrink-0 lg:inline-flex"
         >
           {portfolio.person.whatsapp.label}
         </a>

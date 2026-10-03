@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
+import { Reveal } from "@/components/motion/Reveal";
 import { portfolio } from "@/data/portfolio";
 
 export function About() {
@@ -8,11 +9,12 @@ export function About() {
   return (
     <section id="about" className="section-shell scroll-mt-20 bg-mist">
       <Container>
+        <Reveal>
         <div className="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
           <div>
             <p className="eyebrow text-blue">عني</p>
-            <h2 className="mt-4 text-4xl font-extrabold text-navy">{about.heading}</h2>
-            <p className="mt-3 text-lg font-bold text-blue">{about.paragraphs[0]}</p>
+            <h2 className="mt-4 text-4xl font-semibold text-navy">{about.heading}</h2>
+            <p className="mt-3 text-lg font-medium text-blue">{about.paragraphs[0]}</p>
           </div>
           <div className="border-t border-navy/15 pt-6 lg:mt-8">
             <p className="max-w-3xl text-lg leading-9 text-slate-700">
@@ -22,7 +24,7 @@ export function About() {
               اعرف أكتر عني
               <span aria-hidden="true">←</span>
             </Link>
-            <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm font-bold">
+            <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold">
               <a
                 href={person.linkedInUrl}
                 target="_blank"
@@ -42,6 +44,7 @@ export function About() {
             </div>
           </div>
         </div>
+        </Reveal>
       </Container>
     </section>
   );

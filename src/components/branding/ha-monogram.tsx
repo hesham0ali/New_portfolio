@@ -1,19 +1,23 @@
 type HaMonogramProps = {
   size: number;
   color?: string;
+  decorative?: boolean;
 };
 
 export function HaMonogram({
   size,
-  color = "#59e1d4",
+  color = "#71e1d7",
+  decorative = false,
 }: HaMonogramProps) {
   return (
     <svg
       width={size}
       height={size}
       viewBox="0 0 120 96"
-      role="img"
-      aria-label="HA"
+      role={decorative ? undefined : "img"}
+      aria-label={decorative ? undefined : "HA"}
+      aria-hidden={decorative ? "true" : undefined}
+      focusable="false"
     >
       <path
         fill={color}

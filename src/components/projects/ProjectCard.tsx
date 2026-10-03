@@ -39,7 +39,7 @@ export function ProjectCard({ project }: { project: ResolvedProjectMetadata }) {
 
         <div className="flex flex-1 flex-col p-6 sm:p-8">
           <p className="eyebrow text-blue">{project.role}</p>
-          <h2 className="mt-3 text-2xl font-bold text-navy">
+          <h2 className="mt-3 text-2xl font-semibold text-navy">
             <Link href={`/projects/${project.slug}`} className="link-underline">
               {project.title}
             </Link>
@@ -48,7 +48,7 @@ export function ProjectCard({ project }: { project: ResolvedProjectMetadata }) {
           <div className="mt-auto pt-7">
             <Link
               href={`/projects/${project.slug}`}
-              className="motion-arrow-link inline-flex min-h-11 items-center gap-2 font-bold text-blue"
+              className="motion-arrow-link inline-flex min-h-11 items-center gap-2 font-semibold text-blue"
             >
               {arabic ? "تفاصيل المشروع" : "View project"}
               <span aria-hidden="true" className="motion-arrow inline-block">

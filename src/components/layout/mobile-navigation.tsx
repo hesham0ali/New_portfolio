@@ -93,7 +93,7 @@ export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
             <SiteLogo onClick={() => setIsOpen(false)} />
             <button
               type="button"
-              className="inline-flex min-h-11 items-center rounded-full border border-white/25 px-4 text-sm font-bold"
+              className="inline-flex min-h-11 items-center rounded-[0.7rem] border border-white/25 px-4 text-sm font-semibold transition-colors hover:border-cyan hover:text-cyan"
               onClick={closeAndReturnFocus}
             >
               إغلاق
@@ -107,7 +107,7 @@ export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
                   <a
                     ref={index === 0 ? firstLinkRef : undefined}
                     href={item.href}
-                    className="flex min-h-16 items-center justify-between text-2xl font-bold"
+                    className="flex min-h-16 items-center justify-between text-2xl font-medium transition-colors hover:text-cyan"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}

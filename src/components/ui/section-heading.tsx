@@ -24,7 +24,7 @@ export function SectionHeading({
       </p>
       <h2
         id={id}
-        className={`mt-4 text-balance text-3xl font-extrabold leading-[1.35] sm:text-4xl lg:text-5xl ${inverse ? "text-cream" : "text-navy"}`}
+        className={`mt-4 text-balance text-3xl font-semibold leading-[1.42] sm:text-4xl lg:text-[2.75rem] ${inverse ? "text-cream" : "text-navy"}`}
       >
         {title}
       </h2>

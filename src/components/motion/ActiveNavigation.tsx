@@ -51,7 +51,7 @@ export function ActiveNavigation({ items }: { items: NavigationItem[] }) {
               <a
                 href={item.href}
                 aria-current={active ? "location" : undefined}
-                className="relative inline-flex min-h-11 items-center rounded-full px-3 text-sm text-slate-300 transition-colors hover:bg-white/8 hover:text-white lg:px-4"
+                className="relative inline-flex min-h-11 items-center rounded-[0.6rem] px-3 text-sm font-medium text-slate-300 transition-colors hover:bg-white/6 hover:text-white lg:px-4"
               >
                 {item.label}
                 <AnimatedUnderline active={active} />

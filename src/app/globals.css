@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --navy: #0a192f;
-  --navy-light: #112541;
-  --cream: #f7f4ed;
-  --mist: #edf1f3;
-  --blue: #155eef;
-  --cyan: #59e1d4;
+  --navy: #0b1b30;
+  --navy-light: #132a47;
+  --cream: #faf8f2;
+  --mist: #eef2f4;
+  --blue: #1857d1;
+  --cyan: #71e1d7;
   --slate-300: #cbd5e1;
   --slate-400: #94a3b8;
-  --slate-600: #475569;
-  --slate-700: #334155;
+  --slate-600: #526174;
+  --slate-700: #334458;
   --slate-800: #1e293b;
-  --font-sans-stack: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
-  --font-mono-stack: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-sans-stack: var(--font-plex-sans-arabic);
+  --font-mono-stack: var(--font-plex-sans-arabic);
+  --border-subtle: rgba(11, 27, 48, 0.12);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
@@ -30,6 +32,8 @@
   --color-slate-800: var(--slate-800);
   --font-sans: var(--font-sans-stack);
   --font-mono: var(--font-mono-stack);
+  --font-weight-bold: 600;
+  --font-weight-extrabold: 600;
 }
 
 * {
@@ -47,7 +51,11 @@ body {
   background: var(--cream);
   color: var(--navy);
   font-family: var(--font-sans-stack);
+  font-weight: 400;
+  line-height: 1.65;
+  font-synthesis: none;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
@@ -60,6 +68,13 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--cyan);
@@ -67,15 +82,20 @@ button:focus-visible {
 }
 
 .section-shell {
-  padding-block: 4rem;
+  padding-block: 4.5rem;
 }
 
 .eyebrow {
-  font-family: var(--font-mono-stack);
-  font-size: 0.72rem;
-  font-weight: 650;
-  letter-spacing: 0.15em;
-  line-height: 1.4;
+  font-family: var(--font-sans-stack);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.045em;
+  line-height: 1.6;
+}
+
+.eyebrow[dir="ltr"],
+[dir="ltr"] .eyebrow {
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -90,7 +110,7 @@ button:focus-visible {
   color: var(--navy);
   padding: 0.8rem 1.1rem;
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: 600;
   transition: translate 160ms ease;
 }
 
@@ -100,9 +120,9 @@ button:focus-visible {
 
 .hero-grid {
   background-image:
-    linear-gradient(rgba(89, 225, 212, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(89, 225, 212, 0.045) 1px, transparent 1px),
-    radial-gradient(circle at 80% 20%, rgba(21, 94, 239, 0.22), transparent 31rem);
+    linear-gradient(rgba(113, 225, 215, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(113, 225, 215, 0.04) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(24, 87, 209, 0.18), transparent 31rem);
   background-position: center;
   background-size: 56px 56px, 56px 56px, auto;
 }
@@ -146,7 +166,9 @@ button:focus-visible {
   text-decoration-color: transparent;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.3em;
-  transition: text-decoration-color 160ms ease;
+  transition:
+    color 180ms ease,
+    text-decoration-color 180ms ease;
 }
 
 .link-underline:hover {
@@ -159,14 +181,16 @@ button:focus-visible {
 .project-card-arrow,
 .motion-arrow {
   transition:
-    transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 350ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform 280ms var(--ease-out),
+    border-color 280ms var(--ease-out),
+    background-color 280ms var(--ease-out),
+    color 180ms ease;
 }
 
 @media (hover: hover) and (pointer: fine) {
   .motion-card-interaction:hover {
-    transform: translateY(-3px);
-    border-color: rgba(21, 94, 239, 0.28);
+    transform: translateY(-2px);
+    border-color: rgba(24, 87, 209, 0.3);
   }
 
   .animated-project-card:hover .project-card-media > *,
@@ -184,12 +208,12 @@ button:focus-visible {
   }
 
   .project-navigation-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
 }
 
 .animated-project-card:focus-within {
-  transform: translateY(-4px) !important;
+  transform: translateY(-2px) !important;
 }
 
 .animated-project-card:focus-within .project-card-media > * {
@@ -203,7 +227,7 @@ button:focus-visible {
 }
 
 .project-navigation-card:focus-visible {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 [dir="ltr"] .project-card-arrow,
@@ -226,11 +250,21 @@ button:focus-visible {
   align-items: center;
   gap: 0.65rem;
   border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 999px;
-  padding-inline: 0.9rem;
+  border-radius: 0.7rem;
+  padding-inline: 0.95rem;
   color: var(--cream);
   font-size: 0.8rem;
-  font-weight: 650;
+  font-weight: 600;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.menu-button:hover {
+  border-color: rgba(113, 225, 215, 0.65);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--cyan);
 }
 
 .menu-button-lines {
@@ -247,7 +281,29 @@ button:focus-visible {
   background: currentColor;
 }
 
-.button-primary:not(.hidden),
+.button-primary,
+.button-secondary,
+.button-secondary-dark,
+.button-text-dark,
+.button-contact-primary,
+.button-contact-secondary,
+.button-contact-utility {
+  min-height: 2.875rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  border-radius: 0.72rem;
+  padding-inline: 1.15rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms var(--ease-out);
+}
+
+.button-primary:not(.header-cta),
 .button-secondary,
 .button-secondary-dark,
 .button-text-dark,
@@ -255,19 +311,6 @@ button:focus-visible {
 .button-contact-secondary,
 .button-contact-utility {
   display: inline-flex;
-  min-height: 3rem;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-  border-radius: 999px;
-  padding-inline: 1.25rem;
-  font-size: 0.9rem;
-  font-weight: 700;
-  transition:
-    background-color 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease,
-    translate 160ms ease;
 }
 
 .button-primary {
@@ -279,7 +322,14 @@ button:focus-visible {
 .button-primary:hover {
   border-color: white;
   background: white;
-  translate: 0 -2px;
+  transform: translateY(-1px);
+}
+
+.header-cta {
+  min-height: 2.625rem;
+  border-radius: 0.65rem;
+  padding-inline: 1rem;
+  font-size: 0.84rem;
 }
 
 .button-secondary {
@@ -291,7 +341,7 @@ button:focus-visible {
 .button-secondary:hover {
   border-color: var(--blue);
   color: var(--blue);
-  translate: 0 -2px;
+  transform: translateY(-1px);
 }
 
 .button-secondary-dark {
@@ -301,7 +351,9 @@ button:focus-visible {
 
 .button-secondary-dark:hover {
   border-color: var(--cyan);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--cyan);
+  transform: translateY(-1px);
 }
 
 .button-text-dark {
@@ -322,6 +374,7 @@ button:focus-visible {
 .button-contact-primary:hover {
   background: var(--cyan);
   border-color: var(--cyan);
+  transform: translateY(-1px);
 }
 
 .button-contact-secondary {
@@ -348,13 +401,13 @@ button:focus-visible {
 
 @media (min-width: 640px) {
   .section-shell {
-    padding-block: 5rem;
+    padding-block: 5.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section-shell {
-    padding-block: 6rem;
+    padding-block: 7rem;
   }
 }
 
@@ -385,6 +438,6 @@ button:focus-visible {
 
   .button-primary,
   .button-secondary {
-    translate: none !important;
+    transform: none !important;
   }
 }

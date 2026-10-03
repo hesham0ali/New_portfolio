@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { IBM_Plex_Sans_Arabic } from "next/font/google";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { personId, portfolio, siteUrl, websiteId } from "@/data/portfolio";
 import {
@@ -8,6 +9,14 @@ import {
   twitterImageUrl,
 } from "@/lib/seo";
 import "./globals.css";
+
+const plexSansArabic = IBM_Plex_Sans_Arabic({
+  weight: ["400", "500", "600"],
+  subsets: ["arabic", "latin"],
+  display: "swap",
+  variable: "--font-plex-sans-arabic",
+  fallback: ["Tahoma", "Arial", "sans-serif"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -91,7 +100,12 @@ const globalJsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ar" dir="rtl" data-scroll-behavior="smooth">
+    <html
+      lang="ar"
+      dir="rtl"
+      data-scroll-behavior="smooth"
+      className={plexSansArabic.variable}
+    >
       <body>
         <script
           type="application/ld+json"

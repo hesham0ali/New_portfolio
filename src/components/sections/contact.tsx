@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/container";
+import { Reveal } from "@/components/motion/Reveal";
 import { portfolio } from "@/data/portfolio";
 
 export function Contact() {
@@ -7,9 +8,10 @@ export function Contact() {
   return (
     <section id="contact" className="contact-grid scroll-mt-20 bg-blue py-16 text-white sm:py-20 lg:py-24">
       <Container>
+        <Reveal>
         <div className="mx-auto max-w-4xl text-center">
           <p className="eyebrow text-white">جاهز نبدأ؟</p>
-          <h2 className="mt-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl">
+          <h2 className="mt-4 text-4xl font-semibold leading-[1.4] sm:text-5xl lg:text-[3.5rem]">
             {contact.heading}
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white">
@@ -25,7 +27,7 @@ export function Contact() {
             {person.whatsapp.label}
             <span aria-hidden="true">↗</span>
           </a>
-          <div className="mt-7 flex justify-center gap-5 text-sm font-bold">
+          <div className="mt-7 flex justify-center gap-5 text-sm font-semibold">
             <a
               href={person.linkedInUrl}
               target="_blank"
@@ -44,6 +46,7 @@ export function Contact() {
             </a>
           </div>
         </div>
+        </Reveal>
       </Container>
     </section>
   );
