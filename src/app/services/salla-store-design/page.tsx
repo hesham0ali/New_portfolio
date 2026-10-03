@@ -15,7 +15,7 @@ import {
 
 const pagePath = "/services/salla-store-design";
 const pageUrl = `${siteUrl}${pagePath}`;
-const socialTitle = `${sallaStoreDesignTitle} | Hesham Ali`;
+const socialTitle = `${sallaStoreDesignTitle} | هشام علي`;
 
 export const metadata: Metadata = {
   title: { absolute: socialTitle },
@@ -38,12 +38,12 @@ export const metadata: Metadata = {
 };
 
 const audienceNeeds = [
-  "بتبدأ متجر جديد على سلة وعايز تطلع بشكل منظم من البداية.",
-  "عندك متجر قائم والصفحة الرئيسية أو الأقسام محتاجين إعادة ترتيب.",
-  "شكل الثيم الحالي مش بيعكس هوية البراند.",
-  "تجربة الموبايل محتاجة تحسين.",
-  "عرض المنتجات والعروض محتاج تنظيم أو وضوح أكتر.",
-  "محتاج تعديلات تتجاوز إعدادات الثيم الأساسية.",
+  "تبدأ متجرًا جديدًا على سلة وتريد تجهيزه بصورة منظمة من البداية.",
+  "لديك متجر قائم وتحتاج واجهته أو أقسامه إلى إعادة ترتيب.",
+  "الثيم الحالي لا يعكس هوية علامتك التجارية.",
+  "تجربة المتجر على الجوال تحتاج إلى تحسين.",
+  "عرض المنتجات والعروض يحتاج إلى تنظيم ووضوح أكبر.",
+  "تحتاج إلى تخصيصات تتجاوز إعدادات الثيم الأساسية.",
 ];
 
 const includedServices = [
@@ -73,7 +73,7 @@ const includedServices = [
   },
   {
     title: "تخصيص الثيم",
-    description: "تعديل شكل الـTheme الحالي ليتناسب مع هوية البراند ومتطلبات المتجر.",
+    description: "تعديل شكل الـTheme الحالي ليتناسب مع هوية العلامة التجارية ومتطلبات المتجر.",
   },
   {
     title: "تصميم أقسام المتجر",
@@ -85,7 +85,7 @@ const includedServices = [
   },
   {
     title: "Responsive Design",
-    description: "التأكد من أن تجربة المتجر تعمل بشكل جيد على Desktop وTablet وMobile.",
+    description: "التأكد من أن تجربة المتجر تعمل جيدًا على الجوال والـTablet والـDesktop.",
   },
   {
     title: "تحسين تجربة المستخدم",
@@ -99,7 +99,7 @@ const connectedServiceGroups = [
     eyebrow: "Google وSEO وTracking",
     title: "تجهيز أساسيات القياس والظهور",
     description:
-      "إعداد البنية الأساسية التي تساعدك تقيس أداء المتجر وتراجع أساسيات ظهوره بدون وعود بترتيب أو زيارات أو مبيعات مضمونة.",
+      "إعداد البنية الأساسية التي تساعدك على قياس أداء المتجر ومراجعة أساسيات ظهوره، دون وعود بترتيب أو زيارات أو مبيعات مضمونة.",
     items: [
       "Google Analytics",
       "Google Search Console",
@@ -113,7 +113,7 @@ const connectedServiceGroups = [
     eyebrow: "تطوير ودعم المتاجر القائمة",
     title: "تحسين متجر سلة موجود بدل البدء من الصفر",
     description:
-      "أقدر أراجع متجر قائم، أحدد فرص التحسين، وأنفذ تعديلات تصميمية أو تقنية تقع ضمن نطاق الواجهة والثيم.",
+      "أراجع المتجر القائم، وأحدد فرص التحسين، وأنفذ التعديلات التصميمية أو التقنية التي تقع ضمن نطاق الواجهة والثيم.",
     items: [
       "Store Audit",
       "Store Redesign",
@@ -130,7 +130,7 @@ const designScope = [
   "هيكلة الصفحة الرئيسية",
   "ترتيب المحتوى وأولوياته",
   "طريقة عرض المنتجات",
-  "تجربة الموبايل",
+  "تجربة الجوال",
   "الاتساق البصري",
 ];
 
@@ -143,24 +143,24 @@ const developmentScope = [
 
 const process = [
   {
-    title: "نفهم المتجر",
-    description: "نفهم المنتجات، الجمهور، الهوية، والثيم الحالي.",
+    title: "فهم المتجر",
+    description: "نراجع المنتجات والجمهور والهوية والثيم الحالي.",
   },
   {
-    title: "نحدد المشاكل",
-    description: "نراجع الصفحة الرئيسية، الأقسام، المنتجات، وتجربة الموبايل.",
+    title: "تحديد الاحتياج",
+    description: "نراجع الصفحة الرئيسية والأقسام والمنتجات وتجربة الجوال.",
   },
   {
-    title: "نرتب الأولويات",
-    description: "نحدد إيه اللي يحتاج تصميم وإيه اللي يحتاج تعديل تقني.",
+    title: "ترتيب الأولويات",
+    description: "نحدد ما يحتاج إلى تصميم وما يتطلب تعديلًا تقنيًا.",
   },
   {
-    title: "ننفذ",
+    title: "التنفيذ",
     description: "نطبق التعديلات داخل المتجر والثيم.",
   },
   {
-    title: "نراجع",
-    description: "نعمل QA على المقاسات، التفاعل، والموبايل.",
+    title: "المراجعة",
+    description: "نجري QA على المقاسات والتفاعل وتجربة الجوال.",
   },
 ];
 
@@ -183,40 +183,40 @@ const scopedSeparately = [
 ];
 
 const startingRequirements = [
-  "رابط المتجر لو موجود",
+  "رابط المتجر إن كان قائمًا",
   "نوع الثيم",
-  "الهوية البصرية لو موجودة",
+  "الهوية البصرية إن كانت متوفرة",
   "المنتجات أو الأقسام الرئيسية",
-  "أمثلة مرجعية لو موجودة",
+  "أمثلة مرجعية إن كانت متوفرة",
   "أهم المشاكل الحالية",
   "أي متطلبات خاصة",
 ];
 
 const faqs = [
   {
-    question: "هل لازم أغير الثيم الحالي؟",
+    question: "هل أحتاج إلى تغيير الثيم الحالي؟",
     answer:
-      "مش بالضرورة. الأول بنراجع الثيم الحالي وإمكانياته، وبعدها نحدد هل التعديلات المطلوبة ممكنة عليه ولا تغيير الثيم هيكون أنسب.",
+      "ليس بالضرورة. نراجع أولًا الثيم الحالي وإمكانياته، ثم نحدد هل يمكن تنفيذ التعديلات المطلوبة عليه أم أن تغيير الثيم سيكون أنسب.",
   },
   {
-    question: "هل التصميم يشمل الموبايل؟",
+    question: "هل يشمل التصميم تجربة الجوال؟",
     answer:
-      "أيوه. مراجعة وتنظيم التجربة على الموبايل جزء أساسي من الخدمة، بجانب الديسكتوب.",
+      "نعم. مراجعة التجربة على الجوال وتنظيمها جزء أساسي من الخدمة، إلى جانب سطح المكتب.",
   },
   {
-    question: "هل ممكن تعمل تعديلات بالكود؟",
+    question: "هل يمكن تنفيذ تعديلات برمجية؟",
     answer:
-      "أيوه، ممكن تنفيذ Custom CSS وJavaScript بسيط حسب احتياج المشروع. التعديلات المتقدمة بيتحدد نطاقها بشكل منفصل.",
+      "نعم. يمكن تنفيذ Custom CSS وJavaScript حسب احتياج المشروع، بينما تُقيّم التعديلات المتقدمة ويُحدد نطاقها بصورة مستقلة.",
   },
   {
-    question: "هل ممكن تشتغل على متجر قائم؟",
+    question: "هل يمكن العمل على متجر قائم؟",
     answer:
-      "أيوه. ممكن مراجعة متجر قائم، إعادة ترتيب واجهته، وتحسين الثيم وتجربة الاستخدام بدون البدء من الصفر.",
+      "نعم. يمكن مراجعة متجر قائم، وإعادة ترتيب واجهته، وتحسين الثيم وتجربة الاستخدام دون البدء من الصفر.",
   },
   {
-    question: "هل ممكن تعمل ثيم سلة كامل من الصفر؟",
+    question: "هل يمكن تطوير ثيم سلة كامل من الصفر؟",
     answer:
-      "تطوير ثيم كامل من الصفر ممكن حسب نطاق المشروع، لكنه أقرب لخدمة تطوير الثيم التقني وبيتحدد بعد مراجعة المتطلبات بالتفصيل.",
+      "يمكن تطوير ثيم كامل من الصفر حسب نطاق المشروع، لكنه يندرج ضمن خدمة تطوير الثيم التقني ويُحدد بعد مراجعة المتطلبات بالتفصيل.",
   },
 ];
 
@@ -259,7 +259,7 @@ export default async function SallaStoreDesignPage() {
       {
         "@type": "Service",
         "@id": `${pageUrl}#service`,
-        name: "تصميم وتجهيز وتخصيص متجر سلة",
+        name: "تصميم وتطوير متجر سلة",
         serviceType: "تصميم وتطوير متجر سلة",
         description: sallaStoreDesignDescription,
         url: pageUrl,
@@ -270,7 +270,7 @@ export default async function SallaStoreDesignPage() {
         },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "خدمات تصميم وتجهيز متاجر سلة",
+          name: "خدمات تصميم وتطوير متاجر سلة",
           itemListElement: [
             ...includedServices.map((service) => ({
               "@type": "Offer",
@@ -345,12 +345,12 @@ export default async function SallaStoreDesignPage() {
 
             <div className="mt-9 grid items-end gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)] lg:gap-16">
               <div>
-                <p className="eyebrow text-cyan">تصميم وتجهيز متاجر سلة</p>
+                <p className="eyebrow text-cyan">مصمم ومطور متاجر سلة</p>
                 <h1 className="mt-5 max-w-5xl text-balance text-4xl leading-[1.3] font-extrabold sm:text-5xl lg:text-6xl lg:leading-[1.25]">
-                  تصميم وتجهيز متجر سلة من الصفر بما يناسب هوية متجرك وتجربة عملائك
+                  تصميم متجر سلة جديد وتطويره أو تحسين متجرك القائم
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
-                  من إعداد المتجر وتنظيم الصفحات، لحد تصميم الواجهة وتنفيذ التعديلات داخل الثيم، مع دعم تخصيصات CSS وJavaScript حسب احتياج المشروع.
+                  من إنشاء المتجر وتجهيز صفحاته إلى تصميم الواجهة وتخصيص الثيم وتحسين تجربة الاستخدام على الجوال، مع رفع المحتوى وتنظيمه عندما يكون ضمن نطاق المشروع.
                 </p>
                 <a
                   href={portfolio.person.whatsapp.url}
@@ -367,7 +367,7 @@ export default async function SallaStoreDesignPage() {
               <aside className="rounded-[1.5rem] border border-white/15 bg-white/5 p-6 sm:p-7">
                 <p className="eyebrow text-cyan">نطاق الخدمة</p>
                 <p className="mt-4 text-lg leading-8 text-slate-300">
-                  إعداد المتجر، تنظيم الصفحة الرئيسية، تحسين عرض المنتجات، وتجربة متجاوبة على الموبايل والديسكتوب.
+                  إعداد المتجر للإطلاق، وتنظيم الصفحة الرئيسية، وتحسين عرض المنتجات، وتقديم تجربة متجاوبة على الجوال وسطح المكتب.
                 </p>
               </aside>
             </div>
@@ -378,8 +378,8 @@ export default async function SallaStoreDesignPage() {
           <Container>
             <SectionHeading
               id="service-fit-heading"
-              eyebrow="مناسبة لمين؟"
-              title="الخدمة مناسبة ليك لو متجرك محتاج أكتر من مجرد ثيم جاهز"
+              eyebrow="لمن تناسب الخدمة؟"
+              title="لمتجر جديد يحتاج تجهيزًا متكاملًا أو متجر قائم يحتاج إلى تحسين"
             />
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {audienceNeeds.map((item, index) => (
@@ -402,8 +402,8 @@ export default async function SallaStoreDesignPage() {
             <SectionHeading
               id="included-heading"
               eyebrow="نطاق التنفيذ"
-              title="إيه اللي ممكن يدخل ضمن إنشاء وتصميم متجر سلة؟"
-              description="الخدمة تجمع بين تجهيز المتجر وتصميم واجهته وتخصيصه بشكل مناسب لهوية البراند، والنطاق النهائي بيتحدد حسب حالة المتجر والثيم والمتطلبات."
+              title="ما الذي يمكن أن يشمله تصميم وتطوير متجر سلة؟"
+              description="تجمع الخدمة بين تجهيز المتجر وتصميم واجهته وتخصيصه بما يناسب هوية العلامة التجارية. ويُحدد النطاق النهائي وفق حالة المتجر والثيم والمتطلبات."
             />
             <ul className="mt-10 grid gap-px overflow-hidden rounded-[1.5rem] border border-navy/10 bg-navy/10 sm:grid-cols-2 lg:grid-cols-3">
               {includedServices.map((item) => (
@@ -428,8 +428,8 @@ export default async function SallaStoreDesignPage() {
             <SectionHeading
               id="connected-services-heading"
               eyebrow="خدمات مرتبطة"
-              title="مش كل خدمة تحتاج صفحة مستقلة"
-              description="بعض الاحتياجات تكون جزءًا من مشروع تجهيز أو تحسين متجر سلة، لذلك تظهر هنا كنطاقات واضحة بدل صفحات SEO خفيفة."
+              title="خدمات مكملة ضمن مشروع المتجر"
+              description="قد تكون بعض الاحتياجات جزءًا من مشروع تجهيز متجر سلة أو تحسينه، لذلك تُحدد ضمن نطاق العمل بحسب متطلبات المشروع."
             />
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
               {connectedServiceGroups.map((group) => (
@@ -456,8 +456,8 @@ export default async function SallaStoreDesignPage() {
             <SectionHeading
               id="design-development-heading"
               eyebrow="تحديد الاحتياج"
-              title="إمتى الموضوع بيكون تصميم، وإمتى يحتاج تطوير ثيم؟"
-              description="الفصل بينهم من البداية بيوضح نطاق الشغل ويحدد أنسب طريقة للتنفيذ."
+              title="متى يكون المطلوب تصميمًا أو تخصيصًا أو تطوير ثيم؟"
+              description="تصميم المتجر يهتم بالشكل والهيكلة وتجربة الاستخدام، وتخصيص المتجر يكيّف الثيم القائم، أما تطوير الثيم فيشمل العمل البرمجي الأعمق."
             />
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
               <article className="rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8">
@@ -467,7 +467,7 @@ export default async function SallaStoreDesignPage() {
               </article>
               <article className="rounded-[1.5rem] bg-navy p-6 text-cream sm:p-8">
                 <p className="eyebrow text-cyan">تطوير الثيم</p>
-                <h3 className="mt-4 text-2xl font-extrabold">يكون مطلوب لما التعديل يحتاج منطق أو سلوك مخصص</h3>
+                <h3 className="mt-4 text-2xl font-extrabold">مناسب عندما يتطلب التعديل منطقًا أو سلوكًا مخصصًا</h3>
                 <CheckList items={developmentScope} inverse />
                 <div className="mt-7 border-t border-white/15 pt-5 text-sm leading-7 text-slate-400">
                   <p>تطوير الثيم التقني خدمة مستقلة يتم تحديدها حسب المتطلبات.</p>
@@ -489,7 +489,7 @@ export default async function SallaStoreDesignPage() {
               id="process-heading"
               eyebrow="من البداية للتسليم"
               title="طريقة العمل"
-              description="خطوات عملية وواضحة تساعدنا نحدد المطلوب قبل التنفيذ ونراجعه بعده."
+              description="خطوات عملية وواضحة لتحديد المطلوب قبل التنفيذ ومراجعته بعد الإنجاز."
               inverse
             />
             <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -510,8 +510,8 @@ export default async function SallaStoreDesignPage() {
           <Container>
             <SectionHeading
               id="proof-heading"
-              eyebrow="دليل من الشغل"
-              title="مثال من شغل حقيقي على سلة"
+              eyebrow="مثال من الأعمال"
+              title="مشروع فعلي على منصة سلة"
             />
             <article className="mt-10 overflow-hidden rounded-[1.5rem] border border-navy/10 bg-white shadow-[0_22px_60px_rgba(10,25,47,0.07)]">
               <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
@@ -569,7 +569,7 @@ export default async function SallaStoreDesignPage() {
             <SectionHeading
               id="scope-heading"
               eyebrow="حدود واضحة"
-              title="إيه اللي الخدمة تشملُه وإيه اللي بيتحدد حسب المشروع؟"
+              title="ما الذي تشمله الخدمة وما الذي يُحدد حسب المشروع؟"
               description="بعض البنود جزء معتاد من تجهيز الواجهة، والبنود التقنية المتقدمة تحتاج تقييم ونطاق مستقل."
             />
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
@@ -590,9 +590,9 @@ export default async function SallaStoreDesignPage() {
             <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
               <SectionHeading
                 id="requirements-heading"
-                eyebrow="قبل البداية"
-                title="إيه اللي بحتاجه منك قبل البداية؟"
-                description="المعلومات دي بتخليني أفهم حالة المتجر وأحدد المطلوب بشكل أدق."
+                eyebrow="قبل البدء"
+                title="ما المعلومات المطلوبة قبل البدء؟"
+                description="تساعدني هذه المعلومات على فهم حالة المتجر وتحديد المطلوب بدقة أكبر."
               />
               <ul className="grid gap-3 sm:grid-cols-2">
                 {startingRequirements.map((item, index) => (
@@ -613,8 +613,8 @@ export default async function SallaStoreDesignPage() {
             <SectionHeading
               id="faq-heading"
               eyebrow="أسئلة شائعة"
-              title="إجابات سريعة قبل ما نتكلم"
-              description="تفاصيل التنفيذ النهائية بتعتمد على حالة المتجر والثيم ونطاق التعديلات."
+              title="إجابات سريعة قبل التواصل"
+              description="تعتمد تفاصيل التنفيذ النهائية على حالة المتجر والثيم ونطاق التعديلات."
             />
             <div className="mt-10 divide-y divide-navy/10 overflow-hidden rounded-[1.5rem] border border-navy/10 bg-white">
               {faqs.map((faq, index) => (
@@ -635,12 +635,12 @@ export default async function SallaStoreDesignPage() {
         <section className="contact-grid bg-blue py-16 text-white sm:py-20 lg:py-24" aria-labelledby="final-cta-heading">
           <Container>
             <div className="mx-auto max-w-4xl text-center">
-              <p className="eyebrow text-white">خلينا نراجع المتجر</p>
+              <p className="eyebrow text-white">لنراجع احتياج متجرك</p>
               <h2 id="final-cta-heading" className="mt-4 text-balance text-4xl leading-[1.35] font-extrabold sm:text-5xl lg:text-6xl">
-                لو عندك متجر سلة ومحتاج تطوير فعلي في الشكل والتجربة، ابعتلي رابط المتجر
+                هل لديك متجر سلة جديد أو متجر قائم يحتاج إلى تحسين؟
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white">
-                أراجع الوضع الحالي ونحدد هل المطلوب تصميم، تخصيص، أو تطوير أعمق داخل الثيم.
+                أرسل رابط المتجر أو وصفًا مختصرًا للمشروع لنحدد هل المطلوب تصميمًا، أو تخصيصًا للمتجر، أو تطويرًا أعمق داخل الثيم.
               </p>
               <a
                 href={portfolio.person.whatsapp.url}

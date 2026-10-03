@@ -4,15 +4,15 @@ export const homeTitle =
 export const homeDescription =
   "هشام علي، مطور سلة متخصص في تصميم وتطوير متاجر سلة، تخصيص الثيم، تحسين الواجهة وتجربة المتجر على الجوال.";
 
-export const sallaStoreDesignTitle = "تصميم متجر سلة";
+export const sallaStoreDesignTitle = "تصميم متجر سلة وتطويره";
 
 export const sallaStoreDesignDescription =
-  "تصميم وتجهيز وتخصيص متجر سلة، من إعداد المتجر وتنظيم المنتجات والصفحات إلى تحسين الواجهة وتجربة المستخدم وتهيئة أساسيات Google وSEO.";
+  "تصميم وتطوير متجر سلة جديد أو تحسين متجر قائم، من تجهيز الواجهة وتنظيم الصفحات إلى تخصيص الثيم وتحسين تجربة الاستخدام على الجوال.";
 
-export const sallaThemeCustomizationTitle = "تطوير ثيم سلة وتخصيصه";
+export const sallaThemeCustomizationTitle = "تطوير ثيم سلة وبرمجته";
 
 export const sallaThemeCustomizationDescription =
-  "تطوير وتخصيص ثيمات سلة باستخدام CSS وJavaScript وTwilight، مع بناء Sections مخصصة وتنفيذ Frontend features وتكاملات عند توفر الإمكانيات التقنية.";
+  "تطوير ثيم سلة وبرمجته وتخصيصه باستخدام CSS وJavaScript وTwilight، مع بناء Sections مخصصة وتنفيذ تعديلات Frontend أعمق من خيارات الثيم الجاهز.";
 
 export const aboutTitle =
   "هشام علي | متخصص في تصميم وتطوير متاجر سلة";

@@ -10,7 +10,7 @@ export const personId = `${siteUrl}/#person`;
 export const websiteId = `${siteUrl}/#website`;
 
 const whatsappMessage =
-  "أهلًا هشام، عندي متجر على سلة وعايز أراجع تصميمه وتطويره. رابط المتجر: ";
+  "مرحبًا هشام، لدي متجر على سلة وأرغب في مراجعة تصميمه وتطويره. رابط المتجر: ";
 
 export const portfolio: PortfolioData = {
   person: {
@@ -22,8 +22,8 @@ export const portfolio: PortfolioData = {
     whatsapp: {
       number: "+20 102 724 7079",
       url: `https://wa.me/201027247079?text=${encodeURIComponent(whatsappMessage)}`,
-      label: "ابعت رابط متجرك",
-      ariaLabel: "ابعت رابط متجرك لهشام على واتساب — يفتح في نافذة جديدة",
+      label: "أرسل رابط متجرك",
+      ariaLabel: "أرسل رابط متجرك لهشام على واتساب — يفتح في نافذة جديدة",
     },
     linkedInUrl: "https://www.linkedin.com/in/hesham-ali-dev/",
     githubUrl: "https://github.com/hesham0ali",
