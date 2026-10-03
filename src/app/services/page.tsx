@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { ServicePackages } from "@/components/sections/service-packages";
 import { ServiceCard } from "@/components/services/service-card";
 import { portfolio, siteUrl, websiteId } from "@/data/portfolio";
 import {
@@ -161,6 +162,8 @@ export default function ServicesPage() {
             </div>
           </Container>
         </section>
+
+        <ServicePackages />
       </main>
       <SiteFooter />
     </>

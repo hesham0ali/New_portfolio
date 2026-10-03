@@ -19,6 +19,17 @@ export type ExpertiseItem = {
   ctaLabel?: string;
 };
 
+export type ServicePackageItem = {
+  id: string;
+  englishLabel: string;
+  title: string;
+  audience: string;
+  description: string;
+  features: string[];
+  whatsappMessage: string;
+  ctaLabel: string;
+};
+
 export type SpotlightItem = {
   eyebrow: string;
   title: string;
