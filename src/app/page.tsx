@@ -7,6 +7,7 @@ import { Hero } from "@/components/sections/hero";
 import { Projects } from "@/components/sections/projects";
 import { ServiceCta } from "@/components/sections/service-cta";
 import { ServicePackages } from "@/components/sections/service-packages";
+import { Testimonials } from "@/components/sections/testimonials";
 import { WorkingStyle } from "@/components/sections/working-style";
 import { getProjectBySlug } from "@/lib/projects/get-projects";
 
@@ -25,6 +26,7 @@ export default async function Home() {
         <Expertise />
         <ServicePackages compact />
         <Projects project={sho9.metadata} />
+        <Testimonials />
         <ServiceCta />
         <WorkingStyle />
         <About />
