@@ -148,7 +148,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="mt-10 grid items-stretch gap-5 lg:grid-cols-2">
+            <div className="mt-10 grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
               {portfolio.expertise.map((service) => (
                 <ServiceCard
                   key={service.number}
