@@ -138,8 +138,8 @@ export const portfolio: PortfolioData = {
     },
     {
       number: "05",
-      title: "Google وSEO وTracking",
-      label: "SEO & Tracking",
+      title: "Google وSEO والتتبع",
+      label: "Google, SEO & Tracking",
       description:
         "تجهيز أساسيات Google Analytics وSearch Console وMerchant Center وSEO والتتبع بدون وعود بنتائج مضمونة.",
       capabilities: [

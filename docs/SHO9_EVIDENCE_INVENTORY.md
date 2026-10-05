@@ -15,7 +15,7 @@ This inventory defines the facts that may be used on `/projects/sho9`. It is int
 
 ## Evidence constraints
 
-- No approved Sho9 screenshots or other project media are present in `public/projects/sho9/`; only `.gitkeep` exists.
+- Approved live-store visuals are present in `public/projects/sho9/` and referenced by `content/projects/sho9.mdx`.
 - No conversion, revenue, traffic, sales, performance, or other business outcome is documented.
 - No client testimonial is approved.
 - No launch date or publication date is documented. The project metadata year must not be described as a launch date.
@@ -26,6 +26,6 @@ This inventory defines the facts that may be used on `/projects/sho9`. It is int
 ## Presentation decisions
 
 - Use the live store link, exact role, verified technical tags, and ongoing maintenance as proof.
-- Omit the visual-proof section while approved media is unavailable; do not create a placeholder screenshot.
+- Use the approved live-store visuals as visual proof, with factual alt text and captions.
 - Describe capabilities demonstrated by the recorded scope, not business results.
 - State explicitly that the case study does not claim sales, conversion, or other commercial outcomes.

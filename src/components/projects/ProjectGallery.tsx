@@ -13,11 +13,18 @@ import {
 import { createPortal } from "react-dom";
 import type { ResolvedProjectImage } from "@/lib/projects/project-types";
 
-export function ProjectGallery({ images }: { images: ResolvedProjectImage[] }) {
+export function ProjectGallery({
+  images,
+  locale = "en",
+}: {
+  images: ResolvedProjectImage[];
+  locale?: "ar" | "en";
+}) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const prefersReducedMotion = useReducedMotion();
+  const arabic = locale === "ar";
 
   const closeLightbox = useCallback(() => setSelectedIndex(null), []);
 
@@ -99,7 +106,7 @@ export function ProjectGallery({ images }: { images: ResolvedProjectImage[] }) {
           id="project-gallery-heading"
           className="text-2xl font-semibold tracking-tight text-navy sm:text-3xl"
         >
-          Project gallery
+          {arabic ? "صور المشروع" : "Project gallery"}
         </h2>
         <div
           className={`mt-6 grid gap-5 ${images.length > 1 ? "sm:grid-cols-2" : "grid-cols-1"}`}
@@ -117,7 +124,7 @@ export function ProjectGallery({ images }: { images: ResolvedProjectImage[] }) {
                 }}
                 className="group relative block w-full cursor-zoom-in overflow-hidden text-start focus-visible:outline-offset-[-4px]"
                 style={{ aspectRatio: `${image.width} / ${image.height}` }}
-                aria-label={`Expand image: ${image.alt}`}
+                aria-label={`${arabic ? "تكبير الصورة" : "Expand image"}: ${image.alt}`}
                 aria-haspopup="dialog"
               >
                 <Image
@@ -155,14 +162,14 @@ export function ProjectGallery({ images }: { images: ResolvedProjectImage[] }) {
                 className="fixed inset-0 z-[100] flex items-center justify-center bg-navy/95 p-4 sm:p-8"
               >
                 <h2 id="project-lightbox-title" className="sr-only">
-                  Expanded project image
+                  {arabic ? "صورة مكبرة من المشروع" : "Expanded project image"}
                 </h2>
                 <button
                   ref={closeButtonRef}
                   type="button"
                   onClick={closeLightbox}
                   className="absolute top-4 end-4 z-10 flex size-11 items-center justify-center rounded-full border border-white/40 bg-navy text-xl text-white hover:border-cyan hover:text-cyan sm:top-6 sm:end-6"
-                  aria-label="Close image viewer"
+                  aria-label={arabic ? "إغلاق عارض الصور" : "Close image viewer"}
                 >
                   ×
                 </button>
@@ -172,10 +179,12 @@ export function ProjectGallery({ images }: { images: ResolvedProjectImage[] }) {
                     type="button"
                     onClick={showPrevious}
                     className="absolute bottom-4 start-4 z-10 flex min-h-11 items-center rounded-full border border-white/40 bg-navy px-4 font-semibold text-white hover:border-cyan hover:text-cyan sm:top-1/2 sm:bottom-auto sm:start-6 sm:-translate-y-1/2"
-                    aria-label="Show previous image"
+                    aria-label={arabic ? "عرض الصورة السابقة" : "Show previous image"}
                   >
                     <span aria-hidden="true">←</span>
-                    <span className="sr-only sm:not-sr-only sm:ms-2">Previous</span>
+                    <span className="sr-only sm:not-sr-only sm:ms-2">
+                      {arabic ? "السابقة" : "Previous"}
+                    </span>
                   </button>
                 ) : null}
 
@@ -211,9 +220,11 @@ export function ProjectGallery({ images }: { images: ResolvedProjectImage[] }) {
                     type="button"
                     onClick={showNext}
                     className="absolute end-4 bottom-4 z-10 flex min-h-11 items-center rounded-full border border-white/40 bg-navy px-4 font-semibold text-white hover:border-cyan hover:text-cyan sm:top-1/2 sm:end-6 sm:bottom-auto sm:-translate-y-1/2"
-                    aria-label="Show next image"
+                    aria-label={arabic ? "عرض الصورة التالية" : "Show next image"}
                   >
-                    <span className="sr-only sm:not-sr-only sm:me-2">Next</span>
+                    <span className="sr-only sm:not-sr-only sm:me-2">
+                      {arabic ? "التالية" : "Next"}
+                    </span>
                     <span aria-hidden="true">→</span>
                   </button>
                 ) : null}

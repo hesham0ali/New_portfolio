@@ -46,6 +46,6 @@ npm run seo:validate
 - Project assets: `public/projects/<slug>/`
 - Project authoring guide: `docs/PROJECTS_GUIDE.md`
 
-The Sho9 case study expects an approved cover at `public/projects/sho9/cover.webp`. Do not add a screenshot until it is approved for public use; after adding it, update `cover` in `content/projects/sho9.mdx`.
+The Sho9 case study uses approved live-store visuals from `public/projects/sho9/`, referenced by `content/projects/sho9.mdx`.
 
 Do not publish unverified store ownership, results, metrics, or testimonials. Do not imply an official partnership with Salla.

@@ -165,7 +165,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <ProjectHero project={metadata} />
 
             {isSho9 ? (
-              <Sho9CaseStudy project={metadata} />
+              <>
+                <Sho9CaseStudy project={metadata} />
+                {metadata.gallery.length > 0 ? (
+                  <div className="mx-auto mt-16 max-w-5xl">
+                    <Reveal>
+                      <ProjectGallery images={metadata.gallery} locale="ar" />
+                    </Reveal>
+                  </div>
+                ) : null}
+              </>
             ) : (
               <div className="mx-auto mt-14 max-w-3xl">
                 <Reveal>
@@ -205,7 +214,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
                 {metadata.gallery.length > 0 ? (
                   <Reveal>
-                    <ProjectGallery images={metadata.gallery} />
+                    <ProjectGallery
+                      images={metadata.gallery}
+                      locale={arabic ? "ar" : "en"}
+                    />
                   </Reveal>
                 ) : null}
 

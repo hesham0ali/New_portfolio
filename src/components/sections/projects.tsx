@@ -2,12 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/Reveal";
+import { ProjectGrid } from "@/components/projects/ProjectGrid";
 import { SectionHeading } from "@/components/ui/section-heading";
 import type { ResolvedProjectMetadata } from "@/lib/projects/project-types";
 
 const scope = ["تصميم الواجهة", "تطوير المتجر", "تخصيص الثيم", "صيانة مستمرة"];
 
-export function Projects({ project }: { project: ResolvedProjectMetadata }) {
+export function Projects({
+  project,
+  additionalProjects = [],
+}: {
+  project: ResolvedProjectMetadata;
+  additionalProjects?: ResolvedProjectMetadata[];
+}) {
   return (
     <section id="work" className="section-shell scroll-mt-20 bg-cream">
       <Container>
@@ -15,7 +22,7 @@ export function Projects({ project }: { project: ResolvedProjectMetadata }) {
           <SectionHeading
             eyebrow="الأعمال"
             title="أعمال مختارة"
-            description="نماذج من المشاريع التي توليت فيها التصميم والتطوير والتنفيذ التقني على منصة سلة."
+            description="نماذج حقيقية لمتاجر توليت فيها التصميم والتطوير والتنفيذ التقني على منصة سلة."
           />
         </Reveal>
 
@@ -96,6 +103,20 @@ export function Projects({ project }: { project: ResolvedProjectMetadata }) {
           </div>
         </article>
         </Reveal>
+
+        {additionalProjects.length > 0 ? (
+          <div className="mt-14 border-t border-navy/10 pt-10">
+            <Reveal>
+              <p className="eyebrow text-blue">متاجر سلة أخرى</p>
+              <h3 className="mt-3 text-2xl font-semibold text-navy sm:text-3xl">
+                نماذج إضافية من أعمال التجارة الإلكترونية
+              </h3>
+            </Reveal>
+            <div className="mt-8">
+              <ProjectGrid projects={additionalProjects} />
+            </div>
+          </div>
+        ) : null}
 
         <div className="mt-8">
           <Link href="/projects" className="button-secondary">
