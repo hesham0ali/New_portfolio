@@ -4,26 +4,25 @@ export const homeTitle =
 export const homeDescription =
   "هشام علي، مطور سلة متخصص في تصميم وتطوير متاجر سلة، تخصيص الثيم، تحسين الواجهة وتجربة المتجر على الجوال.";
 
-export const servicesTitle = "خدمات تصميم وتطوير متاجر سلة";
+export const servicesTitle = "خدمات متاجر سلة واختيار المسار المناسب";
 
 export const servicesDescription =
-  "خدمات إنشاء وتصميم وتطوير متاجر سلة، تخصيص الثيمات، التكاملات، إعداد Google وSEO والتتبع، وتحسين المتاجر القائمة.";
+  "اختر بين تصميم وتجهيز متجر سلة أو تطوير الثيم برمجيًا، مع تحديد القدرات المكملة المناسبة حسب احتياج المشروع.";
 
-export const sallaStoreDesignTitle = "تصميم متجر سلة وتطويره";
+export const sallaStoreDesignTitle = "تصميم متجر سلة وتجهيزه أو تحسينه";
 
 export const sallaStoreDesignDescription =
-  "تصميم وتطوير متجر سلة جديد أو تحسين متجر قائم، من تجهيز الواجهة وتنظيم الصفحات إلى تخصيص الثيم وتحسين تجربة الاستخدام على الجوال.";
+  "تصميم وتطوير متجر سلة جديد أو تحسين متجر قائم، من تجهيز الواجهة وتنظيم الصفحات والمنتجات إلى تحسين تجربة الاستخدام على الجوال.";
 
 export const sallaThemeCustomizationTitle = "تطوير ثيم سلة وبرمجته";
 
 export const sallaThemeCustomizationDescription =
   "تطوير ثيم سلة وبرمجته وتخصيصه باستخدام CSS وJavaScript وTwilight، مع بناء Sections مخصصة وتنفيذ تعديلات Frontend أعمق من خيارات الثيم الجاهز.";
 
-export const aboutTitle =
-  "هشام علي | متخصص في تصميم وتطوير متاجر سلة";
+export const aboutTitle = "عن هشام علي | الخبرة والتخصص وطريقة العمل";
 
 export const aboutDescription =
-  "تعرف على هشام علي، متخصص في تصميم وتجهيز متاجر سلة وتخصيص الثيمات باستخدام CSS وJavaScript وTwilight، مع تركيز على المتاجر السعودية والعربية.";
+  "تعرف على هشام علي وخبرته في واجهات متاجر سلة، وتخصصه التقني، وأدواته، وطريقة عمله مع المتاجر العربية.";
 
 export const socialImage = {
   url: "/opengraph-image",

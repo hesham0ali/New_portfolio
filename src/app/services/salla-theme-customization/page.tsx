@@ -12,10 +12,16 @@ import {
   socialImage,
   twitterImageUrl,
 } from "@/lib/seo";
+import { createWhatsAppServiceUrl } from "@/lib/whatsapp";
 
 const pagePath = "/services/salla-theme-customization";
 const pageUrl = `${siteUrl}${pagePath}`;
 const socialTitle = `${sallaThemeCustomizationTitle} | هشام علي`;
+const themeInquiryMessage = `مرحبًا هشام، وصلت من صفحة تخصيص وتطوير ثيم سلة.
+
+رابط المتجر:
+التعديل أو التطوير المطلوب:
+`;
 
 export const metadata: Metadata = {
   title: { absolute: socialTitle },
@@ -240,10 +246,6 @@ export default async function SallaThemeCustomizationPage() {
         description: sallaThemeCustomizationDescription,
         url: pageUrl,
         provider: { "@id": personId },
-        areaServed: {
-          "@type": "Country",
-          name: "Saudi Arabia",
-        },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "خدمات تطوير وبرمجة ثيمات سلة",
@@ -293,6 +295,10 @@ export default async function SallaThemeCustomizationPage() {
   };
 
   const project = sho9.metadata;
+  const themeInquiryUrl = createWhatsAppServiceUrl(
+    portfolio.person.whatsapp.url,
+    themeInquiryMessage,
+  );
   const technicalTags = project.tags.filter((tag) =>
     ["Salla", "تخصيص Theme", "CSS", "JavaScript"].includes(tag),
   );
@@ -314,7 +320,7 @@ export default async function SallaThemeCustomizationPage() {
         <section className="hero-grid overflow-hidden bg-navy text-cream">
           <Container className="py-14 sm:py-20 lg:py-24">
             <nav aria-label="مسار الصفحة" className="flex items-center gap-2 text-sm text-slate-400">
-              <Link href="/" className="link-underline hover:text-cream">
+              <Link href="/" className="touch-link link-underline hover:text-cream">
                 الرئيسية
               </Link>
               <span aria-hidden="true">/</span>
@@ -333,7 +339,7 @@ export default async function SallaThemeCustomizationPage() {
                   أطور الثيمات الحالية، وأنفذ تخصيصات CSS وJavaScript، وأبني Sections وComponents مخصصة باستخدام Twilight عندما يحتاج المتجر إلى Frontend أعمق من الإعدادات العادية.
                 </p>
                 <a
-                  href={portfolio.person.whatsapp.url}
+                  href={themeInquiryUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={portfolio.person.whatsapp.ariaLabel}
@@ -390,7 +396,71 @@ export default async function SallaThemeCustomizationPage() {
           </Container>
         </section>
 
-        <section className="section-shell bg-mist" aria-labelledby="implementation-heading">
+        <section className="section-shell bg-mist" aria-labelledby="proof-heading">
+          <Container>
+            <SectionHeading
+              eyebrow="دليل من مشروع فعلي"
+              id="proof-heading"
+              title="تخصيص ثيم موثق باستخدام CSS وJavaScript"
+              description="مشروع Sho9 يوضح عملًا فعليًا داخل متجر سلة شمل تصميم الواجهة وتطويرها وتخصيص الثيم."
+            />
+            <article className="mt-10 overflow-hidden rounded-[1.5rem] border border-navy/10 bg-white shadow-[0_22px_60px_rgba(10,25,47,0.07)]">
+              <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+                <div className="project-visual flex min-h-72 flex-col justify-between p-7 sm:p-9">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="eyebrow text-blue">Salla Store</span>
+                    <span className="rounded-full border border-navy/15 bg-white/70 px-3 py-1.5 text-xs font-bold text-navy">
+                      مشروع قائم
+                    </span>
+                  </div>
+                  <div>
+                    <p className="text-5xl font-extrabold text-navy sm:text-6xl" dir="ltr">
+                      SHO9
+                    </p>
+                    <p className="mt-3 text-sm text-slate-600" dir="ltr">
+                      sho9.com
+                    </p>
+                  </div>
+                </div>
+                <div className="p-6 sm:p-9 lg:p-10">
+                  <p className="eyebrow text-blue">{project.category}</p>
+                  <h3 className="mt-4 text-3xl font-extrabold text-navy">{project.title}</h3>
+                  <p className="mt-4 max-w-2xl leading-8 text-slate-700">{project.summary}</p>
+                  <dl className="mt-7 grid gap-5 border-y border-navy/10 py-6 sm:grid-cols-2">
+                    <div>
+                      <dt className="text-sm text-slate-600">الدور</dt>
+                      <dd className="mt-2 font-bold leading-7 text-navy">{project.role}</dd>
+                    </div>
+                    {project.maintenance ? (
+                      <div>
+                        <dt className="text-sm text-slate-600">المتابعة</dt>
+                        <dd className="mt-2 font-bold leading-7 text-navy">{project.maintenance}</dd>
+                      </div>
+                    ) : null}
+                  </dl>
+                  <ul className="mt-6 flex flex-wrap gap-2" aria-label="تقنيات مدعومة في بيانات المشروع">
+                    {technicalTags.map((tag) => (
+                      <li key={tag} className="rounded-full bg-mist px-3 py-2 text-sm font-bold text-navy" dir="auto">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+                    <Link href="/projects/sho9" className="button-secondary">
+                      شاهد تفاصيل المشروع
+                      <span aria-hidden="true">←</span>
+                    </Link>
+                    <Link href="/projects" className="touch-link link-underline font-bold text-blue">
+                      شاهد بقية أعمال سلة
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </Container>
+        </section>
+
+        <section className="section-shell bg-cream" aria-labelledby="implementation-heading">
           <Container>
             <SectionHeading
               id="implementation-heading"
@@ -570,65 +640,6 @@ export default async function SallaThemeCustomizationPage() {
           </Container>
         </section>
 
-        <section className="section-shell bg-cream" aria-labelledby="proof-heading">
-          <Container>
-            <SectionHeading eyebrow="مثال من الأعمال" id="proof-heading" title="مشروع فعلي على منصة سلة" />
-            <article className="mt-10 overflow-hidden rounded-[1.5rem] border border-navy/10 bg-white shadow-[0_22px_60px_rgba(10,25,47,0.07)]">
-              <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-                <div className="project-visual flex min-h-72 flex-col justify-between p-7 sm:p-9">
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="eyebrow text-blue">Salla Store</span>
-                    <span className="rounded-full border border-navy/15 bg-white/70 px-3 py-1.5 text-xs font-bold text-navy">
-                      مشروع قائم
-                    </span>
-                  </div>
-                  <div>
-                    <p className="text-5xl font-extrabold text-navy sm:text-6xl" dir="ltr">
-                      SHO9
-                    </p>
-                    <p className="mt-3 text-sm text-slate-600" dir="ltr">
-                      sho9.com
-                    </p>
-                  </div>
-                </div>
-                <div className="p-6 sm:p-9 lg:p-10">
-                  <p className="eyebrow text-blue">{project.category}</p>
-                  <h3 className="mt-4 text-3xl font-extrabold text-navy">{project.title}</h3>
-                  <p className="mt-4 max-w-2xl leading-8 text-slate-700">{project.summary}</p>
-                  <dl className="mt-7 grid gap-5 border-y border-navy/10 py-6 sm:grid-cols-2">
-                    <div>
-                      <dt className="text-sm text-slate-600">الدور</dt>
-                      <dd className="mt-2 font-bold leading-7 text-navy">{project.role}</dd>
-                    </div>
-                    {project.maintenance ? (
-                      <div>
-                        <dt className="text-sm text-slate-600">المتابعة</dt>
-                        <dd className="mt-2 font-bold leading-7 text-navy">{project.maintenance}</dd>
-                      </div>
-                    ) : null}
-                  </dl>
-                  <ul className="mt-6 flex flex-wrap gap-2" aria-label="تقنيات مدعومة في بيانات المشروع">
-                    {technicalTags.map((tag) => (
-                      <li key={tag} className="rounded-full bg-mist px-3 py-2 text-sm font-bold text-navy" dir="auto">
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-                    <Link href="/projects/sho9" className="button-secondary">
-                      شاهد تفاصيل المشروع
-                      <span aria-hidden="true">←</span>
-                    </Link>
-                    <Link href="/about" className="link-underline font-bold text-blue">
-                      تعرّف على خبرة هشام وطريقة عمله
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </Container>
-        </section>
-
         <section className="section-shell bg-mist" aria-labelledby="faq-heading">
           <Container>
             <SectionHeading
@@ -664,7 +675,7 @@ export default async function SallaThemeCustomizationPage() {
                 أرسل رابط المتجر ووصفًا مختصرًا للمطلوب لنحدد هل الحل Custom CSS، أو JavaScript، أو تعديل Component، أو تطويرًا أعمق داخل الثيم.
               </p>
               <a
-                href={portfolio.person.whatsapp.url}
+                href={themeInquiryUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={portfolio.person.whatsapp.ariaLabel}

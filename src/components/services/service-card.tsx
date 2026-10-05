@@ -1,8 +1,19 @@
 import Link from "next/link";
-import type { ExpertiseItem } from "@/types/portfolio";
+
+type PrimaryService = {
+  id: string;
+  number: string;
+  label: string;
+  title: string;
+  audience: string;
+  description: string;
+  capabilities: readonly string[];
+  href: string;
+  ctaLabel: string;
+};
 
 type ServiceCardProps = {
-  service: ExpertiseItem;
+  service: PrimaryService;
   inquiryUrl: string;
 };
 
@@ -22,16 +33,23 @@ export function ServiceCard({ service, inquiryUrl }: ServiceCardProps) {
           >
             {service.label}
           </p>
-          <h2
+          <h3
             id={titleId}
             className="mt-2.5 text-2xl font-semibold leading-[1.5] text-navy"
           >
             {service.title}
-          </h2>
+          </h3>
         </div>
         <span className="shrink-0 font-mono text-sm font-semibold text-blue" dir="ltr">
           {service.number}
         </span>
+      </div>
+
+      <div className="mt-5 rounded-[0.9rem] bg-mist p-4">
+        <p className="text-xs font-semibold text-blue">مناسبة لـ</p>
+        <p className="mt-2 text-sm leading-7 font-medium text-navy">
+          {service.audience}
+        </p>
       </div>
 
       <p className="mt-5 leading-8 text-slate-700">{service.description}</p>
@@ -49,12 +67,10 @@ export function ServiceCard({ service, inquiryUrl }: ServiceCardProps) {
       </div>
 
       <div className="mt-auto flex flex-wrap items-center gap-3 border-t border-navy/10 pt-6">
-        {service.href && service.ctaLabel ? (
-          <Link href={service.href} className="button-secondary">
-            {service.ctaLabel}
-            <span aria-hidden="true">←</span>
-          </Link>
-        ) : null}
+        <Link href={service.href} className="button-secondary">
+          {service.ctaLabel}
+          <span aria-hidden="true">←</span>
+        </Link>
         <a
           href={inquiryUrl}
           target="_blank"

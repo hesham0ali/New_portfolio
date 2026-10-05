@@ -9,8 +9,11 @@ export const siteUrl = new URL(
 export const personId = `${siteUrl}/#person`;
 export const websiteId = `${siteUrl}/#website`;
 
-const whatsappMessage =
-  "مرحبًا هشام، لدي متجر على سلة وأرغب في مراجعة تصميمه وتطويره. رابط المتجر: ";
+const whatsappMessage = `مرحبًا هشام، أرغب في مناقشة متجر على سلة.
+
+رابط المتجر إن وجد:
+المطلوب:
+`;
 
 export const portfolio: PortfolioData = {
   person: {
@@ -38,9 +41,9 @@ export const portfolio: PortfolioData = {
   ],
   hero: {
     eyebrow: "مطور متاجر سلة",
-    headline: "أصمم وأطوّر متاجر سلة من البداية للنهاية.",
+    headline: "مطور سلة لتصميم وتطوير متجرك من البداية للنهاية.",
     description:
-      "من تصميم الواجهة وتجهيز المتجر، إلى تخصيص الثيم وتحسين تجربة التصفح والشراء على الجوال.",
+      "أنا هشام علي، أجهّز واجهة المتجر وتجربة التصفح، وأطوّر الثيم عندما يحتاج المشروع إلى تنفيذ تقني مخصص.",
     supportingText:
       "لو عندك متجر قائم، ابعت رابطه واذكر التعديلات اللي محتاجها. ولو لسه بتبدأ، نحدد المطلوب قبل التنفيذ.",
   },

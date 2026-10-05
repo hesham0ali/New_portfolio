@@ -6,7 +6,6 @@ import { HomeFaq } from "@/components/sections/home-faq";
 import { Projects } from "@/components/sections/projects";
 import { ServiceCta } from "@/components/sections/service-cta";
 import { ServicePackages } from "@/components/sections/service-packages";
-import { Testimonials } from "@/components/sections/testimonials";
 import {
   getAllPublishedProjects,
   getProjectBySlug,
@@ -31,13 +30,12 @@ export default async function Home() {
       <SiteHeader homePage />
       <main id="main-content" tabIndex={-1}>
         <Hero project={sho9.metadata} />
+        <Expertise />
         <ServicePackages compact />
         <Projects
           project={sho9.metadata}
           additionalProjects={additionalSallaProjects}
         />
-        <Expertise />
-        <Testimonials />
         <HomeFaq />
         <ServiceCta />
       </main>

@@ -16,9 +16,11 @@ import type { ResolvedProjectImage } from "@/lib/projects/project-types";
 export function ProjectGallery({
   images,
   locale = "en",
+  description,
 }: {
   images: ResolvedProjectImage[];
   locale?: "ar" | "en";
+  description?: string;
 }) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -108,6 +110,9 @@ export function ProjectGallery({
         >
           {arabic ? "صور المشروع" : "Project gallery"}
         </h2>
+        {description ? (
+          <p className="mt-3 max-w-3xl leading-7 text-slate-600">{description}</p>
+        ) : null}
         <div
           className={`mt-6 grid gap-5 ${images.length > 1 ? "sm:grid-cols-2" : "grid-cols-1"}`}
         >

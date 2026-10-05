@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { NavigationItem, PortfolioData } from "@/types/portfolio";
 import { SiteLogo } from "./site-logo";
 
@@ -18,6 +18,15 @@ export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
 
+  const updateOpenState = useCallback((open: boolean) => {
+    document.body.toggleAttribute("data-mobile-navigation-open", open);
+    setIsOpen(open);
+  }, []);
+
+  useEffect(() => {
+    return () => document.body.removeAttribute("data-mobile-navigation-open");
+  }, []);
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -28,7 +37,7 @@ export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        setIsOpen(false);
+        updateOpenState(false);
         requestAnimationFrame(() => toggleRef.current?.focus());
         return;
       }
@@ -55,10 +64,10 @@ export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen]);
+  }, [isOpen, updateOpenState]);
 
   const closeAndReturnFocus = () => {
-    setIsOpen(false);
+    updateOpenState(false);
     requestAnimationFrame(() => toggleRef.current?.focus());
   };
 
@@ -71,7 +80,7 @@ export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
         aria-expanded={isOpen}
         aria-controls="mobile-navigation"
         aria-label={isOpen ? "إغلاق قائمة التنقل" : "فتح قائمة التنقل"}
-        onClick={() => setIsOpen((open) => !open)}
+        onClick={() => updateOpenState(!isOpen)}
       >
         <span aria-hidden="true" className="menu-button-lines">
           <span />
@@ -90,7 +99,7 @@ export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
           className="fixed inset-0 z-[70] flex flex-col bg-navy px-5 py-5 text-cream"
         >
           <div className="flex items-center justify-between border-b border-white/15 pb-5">
-            <SiteLogo onClick={() => setIsOpen(false)} />
+            <SiteLogo onClick={() => updateOpenState(false)} />
             <button
               type="button"
               className="inline-flex min-h-11 items-center rounded-[0.7rem] border border-white/25 px-4 text-sm font-semibold transition-colors hover:border-cyan hover:text-cyan"
@@ -108,7 +117,7 @@ export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
                     ref={index === 0 ? firstLinkRef : undefined}
                     href={item.href}
                     className="flex min-h-16 items-center justify-between text-2xl font-medium transition-colors hover:text-cyan"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => updateOpenState(false)}
                   >
                     {item.label}
                     <span aria-hidden="true" className="font-mono text-sm text-cyan" dir="ltr">
@@ -126,7 +135,7 @@ export function MobileNavigation({ items, whatsapp }: MobileNavigationProps) {
             rel="noopener noreferrer"
             aria-label={whatsapp.ariaLabel}
             className="button-primary w-full"
-            onClick={() => setIsOpen(false)}
+            onClick={() => updateOpenState(false)}
           >
             {whatsapp.label}
           </a>

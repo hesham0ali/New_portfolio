@@ -3,7 +3,13 @@ import { Stagger } from "@/components/motion/Stagger";
 import { StaggerItem } from "@/components/motion/StaggerItem";
 import type { ResolvedProjectMetadata } from "@/lib/projects/project-types";
 
-export function ProjectGrid({ projects }: { projects: ResolvedProjectMetadata[] }) {
+export function ProjectGrid({
+  projects,
+  eagerFirstImage = false,
+}: {
+  projects: ResolvedProjectMetadata[];
+  eagerFirstImage?: boolean;
+}) {
   if (projects.length === 0) {
     return (
       <div className="rounded-[1.5rem] border border-dashed border-navy/20 bg-white p-8 text-center text-slate-600">
@@ -14,9 +20,9 @@ export function ProjectGrid({ projects }: { projects: ResolvedProjectMetadata[] 
 
   return (
     <Stagger className="grid items-stretch gap-6 lg:grid-cols-2">
-      {projects.map((project) => (
+      {projects.map((project, index) => (
         <StaggerItem key={project.slug} className="h-full">
-          <ProjectCard project={project} />
+          <ProjectCard project={project} eagerImage={eagerFirstImage && index === 0} />
         </StaggerItem>
       ))}
     </Stagger>

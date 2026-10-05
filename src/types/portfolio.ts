@@ -25,6 +25,7 @@ export type ServicePackageItem = {
   title: string;
   audience: string;
   description: string;
+  serviceContext: string;
   features: string[];
   whatsappMessage: string;
   ctaLabel: string;

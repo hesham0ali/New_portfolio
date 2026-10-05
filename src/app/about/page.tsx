@@ -148,7 +148,7 @@ export default async function AboutPage() {
               aria-label="مسار الصفحة"
               className="flex items-center gap-2 text-sm text-slate-400"
             >
-              <Link href="/" className="link-underline hover:text-cream">
+              <Link href="/" className="touch-link link-underline hover:text-cream">
                 الرئيسية
               </Link>
               <span aria-hidden="true">/</span>
@@ -159,12 +159,12 @@ export default async function AboutPage() {
 
             <div className="mt-9 grid items-end gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)] lg:gap-16">
               <div>
-                <p className="eyebrow text-cyan">Salla · Frontend · E-commerce</p>
+                <p className="eyebrow text-cyan">عن هشام علي</p>
                 <h1 className="mt-5 max-w-5xl text-balance text-4xl leading-[1.3] font-extrabold sm:text-5xl lg:text-6xl lg:leading-[1.25]">
-                  هشام علي — متخصص في تصميم وتطوير متاجر سلة
+                  هشام علي: الخبرة، التخصص، وطريقة العمل
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
-                  أعمل على تجهيز متاجر سلة، تصميم الواجهات، تخصيص الثيمات، وتنفيذ تعديلات Frontend باستخدام CSS وJavaScript وTwilight حسب احتياج كل متجر.
+                  أنا مطور واجهات أركز على متاجر سلة، من تنظيم تجربة المتجر وتصميمها إلى تنفيذ تعديلات Frontend باستخدام CSS وJavaScript وTwilight عند الحاجة.
                 </p>
                 <p className="mt-4 max-w-3xl leading-7 text-slate-400">
                   أركز بشكل أساسي على المتاجر الإلكترونية الموجهة للسوق السعودي والعربي.

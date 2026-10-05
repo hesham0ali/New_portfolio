@@ -47,6 +47,10 @@ export function PackageCard({
         {servicePackage.description}
       </p>
 
+      <p className="mt-4 rounded-[0.8rem] bg-mist px-4 py-3 text-sm leading-7 font-medium text-navy">
+        {servicePackage.serviceContext}
+      </p>
+
       <div className="mt-6">
         <p className="text-sm font-semibold text-navy">تشمل:</p>
         <ul className="mt-3 grid gap-2.5">

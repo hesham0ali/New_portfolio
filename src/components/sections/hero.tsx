@@ -4,6 +4,13 @@ import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/Reveal";
 import { portfolio } from "@/data/portfolio";
 import type { ResolvedProjectMetadata } from "@/lib/projects/project-types";
+import { createWhatsAppServiceUrl } from "@/lib/whatsapp";
+
+const homeInquiryMessage = `مرحبًا هشام، وصلت من الصفحة الرئيسية وأرغب في مناقشة متجر على سلة.
+
+رابط المتجر إن وجد:
+المطلوب:
+`;
 
 export function Hero({ project }: { project: ResolvedProjectMetadata }) {
   return (
@@ -23,7 +30,7 @@ export function Hero({ project }: { project: ResolvedProjectMetadata }) {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
-                href={portfolio.person.whatsapp.url}
+                href={createWhatsAppServiceUrl(portfolio.person.whatsapp.url, homeInquiryMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={portfolio.person.whatsapp.ariaLabel}

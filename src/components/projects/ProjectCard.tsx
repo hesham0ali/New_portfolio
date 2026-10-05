@@ -4,7 +4,13 @@ import { AnimatedProjectCard } from "@/components/motion/AnimatedProjectCard";
 import { ProjectPlaceholder } from "@/components/ui/project-placeholder";
 import type { ResolvedProjectMetadata } from "@/lib/projects/project-types";
 
-export function ProjectCard({ project }: { project: ResolvedProjectMetadata }) {
+export function ProjectCard({
+  project,
+  eagerImage = false,
+}: {
+  project: ResolvedProjectMetadata;
+  eagerImage?: boolean;
+}) {
   const number = String(project.order).padStart(2, "0");
   const arabic = /[\u0600-\u06ff]/.test(
     `${project.title} ${project.summary}`,
@@ -23,6 +29,7 @@ export function ProjectCard({ project }: { project: ResolvedProjectMetadata }) {
               src={project.cover.src}
               alt={project.cover.alt}
               fill
+              loading={eagerImage ? "eager" : "lazy"}
               sizes="(max-width: 1024px) 100vw, 50vw"
               style={{ objectPosition: project.cover.position ?? "center" }}
               className="border-b border-navy/10 object-cover"
@@ -39,11 +46,11 @@ export function ProjectCard({ project }: { project: ResolvedProjectMetadata }) {
 
         <div className="flex flex-1 flex-col p-6 sm:p-8">
           <p className="eyebrow text-blue">{project.role}</p>
-          <h2 className="mt-3 text-2xl font-semibold text-navy">
-            <Link href={`/projects/${project.slug}`} className="link-underline">
+          <h3 className="mt-3 text-2xl font-semibold text-navy">
+            <Link href={`/projects/${project.slug}`} className="touch-link link-underline">
               {project.title}
             </Link>
-          </h2>
+          </h3>
           <p className="mt-4 leading-7 text-slate-600">{project.summary}</p>
           <div className="mt-auto pt-7">
             <Link

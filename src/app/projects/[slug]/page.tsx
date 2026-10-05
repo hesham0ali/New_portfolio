@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/layout/container";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -15,6 +16,7 @@ import {
   getProjectNavigation,
 } from "@/lib/projects/get-projects";
 import { socialImage } from "@/lib/seo";
+import { createWhatsAppServiceUrl } from "@/lib/whatsapp";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -88,6 +90,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const pageUrl = `${siteUrl}/projects/${metadata.slug}`;
   const projectName = isSho9 ? sho9Title : `${metadata.title} | هشام علي`;
   const projectDescription = isSho9 ? sho9Description : metadata.summary;
+  const projectInquiryUrl = createWhatsAppServiceUrl(
+    portfolio.person.whatsapp.url,
+    `مرحبًا هشام، وصلت من مشروع ${metadata.shortTitle} وأرغب في مناقشة متجر مشابه على سلة.
+
+رابط المتجر إن وجد:
+المطلوب:
+`,
+  );
   const projectJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -207,6 +217,38 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </Reveal>
 
                 <Reveal>
+                  <section className="mt-12 rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8" aria-labelledby="project-proof-heading">
+                    <p className="eyebrow text-blue">ما الذي يوضحه المشروع؟</p>
+                    <h2 id="project-proof-heading" className="mt-4 text-2xl font-semibold tracking-tight text-navy sm:text-3xl">
+                      خبرة عملية في تصميم وتجهيز واجهة متجر سلة
+                    </h2>
+                    <p className="mt-4 leading-8 text-slate-700">
+                      يوضح مشروع {metadata.shortTitle} تنفيذ واجهة متجر حقيقي على منصة سلة، وتنظيم الأقسام والمحتوى بما يناسب طبيعة منتجاته. لا تنسب الصفحة نتائج تجارية غير موثقة.
+                    </p>
+                  </section>
+                </Reveal>
+
+                <Reveal>
+                  <section className="mt-12" aria-labelledby="related-service-heading">
+                    <p className="eyebrow text-blue">الخدمة المرتبطة</p>
+                    <div className="mt-4 flex flex-col gap-5 rounded-[1.5rem] bg-navy p-6 text-cream sm:flex-row sm:items-center sm:justify-between sm:p-8">
+                      <div>
+                        <h2 id="related-service-heading" className="text-2xl font-semibold">
+                          تصميم وتجهيز متجر سلة
+                        </h2>
+                        <p className="mt-3 max-w-2xl leading-7 text-slate-300">
+                          هذه هي الخدمة الأقرب لنطاق المشروع المنشور: تنظيم الواجهة والأقسام وتجهيز تجربة عربية متجاوبة.
+                        </p>
+                      </div>
+                      <Link href="/services/salla-store-design" className="button-primary shrink-0">
+                        تفاصيل الخدمة
+                        <span aria-hidden="true">←</span>
+                      </Link>
+                    </div>
+                  </section>
+                </Reveal>
+
+                <Reveal>
                   <div className="mt-12 border-t border-navy/10 pt-1">
                     <Content />
                   </div>
@@ -217,24 +259,28 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     <ProjectGallery
                       images={metadata.gallery}
                       locale={arabic ? "ar" : "en"}
+                      description="لقطات من واجهة المتجر توضح أمثلة من الأقسام وطريقة عرض المحتوى المذكورة في نطاق العمل."
                     />
                   </Reveal>
                 ) : null}
 
                 <Reveal>
                   <aside className="mt-14 rounded-[1.5rem] bg-navy p-6 text-cream sm:p-8">
-                    <p className="eyebrow text-cyan">ناقش مشروعًا مشابهًا</p>
+                    <p className="eyebrow text-cyan">ناقش متجرًا مشابهًا</p>
                     <h2 className="mt-3 text-2xl font-semibold tracking-tight">
-                      عندك مشروع تقني وتحتاج تناقش نطاق التنفيذ؟
+                      عندك متجر سلة وتحتاج إلى تصميم أو تنظيم واجهته؟
                     </h2>
+                    <p className="mt-3 leading-7 text-slate-300">
+                      ابعت رابط المتجر والمطلوب تغييره أو بناؤه، ونحدد نطاق التنفيذ المناسب.
+                    </p>
                     <a
-                      href={portfolio.person.whatsapp.url}
+                      href={projectInquiryUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={portfolio.person.whatsapp.ariaLabel}
                       className="motion-arrow-link button-primary mt-6"
                     >
-                      {portfolio.person.whatsapp.label}
+                      أرسل رابط متجرك
                       <span
                         aria-hidden="true"
                         className="motion-arrow inline-block"

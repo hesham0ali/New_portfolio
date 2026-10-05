@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { portfolio } from "@/data/portfolio";
 import type { ResolvedProjectMetadata } from "@/lib/projects/project-types";
+import { createWhatsAppServiceUrl } from "@/lib/whatsapp";
 
 const demonstratedCapabilities = [
   {
@@ -41,6 +42,15 @@ export function Sho9CaseStudy({
 }: {
   project: ResolvedProjectMetadata;
 }) {
+  const projectInquiryUrl = createWhatsAppServiceUrl(
+    portfolio.person.whatsapp.url,
+    `مرحبًا هشام، وصلت من مشروع ${project.shortTitle} وأرغب في مناقشة متجر مشابه على سلة.
+
+رابط المتجر إن وجد:
+المطلوب:
+`,
+  );
+
   return (
     <div className="mt-16 space-y-16 sm:mt-20 sm:space-y-20">
       <section
@@ -234,7 +244,7 @@ export function Sho9CaseStudy({
           ثيم، أو تعديل Frontend.
         </p>
         <a
-          href={portfolio.person.whatsapp.url}
+          href={projectInquiryUrl}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={portfolio.person.whatsapp.ariaLabel}

@@ -12,10 +12,16 @@ import {
   socialImage,
   twitterImageUrl,
 } from "@/lib/seo";
+import { createWhatsAppServiceUrl } from "@/lib/whatsapp";
 
 const pagePath = "/services/salla-store-design";
 const pageUrl = `${siteUrl}${pagePath}`;
 const socialTitle = `${sallaStoreDesignTitle} | هشام علي`;
+const designInquiryMessage = `مرحبًا هشام، وصلت من صفحة تصميم وتجهيز متجر سلة.
+
+رابط المتجر إن وجد:
+المطلوب تصميمه أو تحسينه:
+`;
 
 export const metadata: Metadata = {
   title: { absolute: socialTitle },
@@ -43,7 +49,7 @@ const audienceNeeds = [
   "الثيم الحالي لا يعكس هوية علامتك التجارية.",
   "تجربة المتجر على الجوال تحتاج إلى تحسين.",
   "عرض المنتجات والعروض يحتاج إلى تنظيم ووضوح أكبر.",
-  "تحتاج إلى تخصيصات تتجاوز إعدادات الثيم الأساسية.",
+  "تريد إعادة تصميم الواجهة ضمن إمكانيات الثيم قبل اللجوء إلى تطوير برمجي أعمق.",
 ];
 
 const includedServices = [
@@ -72,12 +78,12 @@ const includedServices = [
     description: "تصميم وتنظيم الـHome Page والصفحات الرئيسية للمتجر.",
   },
   {
-    title: "تخصيص الثيم",
-    description: "تعديل شكل الـTheme الحالي ليتناسب مع هوية العلامة التجارية ومتطلبات المتجر.",
+    title: "تخصيص بصري للثيم",
+    description: "تعديل شكل الـTheme الحالي من خلال الخيارات المتاحة ليتناسب مع هوية العلامة التجارية.",
   },
   {
     title: "تصميم أقسام المتجر",
-    description: "تصميم وترتيب Sections مخصصة لعرض المنتجات والعروض والمحتوى.",
+    description: "تصميم وترتيب Sections لعرض المنتجات والعروض والمحتوى بصورة واضحة.",
   },
   {
     title: "تصميم المحتوى البصري",
@@ -239,8 +245,14 @@ function CheckList({ items, inverse = false }: { items: string[]; inverse?: bool
 }
 
 export default async function SallaStoreDesignPage() {
-  const sho9 = await getProjectBySlug("sho9");
-  if (!sho9) throw new Error("The published Sho9 project is required.");
+  const [sho9, ipple, alkahwaElbeshia] = await Promise.all([
+    getProjectBySlug("sho9"),
+    getProjectBySlug("ipple"),
+    getProjectBySlug("alkahwa-elbeshia"),
+  ]);
+  if (!sho9 || !ipple || !alkahwaElbeshia) {
+    throw new Error("The published Salla projects are required.");
+  }
 
   const serviceJsonLd = {
     "@context": "https://schema.org",
@@ -259,15 +271,11 @@ export default async function SallaStoreDesignPage() {
       {
         "@type": "Service",
         "@id": `${pageUrl}#service`,
-        name: "تصميم وتطوير متجر سلة",
-        serviceType: "تصميم وتطوير متجر سلة",
+        name: "تصميم وتجهيز وتحسين متجر سلة",
+        serviceType: "تصميم وتجهيز وتحسين متاجر سلة",
         description: sallaStoreDesignDescription,
         url: pageUrl,
         provider: { "@id": personId },
-        areaServed: {
-          "@type": "Country",
-          name: "Saudi Arabia",
-        },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "خدمات تصميم وتطوير متاجر سلة",
@@ -316,6 +324,10 @@ export default async function SallaStoreDesignPage() {
   };
 
   const project = sho9.metadata;
+  const designInquiryUrl = createWhatsAppServiceUrl(
+    portfolio.person.whatsapp.url,
+    designInquiryMessage,
+  );
 
   return (
     <>
@@ -334,7 +346,7 @@ export default async function SallaStoreDesignPage() {
         <section className="hero-grid overflow-hidden bg-navy text-cream">
           <Container className="py-14 sm:py-20 lg:py-24">
             <nav aria-label="مسار الصفحة" className="flex items-center gap-2 text-sm text-slate-400">
-              <Link href="/" className="link-underline hover:text-cream">
+              <Link href="/" className="touch-link link-underline hover:text-cream">
                 الرئيسية
               </Link>
               <span aria-hidden="true">/</span>
@@ -345,15 +357,15 @@ export default async function SallaStoreDesignPage() {
 
             <div className="mt-9 grid items-end gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)] lg:gap-16">
               <div>
-                <p className="eyebrow text-cyan">مصمم ومطور متاجر سلة</p>
+                <p className="eyebrow text-cyan">تصميم وتجهيز وتحسين المتجر</p>
                 <h1 className="mt-5 max-w-5xl text-balance text-4xl leading-[1.3] font-extrabold sm:text-5xl lg:text-6xl lg:leading-[1.25]">
-                  تصميم متجر سلة جديد وتطويره أو تحسين متجرك القائم
+                  تصميم متجر سلة وتجهيزه أو تحسين متجر قائم
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
-                  من إنشاء المتجر وتجهيز صفحاته إلى تصميم الواجهة وتخصيص الثيم وتحسين تجربة الاستخدام على الجوال، مع رفع المحتوى وتنظيمه عندما يكون ضمن نطاق المشروع.
+                  من إنشاء المتجر وتجهيز صفحاته إلى تنظيم الواجهة والمنتجات وتحسين تجربة الاستخدام على الجوال، مع رفع المحتوى عندما يكون ضمن نطاق المشروع.
                 </p>
                 <a
-                  href={portfolio.person.whatsapp.url}
+                  href={designInquiryUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={portfolio.person.whatsapp.ariaLabel}
@@ -397,7 +409,87 @@ export default async function SallaStoreDesignPage() {
           </Container>
         </section>
 
-        <section id="customization-heading" className="section-shell scroll-mt-20 bg-mist" aria-labelledby="included-heading">
+        <section className="section-shell bg-mist" aria-labelledby="proof-heading">
+          <Container>
+            <SectionHeading
+              id="proof-heading"
+              eyebrow="دليل من مشروع فعلي"
+              title="تصميم وتطوير متجر قائم على منصة سلة"
+              description="مشروع Sho9 يوضح نطاقًا موثقًا شمل تصميم المتجر وتطويره وتنظيم واجهته وتخصيص الثيم."
+            />
+            <article className="mt-10 overflow-hidden rounded-[1.5rem] border border-navy/10 bg-white shadow-[0_22px_60px_rgba(10,25,47,0.07)]">
+              <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+                <div className="project-visual flex min-h-72 flex-col justify-between p-7 sm:p-9">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="eyebrow text-blue">Salla Store</span>
+                    <span className="rounded-full border border-navy/15 bg-white/70 px-3 py-1.5 text-xs font-bold text-navy">
+                      مشروع قائم
+                    </span>
+                  </div>
+                  <div>
+                    <p className="text-5xl font-extrabold text-navy sm:text-6xl" dir="ltr">
+                      SHO9
+                    </p>
+                    <p className="mt-3 text-sm text-slate-600" dir="ltr">
+                      sho9.com
+                    </p>
+                  </div>
+                </div>
+                <div className="p-6 sm:p-9 lg:p-10">
+                  <p className="eyebrow text-blue">{project.category}</p>
+                  <h3 className="mt-4 text-3xl font-extrabold text-navy">
+                    {project.title}
+                  </h3>
+                  <p className="mt-4 max-w-2xl leading-8 text-slate-700">{project.summary}</p>
+                  <dl className="mt-7 grid gap-5 border-y border-navy/10 py-6 sm:grid-cols-2">
+                    <div>
+                      <dt className="text-sm text-slate-600">الدور</dt>
+                      <dd className="mt-2 font-bold leading-7 text-navy">{project.role}</dd>
+                    </div>
+                    {project.maintenance ? (
+                      <div>
+                        <dt className="text-sm text-slate-600">المتابعة</dt>
+                        <dd className="mt-2 font-bold leading-7 text-navy">{project.maintenance}</dd>
+                      </div>
+                    ) : null}
+                  </dl>
+                  <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+                    <Link href="/projects/sho9" className="button-secondary">
+                      شاهد تفاصيل المشروع
+                      <span aria-hidden="true">←</span>
+                    </Link>
+                    <Link href="/projects" className="touch-link link-underline font-bold text-blue">
+                      شاهد بقية أعمال سلة
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </article>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[ipple.metadata, alkahwaElbeshia.metadata].map((example) => (
+                <Link
+                  key={example.slug}
+                  href={`/projects/${example.slug}`}
+                  className="motion-card-interaction rounded-[1.1rem] border border-navy/10 bg-white p-5 sm:p-6"
+                >
+                  <span className="eyebrow text-blue">مثال إضافي لتصميم متجر سلة</span>
+                  <span className="mt-3 block text-xl font-semibold text-navy">
+                    {example.title}
+                  </span>
+                  <span className="mt-3 block leading-7 text-slate-600">
+                    {example.summary}
+                  </span>
+                  <span className="motion-arrow-link mt-4 inline-flex items-center gap-2 font-semibold text-blue">
+                    شاهد المشروع
+                    <span aria-hidden="true" className="motion-arrow">←</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </section>
+
+        <section id="customization-heading" className="section-shell scroll-mt-20 bg-cream" aria-labelledby="included-heading">
           <Container>
             <SectionHeading
               id="included-heading"
@@ -506,64 +598,6 @@ export default async function SallaStoreDesignPage() {
           </Container>
         </section>
 
-        <section className="section-shell bg-cream" aria-labelledby="proof-heading">
-          <Container>
-            <SectionHeading
-              id="proof-heading"
-              eyebrow="مثال من الأعمال"
-              title="مشروع فعلي على منصة سلة"
-            />
-            <article className="mt-10 overflow-hidden rounded-[1.5rem] border border-navy/10 bg-white shadow-[0_22px_60px_rgba(10,25,47,0.07)]">
-              <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
-                <div className="project-visual flex min-h-72 flex-col justify-between p-7 sm:p-9">
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="eyebrow text-blue">Salla Store</span>
-                    <span className="rounded-full border border-navy/15 bg-white/70 px-3 py-1.5 text-xs font-bold text-navy">
-                      مشروع قائم
-                    </span>
-                  </div>
-                  <div>
-                    <p className="text-5xl font-extrabold text-navy sm:text-6xl" dir="ltr">
-                      SHO9
-                    </p>
-                    <p className="mt-3 text-sm text-slate-600" dir="ltr">
-                      sho9.com
-                    </p>
-                  </div>
-                </div>
-                <div className="p-6 sm:p-9 lg:p-10">
-                  <p className="eyebrow text-blue">{project.category}</p>
-                  <h3 className="mt-4 text-3xl font-extrabold text-navy">
-                    {project.title}
-                  </h3>
-                  <p className="mt-4 max-w-2xl leading-8 text-slate-700">{project.summary}</p>
-                  <dl className="mt-7 grid gap-5 border-y border-navy/10 py-6 sm:grid-cols-2">
-                    <div>
-                      <dt className="text-sm text-slate-600">الدور</dt>
-                      <dd className="mt-2 font-bold leading-7 text-navy">{project.role}</dd>
-                    </div>
-                    {project.maintenance ? (
-                      <div>
-                        <dt className="text-sm text-slate-600">المتابعة</dt>
-                        <dd className="mt-2 font-bold leading-7 text-navy">{project.maintenance}</dd>
-                      </div>
-                    ) : null}
-                  </dl>
-                  <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-                    <Link href="/projects/sho9" className="button-secondary">
-                      شاهد تفاصيل المشروع
-                      <span aria-hidden="true">←</span>
-                    </Link>
-                    <Link href="/about" className="link-underline font-bold text-blue">
-                      تعرّف على خبرة هشام وطريقة عمله
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </Container>
-        </section>
-
         <section className="section-shell bg-mist" aria-labelledby="scope-heading">
           <Container>
             <SectionHeading
@@ -643,7 +677,7 @@ export default async function SallaStoreDesignPage() {
                 أرسل رابط المتجر أو وصفًا مختصرًا للمشروع لنحدد هل المطلوب تصميمًا، أو تخصيصًا للمتجر، أو تطويرًا أعمق داخل الثيم.
               </p>
               <a
-                href={portfolio.person.whatsapp.url}
+                href={designInquiryUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={portfolio.person.whatsapp.ariaLabel}

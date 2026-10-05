@@ -42,7 +42,7 @@ export function FloatingControls({ whatsappUrl }: FloatingControlsProps) {
         aria-label="تواصل مع هشام عبر واتساب — يفتح في نافذة جديدة"
         title="تواصل عبر واتساب"
         style={safeAreaPosition}
-        className="fixed right-4 z-[60] inline-flex size-12 items-center justify-center rounded-[0.9rem] border border-cyan bg-cyan text-navy shadow-[0_10px_30px_rgba(11,27,48,0.18)] transition-[transform,background-color,border-color] duration-200 hover:-translate-y-0.5 hover:border-white hover:bg-white focus-visible:outline-[3px] focus-visible:outline-cyan focus-visible:outline-offset-4 motion-reduce:transform-none motion-reduce:transition-none sm:right-6 lg:right-8"
+        className="global-floating-control fixed right-4 z-[60] inline-flex size-12 items-center justify-center rounded-[0.9rem] border border-cyan bg-cyan text-navy shadow-[0_10px_30px_rgba(11,27,48,0.18)] transition-[transform,background-color,border-color,opacity,visibility] duration-200 hover:-translate-y-0.5 hover:border-white hover:bg-white focus-visible:outline-[3px] focus-visible:outline-cyan focus-visible:outline-offset-4 motion-reduce:transform-none motion-reduce:transition-none sm:right-6 lg:right-8"
       >
         <svg
           aria-hidden="true"
@@ -66,7 +66,7 @@ export function FloatingControls({ whatsappUrl }: FloatingControlsProps) {
           aria-label="العودة إلى أعلى الصفحة"
           title="العودة للأعلى"
           style={safeAreaPosition}
-          className="fixed left-4 z-[60] inline-flex size-12 items-center justify-center rounded-[0.9rem] border border-navy/15 bg-white text-navy shadow-[0_10px_30px_rgba(11,27,48,0.12)] transition-[transform,border-color,color] duration-200 hover:-translate-y-0.5 hover:border-blue hover:text-blue focus-visible:outline-[3px] focus-visible:outline-cyan focus-visible:outline-offset-4 motion-reduce:transform-none motion-reduce:transition-none sm:left-6 lg:left-8"
+          className="global-floating-control fixed left-4 z-[60] inline-flex size-12 items-center justify-center rounded-[0.9rem] border border-navy/15 bg-white text-navy shadow-[0_10px_30px_rgba(11,27,48,0.12)] transition-[transform,border-color,color,opacity,visibility] duration-200 hover:-translate-y-0.5 hover:border-blue hover:text-blue focus-visible:outline-[3px] focus-visible:outline-cyan focus-visible:outline-offset-4 motion-reduce:transform-none motion-reduce:transition-none sm:left-6 lg:left-8"
         >
           <svg
             aria-hidden="true"

@@ -68,6 +68,18 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+.touch-link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+}
+
+body[data-mobile-navigation-open] .global-floating-control {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
 button,
 input,
 textarea,

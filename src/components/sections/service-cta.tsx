@@ -1,6 +1,13 @@
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/Reveal";
 import { portfolio } from "@/data/portfolio";
+import { createWhatsAppServiceUrl } from "@/lib/whatsapp";
+
+const homeCtaMessage = `مرحبًا هشام، وصلت من موقعك وأرغب في تحديد نطاق مناسب لمتجر سلة.
+
+رابط المتجر إن وجد:
+المطلوب:
+`;
 
 export function ServiceCta() {
   return (
@@ -19,7 +26,7 @@ export function ServiceCta() {
           </div>
 
           <a
-            href={portfolio.person.whatsapp.url}
+            href={createWhatsAppServiceUrl(portfolio.person.whatsapp.url, homeCtaMessage)}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={portfolio.person.whatsapp.ariaLabel}

@@ -7,6 +7,11 @@ import { ServicePackages } from "@/components/sections/service-packages";
 import { ServiceCard } from "@/components/services/service-card";
 import { portfolio, siteUrl, websiteId } from "@/data/portfolio";
 import {
+  primaryServices,
+  serviceCapabilities,
+  uncertainServiceMessage,
+} from "@/data/service-model";
+import {
   servicesDescription,
   servicesTitle,
   socialImage,
@@ -53,7 +58,7 @@ export default function ServicesPage() {
         breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
         mainEntity: {
           "@type": "ItemList",
-          itemListElement: portfolio.expertise.map((service, index) => ({
+          itemListElement: primaryServices.map((service, index) => ({
             "@type": "ListItem",
             position: index + 1,
             item: {
@@ -106,7 +111,7 @@ export default function ServicesPage() {
         <section className="hero-grid overflow-hidden bg-navy text-cream">
           <Container className="py-14 sm:py-20 lg:py-24">
             <nav aria-label="مسار الصفحة" className="flex items-center gap-2 text-sm text-slate-400">
-              <Link href="/" className="link-underline hover:text-cream">
+              <Link href="/" className="touch-link link-underline hover:text-cream">
                 الرئيسية
               </Link>
               <span aria-hidden="true">/</span>
@@ -117,19 +122,19 @@ export default function ServicesPage() {
 
             <div className="mt-9 grid items-end gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(18rem,0.75fr)] lg:gap-16">
               <div>
-                <p className="eyebrow text-cyan">مصمم ومطور متاجر سلة</p>
+                <p className="eyebrow text-cyan">دليل اختيار الخدمة</p>
                 <h1 className="mt-5 max-w-4xl text-balance text-4xl leading-[1.3] font-extrabold sm:text-5xl lg:text-6xl lg:leading-[1.25]">
-                  خدمات تصميم وتطوير متاجر سلة
+                  خدمات متاجر سلة حسب احتياج مشروعك
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
-                  أقدّم خدمات تصميم وتجهيز وتخصيص متاجر سلة، إلى جانب تطوير الثيمات والتكاملات والتحسينات التقنية للمتاجر الجديدة والقائمة.
+                  أعمل عبر مسارين واضحين: تصميم وتجهيز المتجر، أو تخصيص وتطوير الثيم. وتدخل بقية الاحتياجات كقدرات ضمن المسار الأنسب.
                 </p>
               </div>
 
               <aside className="rounded-[1.25rem] border border-white/15 bg-white/5 p-6 sm:p-7">
-                <p className="eyebrow text-cyan">اختر ما يناسب متجرك</p>
+                <p className="eyebrow text-cyan">ابدأ من احتياجك</p>
                 <p className="mt-4 leading-8 text-slate-300">
-                  راجع نطاق كل خدمة، ثم أرسل تفاصيل مشروعك مباشرة عبر واتساب برسالة مهيأة للخدمة التي اخترتها.
+                  هل تحتاج إلى تنظيم شكل وتجربة المتجر، أم إلى تعديل تقني داخل الثيم؟ بعد اختيار المسار نحدد الباقة أو نطاق التنفيذ.
                 </p>
               </aside>
             </div>
@@ -139,19 +144,19 @@ export default function ServicesPage() {
         <section className="section-shell bg-mist" aria-labelledby="services-list-heading">
           <Container>
             <div className="max-w-3xl">
-              <p className="eyebrow text-blue">الخدمات</p>
+              <p className="eyebrow text-blue">الخدمتان الأساسيتان</p>
               <h2 id="services-list-heading" className="mt-4 text-3xl font-semibold leading-[1.4] text-navy sm:text-4xl">
-                اختر الخدمة الأقرب لاحتياجك
+                ما المشكلة التي تريد حلها في متجرك؟
               </h2>
               <p className="mt-4 leading-8 text-slate-600">
-                إذا كان مشروعك يجمع أكثر من خدمة، اختر الأقرب واذكر بقية التفاصيل في الرسالة.
+                اختر المسار الأقرب للمشكلة الحالية. القدرات المكملة والباقات تظهر بعده ولا تمثل خدمات متنافسة.
               </p>
             </div>
 
-            <div className="mt-10 grid items-stretch gap-5 md:grid-cols-2 xl:grid-cols-3">
-              {portfolio.expertise.map((service) => (
+            <div className="mt-10 grid items-stretch gap-5 md:grid-cols-2">
+              {primaryServices.map((service) => (
                 <ServiceCard
-                  key={service.number}
+                  key={service.id}
                   service={service}
                   inquiryUrl={createWhatsAppServiceUrl(
                     portfolio.person.whatsapp.url,
@@ -160,6 +165,44 @@ export default function ServicesPage() {
                 />
               ))}
             </div>
+
+            <section className="mt-14 border-t border-navy/10 pt-10" aria-labelledby="capabilities-heading">
+              <div className="max-w-3xl">
+                <p className="eyebrow text-blue">قدرات مكملة</p>
+                <h2 id="capabilities-heading" className="mt-4 text-2xl font-semibold leading-[1.45] text-navy sm:text-3xl">
+                  تُضاف تحت الخدمة المناسبة حسب احتياج المشروع
+                </h2>
+              </div>
+              <div className="mt-8 grid gap-4 md:grid-cols-2">
+                {serviceCapabilities.map((capability) => (
+                  <article key={capability.title} className="rounded-[1.1rem] border border-navy/10 bg-white p-5 sm:p-6">
+                    <h3 className="text-xl font-semibold text-navy">{capability.title}</h3>
+                    <p className="mt-3 leading-7 text-slate-600">{capability.description}</p>
+                    <Link href={capability.parentHref} className="touch-link motion-arrow-link mt-4 gap-2 text-sm font-semibold text-blue">
+                      {capability.parentLabel}
+                      <span aria-hidden="true" className="motion-arrow">←</span>
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <aside className="mt-10 flex flex-col gap-4 rounded-[1.1rem] border border-blue/20 bg-blue/5 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+              <div>
+                <p className="font-semibold text-navy">مش متأكد أنهي خدمة مناسبة؟</p>
+                <p className="mt-2 leading-7 text-slate-600">ابعت رابط متجرك والمطلوب، وأنا أحدد معاك المسار الأنسب.</p>
+              </div>
+              <a
+                href={createWhatsAppServiceUrl(portfolio.person.whatsapp.url, uncertainServiceMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-primary shrink-0"
+                aria-label="أرسل رابط متجرك والمطلوب عبر واتساب — يفتح في نافذة جديدة"
+              >
+                ساعدني أختار
+                <span aria-hidden="true">↗</span>
+              </a>
+            </aside>
           </Container>
         </section>
 

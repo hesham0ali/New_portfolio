@@ -16,11 +16,11 @@ export function ProjectHero({ project }: { project: ResolvedProjectMetadata }) {
         aria-label={arabic ? "مسار الصفحة" : "Breadcrumb"}
         className="flex flex-wrap items-center gap-2 text-sm text-slate-600"
       >
-        <Link href="/" className="link-underline font-bold text-blue">
+        <Link href="/" className="touch-link link-underline font-bold text-blue">
           {arabic ? "الرئيسية" : "Home"}
         </Link>
         <span aria-hidden="true">/</span>
-        <Link href="/projects" className="link-underline font-bold text-blue">
+        <Link href="/projects" className="touch-link link-underline font-bold text-blue">
           {arabic ? "الأعمال" : "Projects"}
         </Link>
         <span aria-hidden="true">/</span>

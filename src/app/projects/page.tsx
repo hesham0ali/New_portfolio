@@ -5,13 +5,14 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { Reveal } from "@/components/motion/Reveal";
 import { ProjectFilters } from "@/components/projects/ProjectFilters";
 import { ProjectGrid } from "@/components/projects/ProjectGrid";
-import { siteUrl, websiteId } from "@/data/portfolio";
+import { portfolio, siteUrl, websiteId } from "@/data/portfolio";
 import { getAllPublishedProjects } from "@/lib/projects/get-projects";
 import { socialImage, twitterImageUrl } from "@/lib/seo";
+import { createWhatsAppServiceUrl } from "@/lib/whatsapp";
 
 const projectsTitle = "أعمال هشام علي | مطور سلة";
 const projectsDescription =
-  "أعمال مختارة لهشام علي تشمل متاجر سلة ومشروعات تقنية أخرى.";
+  "أعمال مختارة لهشام علي في تصميم وتجهيز وتطوير متاجر سلة.";
 
 export const metadata: Metadata = {
   title: "أعمال مختارة",
@@ -49,6 +50,14 @@ export default async function ProjectsPage() {
     ...new Set(technicalProjects.flatMap((project) => project.categories)),
   ].sort((a, b) => a.localeCompare(b));
   const pageUrl = `${siteUrl}/projects`;
+  const projectsInquiryUrl = createWhatsAppServiceUrl(
+    portfolio.person.whatsapp.url,
+    `مرحبًا هشام، وصلت من صفحة أعمالك وأرغب في مناقشة متجري على سلة.
+
+رابط المتجر إن وجد:
+المطلوب:
+`,
+  );
   const collectionJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -78,7 +87,7 @@ export default async function ProjectsPage() {
             <Reveal trigger="mount">
               <p className="eyebrow text-blue">أعمال مختارة</p>
               <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-[1.3] text-navy sm:text-6xl">
-                مشروعات متاجر سلة وأعمال تقنية أخرى.
+                مشروعات مختارة لمتاجر على منصة سلة.
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700">
                 استعرض نماذج من العمل ونطاق المساهمة في كل مشروع بدون مبالغة في الملكية أو النتائج.
@@ -100,7 +109,7 @@ export default async function ProjectsPage() {
                 </p>
               </Reveal>
               <div className="mt-8">
-                <ProjectGrid projects={sallaProjects} />
+                <ProjectGrid projects={sallaProjects} eagerFirstImage />
               </div>
             </section>
 
@@ -130,6 +139,30 @@ export default async function ProjectsPage() {
                 </div>
               </section>
             ) : null}
+
+            <section className="mt-16 border-t border-navy/10 pt-10" aria-labelledby="projects-cta-heading">
+              <div className="flex flex-col gap-5 rounded-[1.25rem] bg-navy p-6 text-cream sm:flex-row sm:items-center sm:justify-between sm:p-8">
+                <div>
+                  <p className="eyebrow text-cyan">الخطوة التالية</p>
+                  <h2 id="projects-cta-heading" className="mt-3 text-2xl font-semibold leading-[1.45] sm:text-3xl">
+                    عجبك مستوى التنفيذ وعايز نراجع متجرك؟
+                  </h2>
+                  <p className="mt-3 max-w-2xl leading-7 text-slate-300">
+                    ابعت رابط متجر سلة والمطلوب تغييره أو تنفيذه، ونحدد الخدمة والنطاق المناسبين.
+                  </p>
+                </div>
+                <a
+                  href={projectsInquiryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button-primary shrink-0"
+                  aria-label="أرسل رابط متجرك بعد مشاهدة الأعمال عبر واتساب — يفتح في نافذة جديدة"
+                >
+                  أرسل رابط متجرك
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </section>
           </Container>
         </section>
       </main>
