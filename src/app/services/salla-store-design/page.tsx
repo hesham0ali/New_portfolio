@@ -54,48 +54,28 @@ const audienceNeeds = [
 
 const includedServices = [
   {
-    title: "إنشاء وتجهيز متجر سلة",
-    description: "إعداد المتجر وضبط الإعدادات الأساسية المطلوبة قبل الإطلاق.",
+    title: "تجهيز متجر جديد للإطلاق",
+    description: "إعداد الصفحات والخيارات الأساسية ومراجعة جاهزية المتجر.",
   },
   {
-    title: "إعداد صفحات المتجر",
-    description: "تجهيز وتنظيم الصفحات الأساسية والمحتوى المطلوب داخل المتجر.",
+    title: "تنظيم الصفحات والأقسام",
+    description: "ترتيب المحتوى والتصنيفات ليسهل على العميل الوصول للمنتجات.",
   },
   {
-    title: "تنظيم الأقسام والتصنيفات",
-    description: "إنشاء وترتيب التصنيفات بما يجعل الوصول للمنتجات أسهل.",
+    title: "تنظيم المنتجات والمحتوى",
+    description: "رفع وترتيب المنتجات والصور والبيانات ضمن النطاق المتفق عليه.",
   },
   {
-    title: "رفع وتنظيم المنتجات",
-    description: "إضافة المنتجات والصور والوصف والبيانات وتنظيمها داخل المتجر.",
+    title: "تصميم واجهة واضحة",
+    description: "تنظيم الصفحة الرئيسية والعروض بما يناسب هوية العلامة التجارية.",
   },
   {
-    title: "إعداد خيارات الدفع والشحن",
-    description: "ضبط الخيارات المتاحة للمتجر، مع ترك أي إجراءات اعتماد خارجية لصاحب المتجر.",
+    title: "تحسين تجربة الجوال",
+    description: "مراجعة وضوح المحتوى والتنقل والعناصر المهمة على الشاشات الصغيرة.",
   },
   {
-    title: "تصميم واجهة متجر سلة",
-    description: "تصميم وتنظيم الـHome Page والصفحات الرئيسية للمتجر.",
-  },
-  {
-    title: "تخصيص بصري للثيم",
-    description: "تعديل شكل الـTheme الحالي من خلال الخيارات المتاحة ليتناسب مع هوية العلامة التجارية.",
-  },
-  {
-    title: "تصميم أقسام المتجر",
-    description: "تصميم وترتيب Sections لعرض المنتجات والعروض والمحتوى بصورة واضحة.",
-  },
-  {
-    title: "تصميم المحتوى البصري",
-    description: "تصميم Banners وصور الأقسام والعناصر البصرية المستخدمة داخل المتجر.",
-  },
-  {
-    title: "Responsive Design",
-    description: "التأكد من أن تجربة المتجر تعمل جيدًا على الجوال والـTablet والـDesktop.",
-  },
-  {
-    title: "تحسين تجربة المستخدم",
-    description: "تحسين ترتيب المحتوى والتنقل ووضوح الـCTAs ومسار المستخدم داخل المتجر.",
+    title: "إعادة تصميم متجر قائم",
+    description: "تحسين الواجهة الحالية بدل البدء من الصفر عندما يكون ذلك هو الحل الأنسب.",
   },
 ];
 
@@ -109,9 +89,7 @@ const connectedServiceGroups = [
     items: [
       "Google Analytics",
       "Google Search Console",
-      "Google Merchant Center عندما يكون المتجر والمنتجات مؤهلين",
-      "Basic Technical SEO للعناوين والوصف وبنية الصفحات والفهرسة",
-      "Tracking Setup عندما تكون الأدوات مدعومة ومتاحة للمشروع",
+      "أساسيات التتبع المدعومة للمشروع",
     ],
   },
   {
@@ -119,83 +97,32 @@ const connectedServiceGroups = [
     eyebrow: "تطوير ودعم المتاجر القائمة",
     title: "تحسين متجر سلة موجود بدل البدء من الصفر",
     description:
-      "أراجع المتجر القائم، وأحدد فرص التحسين، وأنفذ التعديلات التصميمية أو التقنية التي تقع ضمن نطاق الواجهة والثيم.",
+      "أراجع المتجر القائم، وأحدد فرص التحسين، وأنفذ تعديلات الواجهة المناسبة ضمن نطاق المشروع.",
     items: [
-      "Store Audit",
-      "Store Redesign",
-      "UX Improvements",
-      "Technical Improvements داخل النطاق المتاح",
-      "Bug Fixing لمشاكل Frontend أو Theme أو Integrations",
-      "Ongoing Development حسب احتياج المتجر",
+      "مراجعة واجهة المتجر",
+      "إعادة التصميم وتحسين تجربة الاستخدام",
+      "معالجة مشاكل الواجهة ضمن النطاق المتاح",
     ],
   },
 ];
 
-const designScope = [
-  "تخطيط الواجهة",
-  "هيكلة الصفحة الرئيسية",
-  "ترتيب المحتوى وأولوياته",
-  "طريقة عرض المنتجات",
-  "تجربة الجوال",
-  "الاتساق البصري",
-];
-
-const developmentScope = [
-  "سلوك مخصص باستخدام JavaScript",
-  "مكونات مخصصة",
-  "منطق متقدم داخل الثيم",
-  "تغييرات تتجاوز إعدادات الثيم المعتادة",
-];
-
 const process = [
   {
-    title: "فهم المتجر",
-    description: "نراجع المنتجات والجمهور والهوية والثيم الحالي.",
+    title: "مراجعة المتجر",
+    description: "نفهم حالة المتجر والمشكلة والنتيجة المطلوبة.",
   },
   {
-    title: "تحديد الاحتياج",
-    description: "نراجع الصفحة الرئيسية والأقسام والمنتجات وتجربة الجوال.",
-  },
-  {
-    title: "ترتيب الأولويات",
-    description: "نحدد ما يحتاج إلى تصميم وما يتطلب تعديلًا تقنيًا.",
+    title: "تحديد النطاق",
+    description: "نتفق على الصفحات والعناصر التي سيتم تحسينها.",
   },
   {
     title: "التنفيذ",
-    description: "نطبق التعديلات داخل المتجر والثيم.",
+    description: "نجهز المحتوى ونطبق تحسينات الواجهة المتفق عليها.",
   },
   {
-    title: "المراجعة",
-    description: "نجري QA على المقاسات والتفاعل وتجربة الجوال.",
+    title: "المراجعة والتسليم",
+    description: "نراجع المتجر على الجوال وسطح المكتب قبل التسليم.",
   },
-];
-
-const usuallyIncluded = [
-  "إعداد المتجر",
-  "تنظيم واجهة المتجر",
-  "تحسينات Responsive",
-  "هيكلة الصفحة الرئيسية",
-  "تحسين عرض المنتجات",
-  "الاتساق البصري",
-  "تعديلات الثيم الأساسية",
-];
-
-const scopedSeparately = [
-  "JavaScript متقدم",
-  "مكونات مخصصة",
-  "تطوير Twilight",
-  "ربط خدمات خارجية",
-  "منطق متقدم ومخصص داخل الثيم",
-];
-
-const startingRequirements = [
-  "رابط المتجر إن كان قائمًا",
-  "نوع الثيم",
-  "الهوية البصرية إن كانت متوفرة",
-  "المنتجات أو الأقسام الرئيسية",
-  "أمثلة مرجعية إن كانت متوفرة",
-  "أهم المشاكل الحالية",
-  "أي متطلبات خاصة",
 ];
 
 const faqs = [
@@ -212,37 +139,14 @@ const faqs = [
   {
     question: "هل يمكن تنفيذ تعديلات برمجية؟",
     answer:
-      "نعم. يمكن تنفيذ Custom CSS وJavaScript حسب احتياج المشروع، بينما تُقيّم التعديلات المتقدمة ويُحدد نطاقها بصورة مستقلة.",
+      "نعم، لكن التعديلات التي تحتاج إلى كود أو سلوك مخصص تندرج ضمن خدمة تطوير الثيم ويُحدد نطاقها بعد المراجعة.",
   },
   {
     question: "هل يمكن العمل على متجر قائم؟",
     answer:
       "نعم. يمكن مراجعة متجر قائم، وإعادة ترتيب واجهته، وتحسين الثيم وتجربة الاستخدام دون البدء من الصفر.",
   },
-  {
-    question: "هل يمكن تطوير ثيم سلة كامل من الصفر؟",
-    answer:
-      "يمكن تطوير ثيم كامل من الصفر حسب نطاق المشروع، لكنه يندرج ضمن خدمة تطوير الثيم التقني ويُحدد بعد مراجعة المتطلبات بالتفصيل.",
-  },
 ];
-
-function CheckList({ items, inverse = false }: { items: string[]; inverse?: boolean }) {
-  return (
-    <ul className="mt-6 grid gap-3">
-      {items.map((item) => (
-        <li key={item} className="flex gap-3 leading-7">
-          <span
-            aria-hidden="true"
-            className={`mt-2.5 size-2 shrink-0 rounded-full ${inverse ? "bg-cyan" : "bg-blue"}`}
-          />
-          <span className={inverse ? "text-slate-300" : "text-slate-700"} dir="auto">
-            {item}
-          </span>
-        </li>
-      ))}
-    </ul>
-  );
-}
 
 export default async function SallaStoreDesignPage() {
   const [sho9, ipple, alkahwaElbeshia] = await Promise.all([
@@ -494,8 +398,8 @@ export default async function SallaStoreDesignPage() {
             <SectionHeading
               id="included-heading"
               eyebrow="نطاق التنفيذ"
-              title="ما الذي يمكن أن يشمله تصميم وتطوير متجر سلة؟"
-              description="تجمع الخدمة بين تجهيز المتجر وتصميم واجهته وتخصيصه بما يناسب هوية العلامة التجارية. ويُحدد النطاق النهائي وفق حالة المتجر والثيم والمتطلبات."
+              title="ما الذي يمكن تحسينه في متجرك؟"
+              description="يتحدد النطاق حسب حالة المتجر، لكن التركيز يبقى على وضوح الواجهة وسهولة التصفح وجاهزية المحتوى."
             />
             <ul className="mt-10 grid gap-px overflow-hidden rounded-[1.5rem] border border-navy/10 bg-navy/10 sm:grid-cols-2 lg:grid-cols-3">
               {includedServices.map((item) => (
@@ -512,66 +416,34 @@ export default async function SallaStoreDesignPage() {
                 </li>
               ))}
             </ul>
-          </Container>
-        </section>
-
-        <section className="section-shell bg-cream" aria-labelledby="connected-services-heading">
-          <Container>
-            <SectionHeading
-              id="connected-services-heading"
-              eyebrow="خدمات مرتبطة"
-              title="خدمات مكملة ضمن مشروع المتجر"
-              description="قد تكون بعض الاحتياجات جزءًا من مشروع تجهيز متجر سلة أو تحسينه، لذلك تُحدد ضمن نطاق العمل بحسب متطلبات المشروع."
-            />
-            <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            <div className="mt-8 grid gap-4 lg:grid-cols-2">
               {connectedServiceGroups.map((group) => (
                 <article
                   key={group.id}
                   id={group.id}
-                  className="scroll-mt-24 rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8"
+                  className="scroll-mt-24 rounded-[1.1rem] border border-navy/10 bg-white p-5 sm:p-6"
                   aria-labelledby={`${group.id}-title`}
                 >
-                  <p className="eyebrow text-blue">{group.eyebrow}</p>
-                  <h3 id={`${group.id}-title`} className="mt-4 text-2xl font-extrabold text-navy">
+                  <p className="text-sm font-semibold text-blue">{group.eyebrow}</p>
+                  <h3 id={`${group.id}-title`} className="mt-2 text-xl font-semibold text-navy">
                     {group.title}
                   </h3>
-                  <p className="mt-4 leading-8 text-slate-700">{group.description}</p>
-                  <CheckList items={group.items} />
+                  <p className="mt-3 leading-7 text-slate-600">{group.description}</p>
                 </article>
               ))}
             </div>
-          </Container>
-        </section>
-
-        <section className="section-shell bg-cream" aria-labelledby="design-development-heading">
-          <Container>
-            <SectionHeading
-              id="design-development-heading"
-              eyebrow="تحديد الاحتياج"
-              title="متى يكون المطلوب تصميمًا أو تخصيصًا أو تطوير ثيم؟"
-              description="تصميم المتجر يهتم بالشكل والهيكلة وتجربة الاستخدام، وتخصيص المتجر يكيّف الثيم القائم، أما تطوير الثيم فيشمل العمل البرمجي الأعمق."
-            />
-            <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              <article className="rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8">
-                <p className="eyebrow text-blue">تصميم وتجهيز المتجر</p>
-                <h3 className="mt-4 text-2xl font-extrabold text-navy">يركز على الواجهة وتجربة الاستخدام</h3>
-                <CheckList items={designScope} />
-              </article>
-              <article className="rounded-[1.5rem] bg-navy p-6 text-cream sm:p-8">
-                <p className="eyebrow text-cyan">تطوير الثيم</p>
-                <h3 className="mt-4 text-2xl font-extrabold">مناسب عندما يتطلب التعديل منطقًا أو سلوكًا مخصصًا</h3>
-                <CheckList items={developmentScope} inverse />
-                <div className="mt-7 border-t border-white/15 pt-5 text-sm leading-7 text-slate-400">
-                  <p>تطوير الثيم التقني خدمة مستقلة يتم تحديدها حسب المتطلبات.</p>
-                  <Link
-                    href="/services/salla-theme-customization"
-                    className="link-underline mt-3 inline-flex font-bold text-cyan"
-                  >
-                    تفاصيل تخصيص وتطوير ثيمات سلة ←
-                  </Link>
-                </div>
-              </article>
-            </div>
+            <aside className="mt-8 flex flex-col gap-4 rounded-[1.1rem] bg-navy p-5 text-cream sm:flex-row sm:items-center sm:justify-between sm:p-6">
+              <div>
+                <p className="font-semibold">هل المطلوب يحتاج إلى برمجة داخل الثيم؟</p>
+                <p className="mt-2 leading-7 text-slate-300">
+                  التعديلات التي تتجاوز الشكل والتنظيم تنتقل إلى خدمة تطوير الثيم.
+                </p>
+              </div>
+              <Link href="/services/salla-theme-customization" className="button-primary shrink-0">
+                اعرف الفرق
+                <span aria-hidden="true">←</span>
+              </Link>
+            </aside>
           </Container>
         </section>
 
@@ -584,7 +456,7 @@ export default async function SallaStoreDesignPage() {
               description="خطوات عملية وواضحة لتحديد المطلوب قبل التنفيذ ومراجعته بعد الإنجاز."
               inverse
             />
-            <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {process.map((step, index) => (
                 <li key={step.title} className="rounded-[1.25rem] border border-white/15 bg-white/5 p-5">
                   <span className="font-mono text-sm font-bold text-cyan" dir="ltr">
@@ -595,50 +467,6 @@ export default async function SallaStoreDesignPage() {
                 </li>
               ))}
             </ol>
-          </Container>
-        </section>
-
-        <section className="section-shell bg-mist" aria-labelledby="scope-heading">
-          <Container>
-            <SectionHeading
-              id="scope-heading"
-              eyebrow="حدود واضحة"
-              title="ما الذي تشمله الخدمة وما الذي يُحدد حسب المشروع؟"
-              description="بعض البنود جزء معتاد من تجهيز الواجهة، والبنود التقنية المتقدمة تحتاج تقييم ونطاق مستقل."
-            />
-            <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              <article className="rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8">
-                <h3 className="text-2xl font-extrabold text-navy">عادةً ضمن الخدمة</h3>
-                <CheckList items={usuallyIncluded} />
-              </article>
-              <article className="rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8">
-                <h3 className="text-2xl font-extrabold text-navy">يتحدد حسب نطاق المشروع</h3>
-                <CheckList items={scopedSeparately} />
-              </article>
-            </div>
-          </Container>
-        </section>
-
-        <section className="section-shell bg-cream" aria-labelledby="requirements-heading">
-          <Container>
-            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-              <SectionHeading
-                id="requirements-heading"
-                eyebrow="قبل البدء"
-                title="ما المعلومات المطلوبة قبل البدء؟"
-                description="تساعدني هذه المعلومات على فهم حالة المتجر وتحديد المطلوب بدقة أكبر."
-              />
-              <ul className="grid gap-3 sm:grid-cols-2">
-                {startingRequirements.map((item, index) => (
-                  <li key={item} className="flex min-h-20 items-center gap-4 rounded-[1.1rem] border border-navy/10 bg-white p-5">
-                    <span className="font-mono text-sm font-bold text-blue" dir="ltr">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-bold leading-7 text-navy">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </Container>
         </section>
 

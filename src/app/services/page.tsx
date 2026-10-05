@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { ServicePackages } from "@/components/sections/service-packages";
 import { ServiceCard } from "@/components/services/service-card";
 import { portfolio, siteUrl, websiteId } from "@/data/portfolio";
 import {
@@ -127,7 +126,7 @@ export default function ServicesPage() {
                   خدمات متاجر سلة حسب احتياج مشروعك
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
-                  أعمل عبر مسارين واضحين: تصميم وتجهيز المتجر، أو تخصيص وتطوير الثيم. وتدخل بقية الاحتياجات كقدرات ضمن المسار الأنسب.
+                  اختر بين تصميم وتجهيز المتجر، أو تعديل الثيم برمجيًا. نحدد المسار المناسب من المشكلة التي تريد حلها.
                 </p>
               </div>
 
@@ -206,7 +205,6 @@ export default function ServicesPage() {
           </Container>
         </section>
 
-        <ServicePackages />
       </main>
       <SiteFooter />
     </>

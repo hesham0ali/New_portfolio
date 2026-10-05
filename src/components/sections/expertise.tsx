@@ -7,7 +7,6 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { portfolio } from "@/data/portfolio";
 import {
   primaryServices,
-  serviceCapabilities,
   uncertainServiceMessage,
 } from "@/data/service-model";
 import { createWhatsAppServiceUrl } from "@/lib/whatsapp";
@@ -20,7 +19,7 @@ export function Expertise() {
           <SectionHeading
             eyebrow="الخدمتان الأساسيتان"
             title="ابدأ من احتياج متجرك، ثم نحدد نطاق التنفيذ"
-            description="المسار الأول لتصميم وتجهيز تجربة المتجر، والثاني للتخصيص والتطوير التقني داخل الثيم. أما الإعداد والتتبع والتكاملات والدعم فتدخل كقدرات ضمن المسار المناسب."
+            description="اختر تصميم وتجهيز المتجر إذا كان المطلوب متعلقًا بالشكل والتنظيم، أو تطوير الثيم إذا كان التعديل يحتاج إلى برمجة."
           />
         </Reveal>
 
@@ -56,25 +55,6 @@ export function Expertise() {
             </StaggerItem>
           ))}
         </Stagger>
-
-        <Reveal>
-          <section className="mt-14 border-t border-navy/10 pt-10" aria-labelledby="home-capabilities-heading">
-            <div className="max-w-3xl">
-              <p className="eyebrow text-blue">قدرات تحت الخدمتين</p>
-              <h3 id="home-capabilities-heading" className="mt-4 text-2xl font-semibold leading-[1.45] text-navy sm:text-3xl">
-                احتياجات مكملة تُضم إلى نطاق المشروع عند الحاجة
-              </h3>
-            </div>
-            <div className="mt-8 grid gap-px overflow-hidden rounded-[1.1rem] border border-navy/10 bg-navy/10 sm:grid-cols-2 lg:grid-cols-4">
-              {serviceCapabilities.map((capability) => (
-                <article key={capability.title} className="bg-white p-5 sm:p-6">
-                  <h4 className="font-semibold leading-7 text-navy">{capability.title}</h4>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{capability.description}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-        </Reveal>
 
         <div className="mt-8 flex flex-col gap-4 rounded-[1rem] border border-blue/20 bg-white p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
           <div>

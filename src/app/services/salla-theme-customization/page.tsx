@@ -44,84 +44,53 @@ export const metadata: Metadata = {
 };
 
 const customizationNeeds = [
-  "إعدادات الثيم الحالية لا تكفي لتنفيذ التصميم المطلوب.",
-  "تحتاج إلى تعديل شكل عنصر موجود أو سلوكه.",
-  "تحتاج إلى Custom CSS يتجاوز الخيارات المتاحة.",
-  "تحتاج إلى JavaScript لسلوك تفاعلي أو تجربة مخصصة.",
-  "تحتاج إلى Component جديد يمكن التحكم فيه من إعدادات الثيم.",
-  "تحتاج إلى تحسين Responsive لمقاسات أو Sections محددة.",
-  "لديك ثيم قائم وتريد تطويره بدلًا من تغييره بالكامل.",
+  "لا توفر إعدادات الثيم الشكل أو الترتيب المطلوب.",
+  "تريد تغيير طريقة عمل عنصر موجود في الواجهة.",
+  "تحتاج إلى قسم جديد لعرض المحتوى أو المنتجات.",
+  "توجد مشكلة في عرض أجزاء من المتجر على الجوال.",
+  "تريد تطوير الثيم الحالي بدل استبداله بالكامل.",
 ];
 
 const implementationCapabilities = [
   {
-    title: "Custom Salla Theme Development",
-    description: "تطوير Theme مخصص لمنصة سلة بما يتناسب مع تصميم وهوية المشروع عندما يكون ذلك مدعومًا ومناسبًا للنطاق.",
+    title: "تغيير شكل عناصر لا تدعمها الإعدادات",
+    description: "تنفيذ التعديل برمجيًا داخل الثيم عندما لا تكفي الخيارات الجاهزة.",
   },
   {
-    title: "Theme Customization",
-    description: "تعديل وتطوير Theme قائم بدل بناء Theme جديد عندما يكون ذلك هو الحل الأنسب.",
+    title: "إضافة سلوك أو تفاعل مخصص",
+    description: "تحسين طريقة عمل عنصر في الواجهة باستخدام JavaScript عند الحاجة.",
   },
   {
-    title: "Custom Sections",
-    description: "تطوير Sections مخصصة يمكن استخدامها داخل واجهات المتجر.",
+    title: "بناء أقسام مخصصة للواجهة",
+    description: "إضافة Sections جديدة لعرض المحتوى أو المنتجات بالطريقة المطلوبة.",
   },
   {
-    title: "Frontend Development",
-    description: "تنفيذ التعديلات المطلوبة باستخدام التقنيات المناسبة لبيئة Salla Themes.",
+    title: "حل مشاكل العرض على الجوال",
+    description: "معالجة مشاكل المقاسات والترتيب داخل الثيم بدل تركها تعطل التصفح.",
   },
   {
-    title: "CSS & JavaScript Customization",
-    description: "تنفيذ تعديلات Frontend مخصصة عندما لا تكون خيارات الثيم الافتراضية كافية.",
+    title: "تطوير الثيم الحالي",
+    description: "تعديل الموجود عندما يكون مناسبًا بدل بناء ثيم جديد دون حاجة.",
   },
   {
-    title: "Frontend fixes داخل الثيم",
-    description: "تحليل وحل مشاكل الواجهة والسلوك المتجاوب التي تقع ضمن نطاق تطوير الثيم.",
+    title: "تطوير ثيم مخصص عند الحاجة",
+    description: "نطاق مستقل للمشروعات التي لا يمكن تنفيذ متطلباتها على الثيم الحالي.",
   },
 ];
 
 const integrationServices = [
   {
-    title: "Custom Store Features",
-    description: "تطوير خصائص أو واجهات إضافية حسب احتياج المتجر وإمكانيات منصة سلة.",
+    title: "خاصية إضافية داخل المتجر",
+    description: "تُراجع الفكرة أولًا للتأكد من إمكانية تنفيذها داخل سلة.",
   },
   {
-    title: "External Integrations",
-    description: "ربط المتجر مع خدمات وأنظمة خارجية عندما تكون APIs أو Integrations المناسبة متاحة.",
+    title: "ربط خدمة خارجية",
+    description: "يُنفذ الربط عندما تتوفر الصلاحيات وأداة التكامل المناسبة.",
   },
   {
-    title: "API Integration",
-    description: "تنفيذ تكاملات باستخدام APIs عند الحاجة وضمن الحدود الفنية المتاحة.",
+    title: "أتمتة خطوة متكررة",
+    description: "تُقيّم حسب الأدوات المتاحة وحدود منصة سلة قبل اعتمادها.",
   },
-  {
-    title: "Automation",
-    description: "ربط بعض العمليات مع Automation Tools عندما يكون ذلك مناسبًا لطبيعة المشروع.",
-  },
-  {
-    title: "Technical Troubleshooting",
-    description: "تحليل وحل المشاكل التقنية المتعلقة بواجهة المتجر أو التكاملات التي تقع ضمن نطاق التطوير.",
-  },
-];
-
-const twilightExamples = [
-  "Custom promotional section",
-  "Structured content block",
-  "Custom product أو content presentation",
-  "Configurable visual section",
-];
-
-const storeDesignScope = [
-  "هيكلة المتجر والصفحات",
-  "طريقة عرض المحتوى والمنتجات",
-  "التسلسل البصري",
-  "UX وتجهيز واجهة المتجر",
-];
-
-const themeCustomizationScope = [
-  "تعديلات على مستوى الكود",
-  "CSS وJavaScript",
-  "سلوكيات مخصصة",
-  "Custom Components وTwilight",
 ];
 
 const process = [
@@ -138,12 +107,8 @@ const process = [
     description: "CSS، JavaScript، تعديل Component، أو Twilight حسب الحاجة.",
   },
   {
-    title: "التنفيذ والاختبار",
-    description: "نطبق التعديل ونراجع السلوك على المقاسات المناسبة.",
-  },
-  {
-    title: "التسليم والتوضيح",
-    description: "نوضح ما تم تعديله وأي نقاط مهمة للصيانة أو الاستخدام.",
+    title: "التنفيذ والمراجعة",
+    description: "نطبق التعديل ونراجعه على المقاسات المناسبة قبل التسليم.",
   },
 ];
 
@@ -153,20 +118,10 @@ const existingThemeReasons = [
   "الهدف هو تجنب تعقيد إعادة بناء غير ضرورية.",
 ];
 
-const commonCustomization = [
-  "CSS",
-  "تعديلات Frontend على الـ Layout",
-  "Responsive fixes",
-  "تحسينات JavaScript",
-  "تعديلات على Components موجودة",
-];
-
-const projectDependent = [
-  "Custom Twilight Components",
-  "سلوكيات مخصصة معقدة",
-  "إعادة هيكلة كبيرة للثيم",
-  "تطوير ثيم كامل من الصفر",
-  "ربط خدمات خارجية",
+const technicalMethods = [
+  "تعديل الشكل والمسافات باستخدام CSS",
+  "إضافة تفاعل أو سلوك باستخدام JavaScript",
+  "بناء أقسام قابلة للتحكم باستخدام Twilight عند الحاجة",
 ];
 
 const faqs = [
@@ -186,19 +141,9 @@ const faqs = [
       "عندما نحتاج إلى Component مخصص يندمج داخل الثيم ويتيح للتاجر التحكم في المحتوى أو الإعدادات المناسبة من لوحة الثيم.",
   },
   {
-    question: "هل يمكن التحكم في الـComponent المخصص؟",
-    answer:
-      "يمكن في الحالات المناسبة إضافة إعدادات محددة للـComponent، ويُحدد مستوى التحكم حسب طبيعته ومتطلبات المشروع.",
-  },
-  {
     question: "هل يمكن تنفيذ تعديل دون تغيير الثيم بالكامل؟",
     answer:
       "نعم، وهذا غالبًا هو الخيار العملي إذا كان الثيم الحالي مناسبًا وكانت التعديلات محددة في الشكل أو السلوك.",
-  },
-  {
-    question: "هل يمكن بناء ثيم كامل من الصفر؟",
-    answer:
-      "يمكن ذلك حسب متطلبات المشروع، لكنه نطاق مستقل ولا يُفترض تلقائيًا ضمن خدمة التخصيص الحالية.",
   },
 ];
 
@@ -331,12 +276,12 @@ export default async function SallaThemeCustomizationPage() {
 
             <div className="mt-9 grid items-end gap-10 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)] lg:gap-16">
               <div>
-                <p className="eyebrow text-cyan">تطوير وبرمجة ثيمات سلة</p>
+                <p className="eyebrow text-cyan">حل تعديلات تتجاوز إعدادات الثيم</p>
                 <h1 className="mt-5 max-w-5xl text-balance text-4xl leading-[1.3] font-extrabold sm:text-5xl lg:text-6xl lg:leading-[1.25]">
-                  تطوير ثيم سلة وبرمجته بتخصيصات تتجاوز الخيارات الجاهزة
+                  تطوير ثيم سلة بتعديلات تتجاوز الخيارات الجاهزة
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
-                  أطور الثيمات الحالية، وأنفذ تخصيصات CSS وJavaScript، وأبني Sections وComponents مخصصة باستخدام Twilight عندما يحتاج المتجر إلى Frontend أعمق من الإعدادات العادية.
+                  أغيّر شكل أو سلوك عناصر لا توفرها الإعدادات الجاهزة. ويتم التنفيذ برمجيًا عند الحاجة، مع توضيح ما تم تغييره داخل الثيم.
                 </p>
                 <a
                   href={themeInquiryUrl}
@@ -353,7 +298,7 @@ export default async function SallaThemeCustomizationPage() {
               <aside className="rounded-[1.5rem] border border-white/15 bg-white/5 p-6 sm:p-7">
                 <p className="eyebrow text-cyan">نطاق الخدمة</p>
                 <p className="mt-4 text-lg leading-8 text-slate-300">
-                  تعديل الواجهة، تحسين الـ Responsive، إضافة سلوكيات مخصصة، وبناء Components قابلة للإدارة من داخل الثيم.
+                  تعديل الواجهة، حل مشاكل الجوال، وإضافة أقسام أو تفاعلات مخصصة داخل المتجر.
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2" aria-label="تقنيات التخصيص">
                   {["CSS", "JavaScript", "Twilight"].map((item) => (
@@ -464,9 +409,9 @@ export default async function SallaThemeCustomizationPage() {
           <Container>
             <SectionHeading
               id="implementation-heading"
-              eyebrow="داخل الثيم"
-              title="ما الذي يمكن تنفيذه داخل الثيم؟"
-              description="يركز التنفيذ على Frontend الثيم وإمكانياته، ويُحدد النطاق النهائي بعد مراجعة المطلوب والثيم الحالي."
+              eyebrow="النتيجة أولًا"
+              title="ما المشكلة التي يمكن أن يحلها تطوير الثيم؟"
+              description="نبدأ بما تريد تغييره في المتجر، ثم نختار أبسط طريقة تقنية لتنفيذه."
             />
             <ul className="mt-10 grid gap-px overflow-hidden rounded-[1.5rem] border border-navy/10 bg-navy/10 sm:grid-cols-2 lg:grid-cols-3">
               {implementationCapabilities.map((item) => (
@@ -483,94 +428,6 @@ export default async function SallaThemeCustomizationPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 max-w-3xl text-sm leading-7 text-slate-600">
-              الخدمة لا تفترض تطوير Backend أو تطبيقات أو تكاملات خارجية غير مؤكدة؛ أي ربط خارجي يتم تقييمه كنطاق منفصل.
-            </p>
-          </Container>
-        </section>
-
-        <section id="integrations-heading" className="section-shell scroll-mt-20 bg-cream" aria-labelledby="integrations-title">
-          <Container>
-            <SectionHeading
-              id="integrations-title"
-              eyebrow="التطوير والتكاملات"
-              title="خصائص وتكاملات حسب الإمكانيات المتاحة"
-              description="يُراجع أي تكامل أو Automation فنيًا قبل اعتماده، لأن التنفيذ يعتمد على إمكانيات منصة سلة وتوفر APIs أو أدوات ربط مناسبة."
-            />
-            <div className="mt-10 grid gap-px overflow-hidden rounded-[1.5rem] border border-navy/10 bg-navy/10 sm:grid-cols-2 lg:grid-cols-3">
-              {integrationServices.map((item) => (
-                <article key={item.title} className="min-h-40 bg-white p-5 sm:p-6">
-                  <div className="flex items-center gap-3">
-                    <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-blue" />
-                    <h3 className="font-bold leading-7 text-navy" dir="auto">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p className="mt-3 text-sm leading-7 text-slate-600" dir="auto">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-            <p className="mt-6 max-w-3xl text-sm leading-7 text-slate-600">
-              لا يتم الوعد بأي تكامل قبل التأكد من توفر الصلاحيات، التوثيق، وحدود التنفيذ المناسبة داخل بيئة سلة.
-            </p>
-          </Container>
-        </section>
-
-        <section className="section-shell bg-navy text-cream" aria-labelledby="twilight-heading">
-          <Container>
-            <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-              <div>
-                <SectionHeading
-                  id="twilight-heading"
-                  eyebrow="Twilight Components"
-                  title="عندما تحتاج إلى Component مخصص وقابل للتحكم"
-                  description="يساعد Twilight على دمج Component مخصص داخل الثيم مع إعدادات تتيح للتاجر التحكم في المحتوى أو الخصائص المطلوبة."
-                  inverse
-                />
-                <p className="mt-7 max-w-2xl border-s-2 border-cyan ps-5 text-lg leading-8 text-cream">
-                  يمكن بناء بعض الـComponents بحيث يسهل التحكم فيها من إعدادات الثيم دون الرجوع إلى الكود مع كل تعديل.
-                </p>
-                <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-400">
-                  يُحدد مستوى التحكم حسب طبيعة الـComponent؛ فليست كل التخصيصات مناسبة للتحويل إلى إعدادات قابلة للتعديل.
-                </p>
-              </div>
-              <div className="rounded-[1.5rem] border border-white/15 bg-white/5 p-6 sm:p-8">
-                <h3 className="text-2xl font-extrabold">أمثلة عملية</h3>
-                <CheckList items={twilightExamples} inverse />
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        <section className="section-shell bg-cream" aria-labelledby="comparison-heading">
-          <Container>
-            <SectionHeading
-              id="comparison-heading"
-              eyebrow="اختيار الخدمة المناسبة"
-              title="ما الفرق بين تصميم المتجر وتخصيصه وتطوير الثيم؟"
-              description="تصميم المتجر يحدد الشكل والهيكلة، وتخصيص المتجر يكيّف الثيم القائم، بينما ينفذ تطوير الثيم تغييرات Frontend أعمق باستخدام الكود."
-            />
-            <div className="mt-10 grid gap-5 lg:grid-cols-2">
-              <article className="rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8">
-                <p className="eyebrow text-blue">تصميم المتجر</p>
-                <h3 className="mt-4 text-2xl font-extrabold text-navy">الهيكلة، العرض، وتجربة الاستخدام</h3>
-                <CheckList items={storeDesignScope} />
-                <Link
-                  href="/services/salla-store-design"
-                  className="button-secondary mt-7"
-                >
-                  تصميم وتطوير متجر سلة
-                  <span aria-hidden="true">←</span>
-                </Link>
-              </article>
-              <article className="rounded-[1.5rem] bg-navy p-6 text-cream sm:p-8">
-                <p className="eyebrow text-cyan">تخصيص وتطوير الثيم</p>
-                <h3 className="mt-4 text-2xl font-extrabold">تنفيذ تغييرات تقنية داخل الـ Theme</h3>
-                <CheckList items={themeCustomizationScope} inverse />
-              </article>
-            </div>
           </Container>
         </section>
 
@@ -582,7 +439,7 @@ export default async function SallaThemeCustomizationPage() {
               title="طريقة تنفيذ التعديلات"
               description="تساعد كل خطوة على اختيار الحل الأنسب قبل الانتقال إلى تطوير أعمق داخل الثيم."
             />
-            <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {process.map((step, index) => (
                 <li key={step.title} className="rounded-[1.25rem] border border-navy/10 bg-white p-5">
                   <span className="font-mono text-sm font-bold text-blue" dir="ltr">
@@ -598,45 +455,50 @@ export default async function SallaThemeCustomizationPage() {
           </Container>
         </section>
 
-        <section className="section-shell bg-cream" aria-labelledby="existing-theme-heading">
-          <Container>
-            <div className="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-              <SectionHeading
-                id="existing-theme-heading"
-                eyebrow="الحل العملي أولًا"
-                title="هل أحتاج إلى بناء ثيم جديد من الصفر؟"
-                description="ليس دائمًا. يكون تعديل الثيم الحالي هو الخيار العملي عندما يدعم أساسه المتطلبات المطلوبة."
-              />
-              <article className="rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8">
-                <h3 className="text-2xl font-extrabold text-navy">يكون تعديل الثيم الحالي مناسبًا عندما:</h3>
-                <CheckList items={existingThemeReasons} />
-                <p className="mt-7 border-t border-navy/10 pt-5 text-sm leading-7 text-slate-600">
-                  تطوير ثيم كامل من الصفر نطاق مستقل، ويُقترح فقط عندما تستدعي متطلبات المشروع ذلك.
-                </p>
-              </article>
-            </div>
-          </Container>
-        </section>
-
-        <section className="section-shell bg-navy text-cream" aria-labelledby="scope-heading">
+        <section className="section-shell bg-navy text-cream" aria-labelledby="technical-details-heading">
           <Container>
             <SectionHeading
-              id="scope-heading"
-              eyebrow="حدود التنفيذ"
-              title="ما الذي يُحدد حسب كل مشروع؟"
-              description="يفصل النطاق بين التخصيصات المعتادة والتطوير الذي يحتاج إلى مراجعة فنية وتسعير مستقل."
+              id="technical-details-heading"
+              eyebrow="التفاصيل التقنية بعد تحديد المطلوب"
+              title="نطوّر الموجود أولًا، ونستخدم الكود عند الحاجة"
+              description="الهدف هو تنفيذ التغيير المطلوب بأبسط حل مناسب، مع توضيح ما يحتاج إلى نطاق مستقل."
               inverse
             />
             <div className="mt-10 grid gap-5 lg:grid-cols-2">
               <article className="rounded-[1.5rem] border border-white/15 bg-white/5 p-6 sm:p-8">
-                <h3 className="text-2xl font-extrabold">تخصيصات شائعة</h3>
-                <CheckList items={commonCustomization} inverse />
+                <h3 className="text-2xl font-extrabold">متى يكفي تعديل الثيم الحالي؟</h3>
+                <CheckList items={existingThemeReasons} inverse />
+                <p className="mt-6 text-sm leading-7 text-slate-400">
+                  بناء ثيم كامل من الصفر نطاق مستقل، ولا يُقترح إلا إذا احتاجه المشروع فعلًا.
+                </p>
               </article>
-              <article className="rounded-[1.5rem] border border-white/15 bg-white/5 p-6 sm:p-8">
-                <h3 className="text-2xl font-extrabold">يتحدد حسب المشروع</h3>
-                <CheckList items={projectDependent} inverse />
+              <article id="twilight-heading" className="scroll-mt-24 rounded-[1.5rem] border border-white/15 bg-white/5 p-6 sm:p-8">
+                <h3 className="text-2xl font-extrabold">كيف تُنفذ التعديلات؟</h3>
+                <CheckList items={technicalMethods} inverse />
               </article>
             </div>
+
+            <div id="integrations-heading" className="scroll-mt-24 pt-12">
+              <h3 className="text-2xl font-extrabold">الخصائص والربط الخارجي تُراجع قبل التنفيذ</h3>
+              <div className="mt-6 grid gap-4 lg:grid-cols-3">
+                {integrationServices.map((item) => (
+                  <article key={item.title} className="rounded-[1.1rem] border border-white/15 bg-white/5 p-5">
+                    <h4 className="font-semibold text-cream">{item.title}</h4>
+                    <p className="mt-3 text-sm leading-7 text-slate-300">{item.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <aside className="mt-8 flex flex-col gap-4 rounded-[1.1rem] border border-white/15 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+              <p className="leading-7 text-slate-300">
+                إذا كانت المشكلة في ترتيب المحتوى أو شكل المتجر فقط، ابدأ بخدمة تصميم وتجهيز المتجر.
+              </p>
+              <Link href="/services/salla-store-design" className="button-primary shrink-0">
+                خدمة تصميم المتجر
+                <span aria-hidden="true">←</span>
+              </Link>
+            </aside>
           </Container>
         </section>
 
@@ -672,7 +534,7 @@ export default async function SallaThemeCustomizationPage() {
                 هل يحتاج ثيم متجرك إلى تخصيص بسيط أم تطوير برمجي أعمق؟
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white">
-                أرسل رابط المتجر ووصفًا مختصرًا للمطلوب لنحدد هل الحل Custom CSS، أو JavaScript، أو تعديل Component، أو تطويرًا أعمق داخل الثيم.
+                أرسل رابط المتجر ووصفًا مختصرًا للنتيجة المطلوبة، وسأحدد معك مستوى التعديل والطريقة الأنسب لتنفيذه.
               </p>
               <a
                 href={themeInquiryUrl}

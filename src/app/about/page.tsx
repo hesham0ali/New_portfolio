@@ -55,9 +55,9 @@ const specializations = [
   },
   {
     number: "03",
-    title: "Components مخصصة باستخدام Twilight",
+    title: "أقسام مخصصة قابلة للتحكم",
     description:
-      "بناء Sections مخصصة وقابلة للتحكم من إعدادات الثيم عندما يحتاج المتجر حلًا يتجاوز المكونات الجاهزة.",
+      "بناء أقسام جديدة يمكن إدارتها من إعدادات الثيم عندما لا تكفي الخيارات الجاهزة، باستخدام Twilight عند الحاجة.",
     href: "/services/salla-theme-customization#twilight-heading",
     linkLabel: "اعرف أكتر عن Twilight Components",
   },
@@ -69,16 +69,6 @@ const workingPrinciples = [
   "أفضل تعديل الموجود لما يكون مناسب بدل إعادة البناء بدون داعي.",
   "أراجع التنفيذ على الموبايل والديسكتوب.",
   "أحافظ على إن الحل يبقى واضح وقابل للصيانة قدر الإمكان.",
-];
-
-const toolkit = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "Salla Themes",
-  "Twilight",
-  "Responsive Frontend",
-  "Git / GitHub",
 ];
 
 const audiences = [
@@ -164,7 +154,7 @@ export default async function AboutPage() {
                   هشام علي: الخبرة، التخصص، وطريقة العمل
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
-                  أنا مطور واجهات أركز على متاجر سلة، من تنظيم تجربة المتجر وتصميمها إلى تنفيذ تعديلات Frontend باستخدام CSS وJavaScript وTwilight عند الحاجة.
+                  أركز على تنظيم وتصميم واجهات متاجر سلة، وأنفذ التعديلات البرمجية باستخدام CSS وJavaScript وTwilight عندما لا تكفي الإعدادات الجاهزة.
                 </p>
                 <p className="mt-4 max-w-3xl leading-7 text-slate-400">
                   أركز بشكل أساسي على المتاجر الإلكترونية الموجهة للسوق السعودي والعربي.
@@ -267,39 +257,6 @@ export default async function AboutPage() {
           </Container>
         </section>
 
-        <section className="section-shell bg-mist" aria-labelledby="toolkit-heading">
-          <Container>
-            <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-              <SectionHeading
-                id="toolkit-heading"
-                eyebrow="Technical toolkit"
-                title="الأدوات والتقنيات اللي بستخدمها"
-                description="أستخدم التقنية المناسبة لتنفيذ الواجهة داخل سلة، مع الحفاظ على بساطة الحل وقابليته للصيانة."
-              />
-              <div>
-                <ul className="grid gap-3 sm:grid-cols-2" aria-label="التقنيات الأساسية">
-                  {toolkit.map((item) => (
-                    <li
-                      key={item}
-                      className="flex min-h-16 items-center gap-3 rounded-[1rem] border border-navy/10 bg-white px-5 font-bold text-navy"
-                      dir="auto"
-                    >
-                      <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-blue" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-5 rounded-[1.25rem] border border-navy/10 bg-white p-6">
-                  <p className="font-extrabold text-navy">دعم اتجاه الـ UI عند الحاجة</p>
-                  <p className="mt-3 leading-8 text-slate-700">
-                    أستخدم Google Stitch وClaude Design للمساعدة في تكوين اتجاهات أو Mockups بسيطة للواجهة عند الحاجة، ثم أنفذ الحل المناسب مباشرة داخل ثيم سلة.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
         <section className="section-shell bg-cream" aria-labelledby="real-work-heading">
           <Container>
             <SectionHeading
@@ -352,23 +309,6 @@ export default async function AboutPage() {
                 </div>
               </div>
             </article>
-          </Container>
-        </section>
-
-        <section className="section-shell bg-mist" aria-labelledby="salla-focus-heading">
-          <Container>
-            <div className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-              <SectionHeading
-                id="salla-focus-heading"
-                eyebrow="Salla storefronts"
-                title="ليه تركيزي الأساسي على متاجر سلة؟"
-              />
-              <div className="rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8">
-                <p className="text-lg leading-9 text-slate-700">
-                  العمل على متجر سلة يجمع بين هيكلة الواجهة، الـ UI، تخصيص الـ Frontend، والتنفيذ التقني داخل الثيم. احتياجات كتير بتكون في المساحة بين إعدادات الثيم الجاهزة والتطوير المخصص بالكامل؛ ودوري هو تحديد المستوى الأنسب للتنفيذ وتطبيقه بدون تعقيد غير ضروري.
-                </p>
-              </div>
-            </div>
           </Container>
         </section>
 

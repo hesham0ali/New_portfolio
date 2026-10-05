@@ -82,7 +82,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   if (!project) notFound();
 
   const navigation = await getProjectNavigation(slug);
-  const { Content, metadata } = project;
+  const { metadata } = project;
   const isSho9 = metadata.slug === "sho9";
   const arabic = /[\u0600-\u06ff]/.test(
     `${metadata.summary} ${metadata.overview}`,
@@ -223,7 +223,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                       خبرة عملية في تصميم وتجهيز واجهة متجر سلة
                     </h2>
                     <p className="mt-4 leading-8 text-slate-700">
-                      يوضح مشروع {metadata.shortTitle} تنفيذ واجهة متجر حقيقي على منصة سلة، وتنظيم الأقسام والمحتوى بما يناسب طبيعة منتجاته. لا تنسب الصفحة نتائج تجارية غير موثقة.
+                      يوضح مشروع {metadata.shortTitle} تنفيذ واجهة متجر حقيقي على منصة سلة، وتنظيم الأقسام والمحتوى بما يناسب طبيعة منتجاته.
                     </p>
                   </section>
                 </Reveal>
@@ -246,12 +246,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                       </Link>
                     </div>
                   </section>
-                </Reveal>
-
-                <Reveal>
-                  <div className="mt-12 border-t border-navy/10 pt-1">
-                    <Content />
-                  </div>
                 </Reveal>
 
                 {metadata.gallery.length > 0 ? (

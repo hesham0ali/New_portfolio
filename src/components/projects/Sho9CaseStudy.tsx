@@ -5,20 +5,16 @@ import { createWhatsAppServiceUrl } from "@/lib/whatsapp";
 
 const demonstratedCapabilities = [
   {
-    title: "العمل داخل متجر سلة",
-    description: "المشروع منفذ على منصة Salla، والرابط المباشر للمتجر متاح للزيارة.",
+    title: "تنفيذ متجر حقيقي على سلة",
+    description: "يمكن زيارة المتجر ومراجعة الواجهة المنشورة مباشرة.",
   },
   {
-    title: "تصميم وتطوير الواجهة",
-    description: "نطاق الدور الموثق هو تصميم وتطوير المتجر من البداية للنهاية.",
+    title: "تصميم وتطوير من البداية للنهاية",
+    description: "شمل الدور تجهيز الواجهة وتنظيم المتجر وتنفيذ التعديلات المطلوبة.",
   },
   {
-    title: "تخصيص الثيم",
-    description: "بيانات المشروع تسجل تخصيص الثيم والعمل باستخدام CSS وJavaScript.",
-  },
-  {
-    title: "دعم مستمر",
-    description: "المشروع يتضمن متابعة وصيانة مستمرة وفق المعلومات المنشورة.",
+    title: "تخصيص ودعم مستمر",
+    description: "شمل العمل تخصيص الثيم باستخدام CSS وJavaScript، مع متابعة وصيانة مستمرة.",
   },
 ];
 
@@ -69,43 +65,8 @@ export function Sho9CaseStudy({
         <div className="rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8">
           <p className="text-lg leading-9 text-slate-700">{project.overview}</p>
           <p className="mt-5 leading-8 text-slate-600">
-            المتاح من بيانات المشروع يوضح المنصة، نطاق دور هشام، الأدوات التقنية
-            المسجلة، واستمرار المتابعة. لا تنسب دراسة الحالة للمشروع مشكلة تجارية
-            أو نتيجة غير موثقة.
+            يعرض المشروع النطاق المنفذ والأدوات المستخدمة دون ادعاء نتائج تجارية غير موثقة.
           </p>
-        </div>
-      </section>
-
-      <section aria-labelledby="project-role-heading">
-        <div className="max-w-3xl">
-          <p className="eyebrow text-blue">النطاق المؤكد</p>
-          <h2
-            id="project-role-heading"
-            className="mt-4 text-3xl font-extrabold leading-tight text-navy sm:text-4xl"
-          >
-            دوري في المشروع
-          </h2>
-          <p className="mt-5 text-lg leading-8 text-slate-700">{project.role}.</p>
-        </div>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          <article className="rounded-[1.5rem] border border-navy/10 bg-navy p-6 text-cream sm:p-8">
-            <p className="eyebrow text-cyan">Platform</p>
-            <h3 className="mt-4 text-2xl font-extrabold">Salla</h3>
-            <p className="mt-3 leading-8 text-slate-300">
-              متجر إلكتروني قائم على منصة سلة ومتاح عبر رابطه المباشر.
-            </p>
-          </article>
-          <article className="rounded-[1.5rem] border border-navy/10 bg-white p-6 sm:p-8">
-            <p className="eyebrow text-blue">Frontend scope</p>
-            <h3 className="mt-4 text-2xl font-extrabold text-navy">
-              تصميم، تطوير، وتخصيص الثيم
-            </h3>
-            <p className="mt-3 leading-8 text-slate-700">
-              نطاق المشروع المنشور يربط العمل بالواجهة، تخصيص الثيم، واستخدام
-              CSS وJavaScript.
-            </p>
-          </article>
         </div>
       </section>
 
@@ -131,35 +92,6 @@ export function Sho9CaseStudy({
         </ol>
       </section>
 
-      {project.maintenance ? (
-        <section
-          aria-labelledby="maintenance-heading"
-          className="rounded-[1.75rem] bg-navy p-6 text-cream sm:p-9 lg:p-12"
-        >
-          <div className="grid gap-7 lg:grid-cols-[0.7fr_1.3fr] lg:gap-14">
-            <div>
-              <p className="eyebrow text-cyan">Ongoing work</p>
-              <h2
-                id="maintenance-heading"
-                className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl"
-              >
-                الدعم والصيانة
-              </h2>
-            </div>
-            <div>
-              <p className="text-xl font-extrabold leading-9">
-                {project.maintenance} للمتجر.
-              </p>
-              <p className="mt-4 leading-8 text-slate-300">
-                ده يثبت استمرار العلاقة بالمشروع بعد التنفيذ. البيانات المنشورة لا
-                تحدد SLA أو مواعيد استجابة أو تكرارًا ثابتًا للصيانة، لذلك لا يتم
-                افتراض أي منها هنا.
-              </p>
-            </div>
-          </div>
-        </section>
-      ) : null}
-
       <section aria-labelledby="proof-heading">
         <div className="max-w-3xl">
           <p className="eyebrow text-blue">قدرات، مش نتائج تجارية</p>
@@ -170,9 +102,11 @@ export function Sho9CaseStudy({
             المشروع بيوضح إيه؟
           </h2>
           <p className="mt-5 leading-8 text-slate-700">
-            Sho9 دليل على نطاق تنفيذ داخل متجر سلة. الصفحة لا تدّعي زيادة مبيعات
-            أو Conversion rate أو أي نتيجة تجارية غير موثقة.
+            Sho9 دليل على تنفيذ فعلي داخل متجر سلة، وليس ادعاءً بنتائج تجارية غير موثقة.
           </p>
+          {project.maintenance ? (
+            <p className="mt-3 font-semibold text-navy">الحالة الحالية: {project.maintenance}.</p>
+          ) : null}
         </div>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {demonstratedCapabilities.map((item) => (
@@ -184,15 +118,6 @@ export function Sho9CaseStudy({
               <p className="mt-3 leading-8 text-slate-700">{item.description}</p>
             </article>
           ))}
-        </div>
-        <div className="mt-6 flex flex-col gap-3 rounded-[1.25rem] border border-blue/20 bg-blue/5 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-          <p className="leading-8 text-slate-700">
-            اعرف أكتر عن تخصص هشام وطريقة شغله مع متاجر سلة.
-          </p>
-          <Link href="/about" className="button-secondary shrink-0">
-            عن هشام علي
-            <span aria-hidden="true">←</span>
-          </Link>
         </div>
       </section>
 

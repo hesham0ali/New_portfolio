@@ -5,7 +5,6 @@ import { Hero } from "@/components/sections/hero";
 import { HomeFaq } from "@/components/sections/home-faq";
 import { Projects } from "@/components/sections/projects";
 import { ServiceCta } from "@/components/sections/service-cta";
-import { ServicePackages } from "@/components/sections/service-packages";
 import {
   getAllPublishedProjects,
   getProjectBySlug,
@@ -31,7 +30,6 @@ export default async function Home() {
       <main id="main-content" tabIndex={-1}>
         <Hero project={sho9.metadata} />
         <Expertise />
-        <ServicePackages compact />
         <Projects
           project={sho9.metadata}
           additionalProjects={additionalSallaProjects}
